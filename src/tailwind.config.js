@@ -2,7 +2,11 @@ module.exports = {
   theme: {
     colors: {
       blue: '#0039CB',
-      white: '#ffffff'
+      white: '#ffffff',
+      gray: {
+        graph: '#f4f4f4',
+        text: '#828282'
+      }
     },
     spacing: {
       0: '0',
@@ -17,7 +21,8 @@ module.exports = {
       32: '32px',
       36: '36px',
       40: '40px',
-      60: '60px'
+      60: '60px',
+      90: '90px'
     }
   },
   variants: {},

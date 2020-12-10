@@ -1,43 +1,27 @@
 <template>
   <div>
-    <nav>
-      <div class="site-link">
-        Yardstick
-      </div>
-      <!-- TODO student dropdown -->
+    <the-top-nav />
 
-      <div class="flex-grow" />
+    <the-side-rail />
 
-      <div class="icons">
-        <font-awesome-icon
-          class="icon"
-          :icon="['far', 'question-circle']"
-        />
-        <font-awesome-icon
-          class="icon"
-          :icon="['fas', 'user']"
-        />
-      </div>
-    </nav>
-    <Nuxt />
+    <Nuxt class="margin-for-side-rail" />
   </div>
 </template>
 
+<script>
+import TheTopNav from '@/components/layout/TheTopNav'
+import TheSideRail from '@/components/layout/TheSideRail'
+
+export default {
+  components: {
+    TheTopNav,
+    TheSideRail
+  }
+}
+</script>
+
 <style lang="postcss" scoped>
-nav {
-  @apply bg-blue flex items-center h-60;
-}
-
-.site-link {
-  @apply text-white font-extrabold ml-20;
-  font-size: 36px;
-}
-
-.icons {
-  @apply flex items-center;
-}
-
-.icon {
-  @apply text-white w-24 h-24 mr-30;
+.margin-for-side-rail {
+  @apply ml-90;
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <div class="placeholder">
-    Hello, World
+    <h1>Hello, World</h1>
+
+    I'm the main content
   </div>
 </template>
 
@@ -10,7 +12,7 @@ export default {}
 
 <style lang="postcss" scoped>
 .placeholder {
+  @apply p-40;
   height: 800px;
-  background: #ddd;
 }
 </style>
