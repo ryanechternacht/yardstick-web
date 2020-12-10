@@ -11,6 +11,7 @@ module.exports = {
     spacing: {
       0: '0',
       4: '4px',
+      6: '6px',
       8: '8px',
       10: '10px',
       12: '12px',

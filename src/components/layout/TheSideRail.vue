@@ -60,11 +60,11 @@ nav {
 }
 
 .icon {
-  @apply block w-36 h-36;
+  @apply block w-24 h-24 m-6;
 }
 
 .link-text {
-  @apply text-center px-12 mt-4;
+  @apply text-center px-12;
   font-size: 12px;
 }
 
