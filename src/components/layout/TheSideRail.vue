@@ -3,7 +3,7 @@
     <div class="top-nav-spacer" />
 
     <div class="links">
-      <div class="link">
+      <div class="link link--active">
         <font-awesome-icon
           :icon="['fas', 'home']"
           class="icon"
@@ -46,6 +46,12 @@
   </nav>
 </template>
 
+<script>
+export default {
+  // TODO read the route to determine which link to be active
+}
+</script>
+
 <style scoped lang="postcss">
 nav {
   @apply fixed top-0 left-0 h-full z-10 w-90 border-r-2 border-gray-graph;
@@ -56,7 +62,11 @@ nav {
 }
 
 .link {
-  @apply flex flex-col items-center mt-20 text-gray-text;
+  @apply flex flex-col cursor-pointer items-center mt-20 text-gray-text;
+}
+
+.link--active {
+  @apply text-blue;
 }
 
 .icon {
