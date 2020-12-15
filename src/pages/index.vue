@@ -1,19 +1,31 @@
 <template>
-  <div class="c">
-    <div class="content">
-      <h2 class="text-center">
-        Based on 27 data points we would say
-      </h2>
+  <div class="content">
+    <h2>Based on 27 data points we would say</h2>
 
-      <h1 class="text-center mt-24">
-        Darryl is <span class="at-risk">At Risk</span> in Reading and
-        <span class="advanced">Advanced</span> in Mathematics
-      </h1>
+    <h1 class="mt-24">
+      Darryl is <span class="at-risk">At Risk</span> in Reading and
+      <span class="advanced">Advanced</span> in Mathematics
+    </h1>
 
-      <div class="links">
-        <h2 class="">
-          What should we show you next
-        </h2>
+    <div class="links">
+      <h2>What should we show you next?</h2>
+
+      <div class="button-links">
+        <div class="button-link">
+          <div class="p-20">
+            How you can help Darryl be more prepared.
+          </div>
+        </div>
+        <div class="button-link">
+          <div class="p-20">
+            How Darryl is doing across all of his assessments.
+          </div>
+        </div>
+        <div class="button-link">
+          <div class="p-20">
+            Where Darryl is doing well and where he has room to grow.
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -27,14 +39,17 @@ export default {}
 .content {
   @apply flex flex-col items-center;
   margin-top: 100px;
+  margin-bottom: 200px;
 }
 
 h2 {
+  @apply text-center;
   font-size: 40px;
   line-height: 48px;
 }
 
 h1 {
+  @apply text-center;
   font-size: 70px;
   line-height: 84px;
 }
@@ -49,5 +64,21 @@ h1 {
 
 .links {
   margin-top: 200px;
+}
+
+.button-links {
+  @apply flex items-center mt-50;
+}
+
+.button-link {
+  @apply flex flex-row items-center text-center mx-24 border-3 border-blue-lighter
+    rounded-lg text-blue-lighter cursor-pointer;
+  height: 180px;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.button-link:hover {
+  @apply bg-blue-lighter text-white;
 }
 </style>
