@@ -4,7 +4,9 @@
 
     <the-side-rail />
 
-    <Nuxt class="margin-for-side-rail" />
+    <div class="margin-for-siderail">
+      <Nuxt class="ys-container" />
+    </div>
   </div>
 </template>
 
@@ -21,7 +23,15 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.margin-for-side-rail {
-  @apply ml-90;
+.margin-for-siderail {
+  margin-left: 90px;
+}
+
+.ys-container {
+  /* a modified container to account for the siderail.
+     this only works on xl right now
+  */
+  @apply mx-auto;
+  max-width: 1190px;
 }
 </style>

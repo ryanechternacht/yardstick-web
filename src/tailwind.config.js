@@ -2,11 +2,13 @@ module.exports = {
   theme: {
     colors: {
       blue: '#0039CB',
-      white: '#ffffff',
       gray: {
         graph: '#f4f4f4',
         text: '#828282'
-      }
+      },
+      orange: '#f57c00',
+      purple: '#512da8',
+      white: '#ffffff'
     },
     spacing: {
       0: '0',
