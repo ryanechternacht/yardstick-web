@@ -4,7 +4,8 @@
 
     <div class="links">
       <nuxt-link
-        class="link link--active"
+        class="link"
+        :class="{'link--active': siteSection === 'home'}"
         to="/"
       >
         <font-awesome-icon
@@ -18,6 +19,7 @@
 
       <nuxt-link
         class="link"
+        :class="{'link--active': siteSection === 'how-to-help'}"
         to="/how-to-help"
       >
         <font-awesome-icon
@@ -31,6 +33,7 @@
 
       <nuxt-link
         class="link"
+        :class="{'link--active': siteSection === 'obstacles-and-opportunities'}"
         to="/obstacles-and-opportunities"
       >
         <font-awesome-icon
@@ -44,6 +47,7 @@
 
       <nuxt-link
         class="link"
+        :class="{'link--active': siteSection === 'assessment-details'}"
         to="/assessment-details"
       >
         <font-awesome-icon
@@ -60,7 +64,38 @@
 
 <script>
 export default {
-  // TODO read the route to determine which link to be active
+  data () {
+    return {
+      siteSection: ''
+    }
+  },
+  watch: {
+    $route () {
+      this.updateSiteSection()
+    }
+  },
+  created () {
+    this.updateSiteSection()
+  },
+  methods: {
+    updateSiteSection () {
+      const path = (this.$route.matched.length && this.$route.matched[0].path) || ''
+      switch (path) {
+        case '/how-to-help':
+          this.siteSection = 'how-to-help'
+          break
+        case '/obstacles-and-opportunities':
+          this.siteSection = 'obstacles-and-opportunities'
+          break
+        case '/assessment-details':
+          this.siteSection = 'assessment-details'
+          break
+        case '/':
+        default:
+          this.siteSection = 'home'
+      }
+    }
+  }
 }
 </script>
 
