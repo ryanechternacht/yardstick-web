@@ -1,12 +1,24 @@
 <template>
   <div>
-    How to help
+    <div
+      v-for="(gist, index) in gists"
+      :key="index"
+      class="mb-20"
+    >
+      {{ gist }}
+    </div>
   </div>
 </template>
 
 <script>
-export default {
+import gistData from '@/assets/data/gists'
 
+export default {
+  data () {
+    return {
+      gists: gistData
+    }
+  }
 }
 </script>
 
