@@ -3,45 +3,57 @@
     <div class="top-nav-spacer" />
 
     <div class="links">
-      <div class="link link--active">
+      <nuxt-link
+        class="link link--active"
+        to="/"
+      >
         <font-awesome-icon
           :icon="['fas', 'home']"
           class="icon"
         />
-        <a class="link-text">
+        <div class="link-text">
           Home
-        </a>
-      </div>
+        </div>
+      </nuxt-link>
 
-      <div class="link">
+      <nuxt-link
+        class="link"
+        to="/how-to-help"
+      >
         <font-awesome-icon
           :icon="['fas', 'head-side-virus']"
           class="icon"
         />
-        <a class="link-text">
+        <div class="link-text">
           How to Help
-        </a>
-      </div>
+        </div>
+      </nuxt-link>
 
-      <div class="link">
+      <nuxt-link
+        class="link"
+        to="/obstacles-and-opportunities"
+      >
         <font-awesome-icon
           :icon="['fas', 'flag']"
           class="icon"
         />
-        <a class="link-text">
+        <div class="link-text">
           Obstacles &amp; Opportunities
-        </a>
-      </div>
+        </div>
+      </nuxt-link>
 
-      <div class="link">
+      <nuxt-link
+        class="link"
+        to="/assessment-details"
+      >
         <font-awesome-icon
           :icon="['fas', 'chart-bar']"
           class="icon"
         />
-        <a class="link-text">
+        <div class="link-text">
           Assessment Details
-        </a>
-      </div>
+        </div>
+      </nuxt-link>
     </div>
   </nav>
 </template>
