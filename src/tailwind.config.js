@@ -11,6 +11,7 @@ module.exports = {
       },
       orange: '#f57c00',
       purple: '#512da8',
+      red: '#d50000',
       white: '#ffffff'
     },
     spacing: {
