@@ -1,9 +1,3 @@
-<template>
-  <div>
-    Obstacles and Opportunities
-  </div>
-</template>
-
 <script>
 export default {
   middleware ({ redirect }) {
@@ -11,7 +5,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-
-</style>
