@@ -3,36 +3,18 @@
     <h1>Opportunities</h1>
 
     <div class="awards">
-      <div class="award">
+      <div
+        v-for="o in opportunities"
+        :key="o.id"
+        class="award"
+      >
         <div class="award-header">
-          Shooting Star
+          {{ o.title }}
         </div>
-        <img src="~/assets/images/opportunities-star.png">
+        <img :src="o.image">
         <div class="award-description">
-          Holy Moly! Darry grew more than <span class="font-bold">88% of his peers</span> on
-          the most recent NWEA MAP Assessment
-        </div>
-      </div>
-      <div class="award">
-        <div class="award-header">
-          Shooting Star
-        </div>
-        <img src="~/assets/images/opportunities-award.png">
-        <div class="award-description">
-          Darryl has the highest NWEA MAP score in
-          <span class="font-bold">The Real and Complex Number System</span>
-          in his class. Is ice cream in order?
-        </div>
-      </div>
-      <div class="award">
-        <div class="award-header">
-          Shooting Star
-        </div>
-        <img src="~/assets/images/opportunities-wizard.png">
-        <div class="award-description">
-          Darry might have some magic up his sleeves as he is
-          <span class="font-bold">Proficient</span> or <span class="font-bold">On Track</span>
-          across all of his math assessments
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div v-html="o.description" />
         </div>
       </div>
     </div>
@@ -48,8 +30,14 @@
 </template>
 
 <script>
-export default {
+import opportunities from '@/assets/data/opportunities'
 
+export default {
+  data () {
+    return {
+      opportunities
+    }
+  }
 }
 </script>
 
@@ -77,7 +65,7 @@ h1 {
 }
 
 .award-description {
-  @apply w-full p-20 bg-gray-graph text-center;
+  @apply w-full p-20 mt-20 bg-gray-graph text-center;
   font-size: 24px;
   line-height: 29px;
 }

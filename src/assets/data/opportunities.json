@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Shooting Star",
+    "image": "/images/opportunities-star.png",
+    "description": "Holy Moly! Darry grew more than <span class=\"font-bold\">88% of his peers</span> on the most recent NWEA MAP Assessment"
+  },
+  {
+    "id": 2,
+    "title": "Top of Class",
+    "image": "/images/opportunities-award.png",
+    "description": "Darryl has the highest NWEA MAP score in <span class=\"font-bold\">The Real and Complex Number System</span> in his class. Is ice cream in order?"
+  },
+  {
+    "id": 3,
+    "title": "Math Wizard",
+    "image": "/images/opportunities-wizard.png",
+    "description": "Darry might have some magic up his sleeves as he is <span class=\"font-bold\">Proficient</span> or <span class=\"font-bold\">On Track</span> across all of his math assessments"
+  }
+]
