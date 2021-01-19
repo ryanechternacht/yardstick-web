@@ -14,7 +14,7 @@
         <img :src="o.image">
         <div class="award-description">
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="o.description" />
+          <div v-html="stringFormat(student, o.description)" />
         </div>
       </div>
     </div>
@@ -23,19 +23,30 @@
       <nuxt-link
         to="/obstacles-and-opportunities/obstacles"
       >
-        Explore Darryl's Obstacles
+        Explore {{ student.name.possessive }} Obstacles
       </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import opportunities from '@/assets/data/opportunities'
 
 export default {
   data () {
     return {
       opportunities
+    }
+  },
+  computed: {
+    ...mapGetters('student', ['student'])
+  },
+  methods: {
+    stringFormat (student, template) {
+      // eslint-disable-next-line no-eval
+      return eval('`' + template + '`')
     }
   }
 }
