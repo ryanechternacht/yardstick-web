@@ -14,7 +14,7 @@
         <img :src="o.image">
         <div class="award-description">
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="stringFormat(student, o.description)" />
+          <div v-html="renderTemplate(o.description)" />
         </div>
       </div>
     </div>
@@ -44,9 +44,9 @@ export default {
     ...mapGetters('student', ['student'])
   },
   methods: {
-    stringFormat (student, template) {
+    renderTemplate (template) {
       // eslint-disable-next-line no-eval
-      return eval('`' + template + '`')
+      return (student => eval('`' + template + '`'))(this.student)
     }
   }
 }

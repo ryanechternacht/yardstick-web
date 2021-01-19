@@ -9,7 +9,7 @@
         :key="ri"
         class="recommendation"
       >
-        <h2>{{ recommendation.title }}</h2>
+        <h2>{{ renderTemplate(recommendation.title) }}</h2>
         <div class="tags">
           <div
             v-for="(tag, ti) in recommendation.tags"
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div>
-          {{ recommendation.description }}
+          {{ renderTemplate(recommendation.description) }}
         </div>
         <div class="flex flex-row-reverse">
           <nuxt-link
@@ -36,12 +36,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import recommendations from '@/assets/data/how-to-help'
 
 export default {
   data () {
     return {
       recommendations
+    }
+  },
+  computed: {
+    ...mapGetters('student', ['student'])
+  },
+  methods: {
+    renderTemplate (template) {
+      // eslint-disable-next-line no-eval
+      return (student => eval('`' + template + '`'))(this.student)
     }
   }
 }
