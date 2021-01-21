@@ -14,7 +14,7 @@
         <img :src="o.image">
         <div class="award-description">
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="renderTemplate(o.description)" />
+          <div v-html="renderStudentTemplate(student, o.description)" />
         </div>
       </div>
     </div>
@@ -33,8 +33,16 @@
 import { mapGetters } from 'vuex'
 
 import opportunities from '@/assets/data/opportunities'
+import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
+  setup () {
+    const { renderStudentTemplate } = useRenderTemplate()
+
+    return {
+      renderStudentTemplate
+    }
+  },
   data () {
     return {
       opportunities
@@ -42,12 +50,6 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['student'])
-  },
-  methods: {
-    renderTemplate (template) {
-      // eslint-disable-next-line no-eval
-      return (student => eval('`' + template + '`'))(this.student)
-    }
   }
 }
 </script>

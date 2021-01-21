@@ -19,7 +19,7 @@
         <h3>{{ s.title }}</h3>
         <p class="step-text">
           <!-- TODO this should have a link in it -->
-          {{ renderTemplate(s.text) }}
+          {{ renderStudentTemplate(student, s.text) }}
         </p>
       </div>
     </div>
@@ -30,8 +30,16 @@
 import { mapGetters } from 'vuex'
 
 import actionPlan from '@/assets/data/gist-action-plan'
+import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
+  setup () {
+    const { renderStudentTemplate } = useRenderTemplate()
+
+    return {
+      renderStudentTemplate
+    }
+  },
   data () {
     return {
       actionPlan
@@ -39,12 +47,6 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['student'])
-  },
-  methods: {
-    renderTemplate (template) {
-      // eslint-disable-next-line no-eval
-      return (student => eval('`' + template + '`'))(this.student)
-    }
   }
 }
 </script>
