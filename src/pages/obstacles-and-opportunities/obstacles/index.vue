@@ -15,6 +15,15 @@
         start to finish, in a single sitting.
       </p>
     </div>
+
+    <div class="mt-50 text-center">
+      <nuxt-link
+        class="start-the-conversation"
+        to="/obstacles-and-opportunities/obstacles/1"
+      >
+        Start the Conversation
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -57,5 +66,12 @@ h1 {
   @apply text-center;
   font-size: 24px;
   line-height: 28.8px;
+}
+
+.start-the-conversation {
+  @apply bg-red text-white rounded-full px-16 py-10 uppercase;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  line-height: 17px;
 }
 </style>
