@@ -2,6 +2,7 @@
   {
     "id": 1,
     "question": "Where do ${student.name.possessive} academic skills have the greatest obstacles to overcome for ${student.pronouns.accusative} to be college and career ready by graduation?",
-    "answer": "Based on ${student.name.possessive} scores on his NWEA MAP and Forward Exam, we see ${student.pronouns.possessive} greatest obstacles to overcome as ${student.pronouns.possessive} performance with <span class=\"underline\">Fiction Comprehension</span>."
+    "answer": "Based on ${student.name.possessive} scores on his NWEA MAP and Forward Exam, we see ${student.pronouns.possessive} greatest obstacles to overcome as ${student.pronouns.possessive} performance with <span class=\"underline\">Fiction Comprehension</span>.",
+    "type": "SimpleObstacle"
   }
 ]
