@@ -13,7 +13,10 @@
       </div>
 
       <!-- eslint-disable vue/no-v-html -->
-      <div class="answer">
+      <div
+        v-if="showAnswer"
+        class="answer"
+      >
         <span class="q-and-a-label">
           Answer:
         </span>
@@ -24,7 +27,10 @@
       </div>
       <!-- eslint-enable vue/no-v-html -->
 
-      <div class="next-questions">
+      <div
+        v-if="showNextQuestions"
+        class="next-questions"
+      >
         <h3>Ask Another Question:</h3>
 
         <div
@@ -78,13 +84,50 @@ export default {
       }
     ]
 
+    // TODO where does this come from? maybe we have a few page templates and an
+    // "obstacle type" field which does dynamic dispatch to the correct page?
+    const delays = [
+      {
+        section: 'showAnswer',
+        delay: 1000
+      },
+      {
+        section: 'showNextQuestions',
+        delay: 1000
+      }
+    ]
+
     return {
-      obstacle,
-      nextQuestions
+      delays,
+      nextQuestions,
+      obstacle
+    }
+  },
+  data () {
+    return {
+      showAnswer: false,
+      showNextQuestions: false
     }
   },
   computed: {
     ...mapGetters('student', ['student'])
+  },
+  mounted () {
+    this.startAnimation()
+  },
+  methods: {
+    startAnimation () {
+      this.runNextAnimation()
+    },
+    runNextAnimation () {
+      if (this.delays.length) {
+        const d = this.delays.shift()
+        setTimeout(() => {
+          this[d.section] = true
+          this.runNextAnimation()
+        }, d.delay)
+      }
+    }
   }
 }
 </script>
