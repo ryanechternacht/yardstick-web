@@ -4,33 +4,41 @@
 
     <div class="q-and-a">
       <div class="question">
-        {{ renderStudentTemplate(student, obstacle.question) }}
+        <span class="q-and-a-label">
+          Question:
+        </span>
+        <span class="q-and-a-content">
+          {{ renderStudentTemplate(student, obstacle.question) }}
+        </span>
       </div>
 
       <!-- eslint-disable vue/no-v-html -->
-      <div
-        class="answer"
-        v-html="renderStudentTemplate(student, obstacle.answer)"
-      />
+      <div class="answer">
+        <span class="q-and-a-label">
+          Answer:
+        </span>
+        <span
+          class="q-and-a-content"
+          v-html="renderStudentTemplate(student, obstacle.answer)"
+        />
+      </div>
       <!-- eslint-enable vue/no-v-html -->
 
       <div class="next-questions">
-        <!-- TODO -->
-        <nuxt-link
-          to="/obstacles-and-opportunities/obstacles/2"
+        <h3>Ask Another Question:</h3>
+
+        <div
+          v-for="nq in nextQuestions"
+          :key="nq.id"
+          class="mt-24"
         >
-          question 2
-        </nuxt-link>
-        <nuxt-link
-          to="/obstacles-and-opportunities/obstacles/3"
-        >
-          question 3
-        </nuxt-link>
-        <nuxt-link
-          to="/obstacles-and-opportunities/obstacles/4"
-        >
-          question 4
-        </nuxt-link>
+          <nuxt-link
+            class="next-question"
+            :to="{ path: `/obstacles-and-opportunities/obstacles/${nq.id}` }"
+          >
+            {{ nq.question }}
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -54,8 +62,25 @@ export default {
     const id = parseInt(params.id, 10)
     const obstacle = obstacles.find(o => o.id === id)
 
+    // TODO
+    const nextQuestions = [
+      {
+        id: 2,
+        question: 'Question 2'
+      },
+      {
+        id: 3,
+        question: 'Question 3'
+      },
+      {
+        id: 4,
+        question: 'Question 4'
+      }
+    ]
+
     return {
-      obstacle
+      obstacle,
+      nextQuestions
     }
   },
   computed: {
@@ -72,10 +97,22 @@ h1 {
 }
 
 .q-and-a {
-  @apply grid grid-cols-2 grid-rows-2;
+  @apply grid grid-cols-2 grid-rows-2 gap-50 mt-50;
   grid-template-areas:
     "question        answer"
      "next-questions answer";
+}
+
+.q-and-a-label {
+  @apply font-medium text-blue;
+  font-size: 32px;
+  line-height: 38.4px;
+}
+
+.q-and-a-content {
+  @apply italic;
+  font-size: 32px;
+  line-height: 38.4px;
 }
 
 .question {
@@ -90,4 +127,15 @@ h1 {
   grid-area: next-questions;
 }
 
+h3 {
+  @apply font-medium;
+  font-size: 24px;
+  line-height: 28.8px;
+}
+
+.next-question {
+  @apply rounded-lg bg-gray-graph py-6 px-10;
+  font-size: 18px;
+  line-height: 21.6px;
+}
 </style>
