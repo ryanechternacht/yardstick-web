@@ -14,7 +14,6 @@
 
       <!-- eslint-disable vue/no-v-html -->
       <div
-        v-if="showAnswer"
         class="answer"
       >
         <span class="q-and-a-label">
@@ -28,7 +27,6 @@
       <!-- eslint-enable vue/no-v-html -->
 
       <div
-        v-if="showNextQuestions"
         class="next-questions"
       >
         <h3>Ask Another Question:</h3>
@@ -88,12 +86,12 @@ export default {
     // "obstacle type" field which does dynamic dispatch to the correct page?
     const delays = [
       {
-        section: 'showAnswer',
-        delay: 1000
+        section: 'answer',
+        delay: 5000
       },
       {
-        section: 'showNextQuestions',
-        delay: 1000
+        section: 'next-questions',
+        delay: 3000
       }
     ]
 
@@ -123,7 +121,12 @@ export default {
       if (this.delays.length) {
         const d = this.delays.shift()
         setTimeout(() => {
-          this[d.section] = true
+          this.$anime({
+            targets: `.${d.section}`,
+            opacity: 1,
+            duration: 1000,
+            easing: 'linear'
+          })
           this.runNextAnimation()
         }, d.delay)
       }
@@ -164,10 +167,12 @@ h1 {
 
 .answer {
   grid-area: answer;
+  opacity: 0;
 }
 
 .next-questions {
   grid-area: next-questions;
+  opacity: 0;
 }
 
 h3 {
