@@ -23,25 +23,12 @@
     </div>
     <!-- eslint-enable vue/no-v-html -->
 
-    <div
+    <next-questions
       class="next-questions"
-    >
-      <h3>Ask Another Question:</h3>
-
-      <div
-        v-for="nq in nextQuestions"
-        :key="nq.id"
-        class="mt-24"
-      >
-        <div class="next-question">
-          <nuxt-link
-            :to="{ path: `/obstacles-and-opportunities/obstacles/${nq.id}` }"
-          >
-            {{ renderStudentTemplate(student, nq.question) }}
-          </nuxt-link>
-        </div>
-      </div>
-    </div>
+      :cta="obstacle.cta"
+      :next-questions="nextQuestions"
+      :student="student"
+    />
   </div>
 </template>
 
@@ -133,17 +120,5 @@ export default {
 .next-questions {
   grid-area: next-questions;
   opacity: 0;
-}
-
-h3 {
-  @apply font-medium;
-  font-size: 24px;
-  line-height: 28.8px;
-}
-
-.next-question {
-  @apply inline-block rounded-lg bg-gray-graph py-6 px-10;
-  font-size: 18px;
-  line-height: 21.6px;
 }
 </style>
