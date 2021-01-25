@@ -4,6 +4,7 @@
 
     <component
       :is="obstacle.type"
+      :key="obstacle.id"
       v-bind="{ student, delays, nextQuestions, obstacle }"
     />
   </div>
@@ -22,33 +23,18 @@ export default {
   asyncData ({ params }) {
     const id = parseInt(params.id, 10)
     const obstacle = obstacles.find(o => o.id === id)
-
-    // TODO
-    const nextQuestions = [
-      {
-        id: 2,
-        question: 'Question 2'
-      },
-      {
-        id: 3,
-        question: 'Question 3'
-      },
-      {
-        id: 4,
-        question: 'Question 4'
-      }
-    ]
+    const nextQuestions = obstacles.filter(o => o.id > id)
 
     // TODO where does this come from? maybe we have a few page templates and an
     // "obstacle type" field which does dynamic dispatch to the correct page?
     const delays = [
       {
         section: 'answer',
-        delay: 5000
+        delay: 1000
       },
       {
         section: 'next-questions',
-        delay: 3000
+        delay: 1000
       }
     ]
 

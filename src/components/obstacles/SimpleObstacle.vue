@@ -33,12 +33,13 @@
         :key="nq.id"
         class="mt-24"
       >
-        <nuxt-link
-          class="next-question"
-          :to="{ path: `/obstacles-and-opportunities/obstacles/${nq.id}` }"
-        >
-          {{ nq.question }}
-        </nuxt-link>
+        <div class="next-question">
+          <nuxt-link
+            :to="{ path: `/obstacles-and-opportunities/obstacles/${nq.id}` }"
+          >
+            {{ renderStudentTemplate(student, nq.question) }}
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -101,7 +102,8 @@ export default {
 
 <style lang="postcss" scoped>
 .q-and-a {
-  @apply grid grid-cols-2 grid-rows-2 gap-50 mt-50;
+  @apply grid grid-cols-2 gap-50 mt-50 auto-rows-auto;
+  grid-template-rows: repeat(2, auto);
   grid-template-areas:
     "question        answer"
      "next-questions answer";
@@ -140,7 +142,7 @@ h3 {
 }
 
 .next-question {
-  @apply rounded-lg bg-gray-graph py-6 px-10;
+  @apply inline-block rounded-lg bg-gray-graph py-6 px-10;
   font-size: 18px;
   line-height: 21.6px;
 }
