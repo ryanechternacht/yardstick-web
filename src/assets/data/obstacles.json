@@ -27,7 +27,7 @@
     "id": 4,
     "question": "Can you show me what ${student.name.possessive} performance looks like?",
     "answer": "The passage on the left represents an approximate text ${student.name.first} could read and comprehend. On the right is a text of what an On Track 8th grader reader could comprehend.",
-    "type": "SimpleObstacle",
+    "type": "ReadingPassageObstacle",
     "order": 4,
     "cta": {
       "position": "above"

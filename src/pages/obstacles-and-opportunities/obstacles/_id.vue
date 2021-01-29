@@ -14,10 +14,13 @@
 import { mapGetters } from 'vuex'
 
 import obstacles from '@/assets/data/obstacles'
+
+import ReadingPassageObstacle from '@/components/obstacles/ReadingPassageObstacle'
 import SimpleObstacle from '@/components/obstacles/SimpleObstacle'
 
 export default {
   components: {
+    ReadingPassageObstacle,
     SimpleObstacle
   },
   asyncData ({ params }) {
