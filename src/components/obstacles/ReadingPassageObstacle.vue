@@ -32,7 +32,7 @@
             On Track Reader
           </div>
           <div class="passage-text">
-            {{ samples.reading[8] /* TODO */ }}
+            {{ samples.reading[student.grade.cardinal] }}
           </div>
         </div>
       </div>

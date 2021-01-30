@@ -13,6 +13,10 @@ export const state = () => ({
       possessiveUpper: 'His',
       accusative: 'him',
       accusativeUpper: 'Him'
+    },
+    grade: {
+      ordinal: '8th',
+      cardinal: 8
     }
   }
 })

@@ -8,7 +8,7 @@
   },
   {
     "id": 2,
-    "question": "How does ${student.name.first} compare to other 8th graders?",
+    "question": "How does ${student.name.first} compare to other ${student.grade.ordinal} graders?",
     "answer": "Based on ${student.pronouns.possessive} assessments, ${student.name.possessive} performance is more than one grade level behind on related Fiction Comprehension skills",
     "type": "SimpleObstacle",
     "order": 2
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "question": "Can you show me what ${student.name.possessive} performance looks like?",
-    "answer": "The passage on the left represents an approximate text ${student.name.first} could read and comprehend. On the right is a text of what an On Track 8th grader reader could comprehend.",
+    "answer": "The passage on the left represents an approximate text ${student.name.first} could read and comprehend. On the right is a text of what an On Track ${student.grade.ordinal} grader reader could comprehend.",
     "type": "ReadingPassageObstacle",
     "order": 4,
     "cta": {
