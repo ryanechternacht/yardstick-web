@@ -3,10 +3,12 @@ module.exports = {
     colors: {
       blue: {
         default: '#0039CB',
-        lighter: '#2962ff'
+        lighter: '#2962ff',
+        graph: '#2962FF'
       },
       gray: {
         graph: '#f4f4f4',
+        'graph-dark': '#757474',
         text: '#828282'
       },
       orange: '#f57c00',
