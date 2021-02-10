@@ -19,8 +19,9 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '@/plugins/chartist',
     '@/plugins/fort-awesome',
-    '@/plugins/chartist'
+    '@/plugins/vue-fragment'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
