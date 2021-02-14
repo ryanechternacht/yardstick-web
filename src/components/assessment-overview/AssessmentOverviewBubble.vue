@@ -1,0 +1,40 @@
+<template>
+  <!-- TODO pull out these numbers as an enum? -->
+  <nuxt-link
+    class="rating-bubble"
+    :class="{'bg-red-off-track': rating.score === 1,
+             'bg-orange-at-risk': rating.score === 2,
+             'bg-yellow-likely-on-track': rating.score === 3,
+             'bg-green-on-track': rating.score === 4,
+             'bg-purple-advanced': rating.score === 5}"
+    :to="{path: `/assessments/${rating.id}`}"
+  >
+    <div class="rating-text">
+      {{ rating.name }}
+    </div>
+  </nuxt-link>
+</template>
+
+<script>
+export default {
+  props: {
+    rating: {
+      type: Object,
+      required: true
+    }
+  }
+}
+</script>
+
+<style lang="postcss" scoped>
+.rating-bubble {
+  @apply flex items-center h-60 rounded-md mx-10 mt-15 mb-25;
+  box-shadow: 3px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rating-text {
+  @apply text-center text-white font-bold w-full mx-10;
+  font-size: 20px;
+  line-height: 24px;
+}
+</style>
