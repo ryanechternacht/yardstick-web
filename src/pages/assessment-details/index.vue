@@ -3,7 +3,7 @@
     <h1>Assessment Scorecard</h1>
 
     <assessment-overview
-      class="mt-50"
+      class="mt-50 mb-90"
       :assessment-data="assessmentData"
     />
   </div>

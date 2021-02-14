@@ -1,19 +1,19 @@
 <template>
   <div class="assessment-overview">
     <div />
-    <div>
+    <div class="header border-red-off-track">
       Off Track
     </div>
-    <div>
+    <div class="header border-orange-at-risk">
       At Risk
     </div>
-    <div>
+    <div class="header border-yellow-likely-on-track">
       Likely On Track
     </div>
-    <div>
+    <div class="header border-green-on-track">
       On Track
     </div>
-    <div>
+    <div class="header border-purple-advanced">
       Advanced
     </div>
 
@@ -24,10 +24,12 @@
     <assessment-overview-subject
       :subject="assessmentData.math"
       subject-name="Mathematics"
+      :top-border="true"
     />
     <assessment-overview-subject
       :subject="assessmentData.ela"
       subject-name="Reading/ELA"
+      :top-border="true"
     />
   </div>
 </template>
@@ -53,5 +55,12 @@ export default {
 .assessment-overview {
   @apply grid;
   grid-template-columns: auto repeat(5, 1fr);
+  grid-template-rows: auto;
+}
+
+.header {
+  @apply text-center border-b-3 pb-8 mx-10 mb-40;
+  font-size: 25px;
+  line-height: 30px;
 }
 </style>

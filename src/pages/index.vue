@@ -55,11 +55,11 @@ h1 {
 }
 
 .at-risk {
-  @apply text-orange underline;
+  @apply text-orange-at-risk underline;
 }
 
 .advanced {
-  @apply text-purple underline;
+  @apply text-purple-advanced underline;
 }
 
 .links {
