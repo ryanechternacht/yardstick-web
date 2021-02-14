@@ -47,15 +47,15 @@
 
       <nuxt-link
         class="link"
-        :class="{'link--active': siteSection === 'assessment-details'}"
-        to="/assessment-details"
+        :class="{'link--active': siteSection === 'assessments'}"
+        to="/assessments"
       >
         <font-awesome-icon
           :icon="['fas', 'chart-bar']"
           class="icon"
         />
         <div class="link-text">
-          Assessment Details
+          Assessment Scorecard
         </div>
       </nuxt-link>
     </div>
@@ -64,6 +64,7 @@
 
 <script>
 export default {
+  name: 'TheSideRail',
   data () {
     return {
       siteSection: ''
@@ -87,8 +88,8 @@ export default {
         case '/obstacles-and-opportunities':
           this.siteSection = 'obstacles-and-opportunities'
           break
-        case '/assessment-details':
-          this.siteSection = 'assessment-details'
+        case '/assessments':
+          this.siteSection = 'assessments'
           break
         case '/':
         default:

@@ -21,6 +21,12 @@
   </nav>
 </template>
 
+<script>
+export default {
+  name: 'TheTopNav'
+}
+</script>
+
 <style scoped lang="postcss">
 nav {
   @apply sticky top-0 bg-blue flex items-center z-20;
