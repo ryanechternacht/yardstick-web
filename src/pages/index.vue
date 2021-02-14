@@ -82,3 +82,10 @@ h1 {
   @apply bg-blue-lighter text-white;
 }
 </style>
+
+<style>
+/* TODO is there a better way to set this */
+html * {
+   font-family: 'Lato', sans-serif;
+}
+</style>
