@@ -1,10 +1,17 @@
 <template>
-  <h1>assessment</h1>
+  <div>
+    <h1>assessment</h1>
+    <base-modal />
+  </div>
 </template>
 
 <script>
-export default {
+import BaseModal from '@/components/BaseModal'
 
+export default {
+  components: {
+    BaseModal
+  }
 }
 </script>
 
