@@ -1,5 +1,8 @@
 <template>
-  <base-modal>
+  <base-modal
+    :open="open"
+    @closeRequested="closeRequested"
+  >
     <template #default>
       <div class="explanation">
         <h1>Why is the NWEA MAP Important</h1>
@@ -20,7 +23,18 @@
 import BaseModal from '@/components/BaseModal'
 export default {
   name: 'AssessmentExplanation',
-  components: { BaseModal }
+  components: { BaseModal },
+  props: {
+    open: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    closeRequested () {
+      this.$emit('closeRequested', {})
+    }
+  }
 }
 </script>
 

@@ -1,5 +1,9 @@
 <template>
-  <div class="background">
+  <div
+    v-show="open"
+    class="background"
+    @click="closeRequested"
+  >
     <div class="content">
       <div>
         <slot name="default" />
@@ -10,7 +14,18 @@
 
 <script>
 export default {
-  name: 'BaseModal'
+  name: 'BaseModal',
+  props: {
+    open: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    closeRequested () {
+      this.$emit('closeRequested', {})
+    }
+  }
 }
 </script>
 

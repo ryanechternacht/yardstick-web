@@ -1,7 +1,10 @@
 <template>
   <div>
     <h1>assessment</h1>
-    <assessment-explanation />
+    <assessment-explanation
+      :open="showModal"
+      @closeRequested="modalClosed"
+    />
   </div>
 </template>
 
@@ -11,6 +14,17 @@ import AssessmentExplanation from '@/components/assessment-explanation/Assessmen
 export default {
   components: {
     AssessmentExplanation
+  },
+  data () {
+    return {
+      showModal: true
+    }
+  },
+  methods: {
+    modalClosed () {
+      console.log('closed')
+      this.showModal = false
+    }
   }
 }
 </script>
