@@ -1,16 +1,16 @@
 <template>
   <div>
     <h1>assessment</h1>
-    <base-modal />
+    <assessment-explanation />
   </div>
 </template>
 
 <script>
-import BaseModal from '@/components/BaseModal'
+import AssessmentExplanation from '@/components/assessment-explanation/AssessmentExplanation'
 
 export default {
   components: {
-    BaseModal
+    AssessmentExplanation
   }
 }
 </script>
