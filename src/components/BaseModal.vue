@@ -2,12 +2,10 @@
   <div
     v-show="open"
     class="background"
-    @click="closeRequested"
+    @click.self="closeRequested"
   >
     <div class="content">
-      <div>
-        <slot name="default" />
-      </div>
+      <slot name="default" />
     </div>
   </div>
 </template>
