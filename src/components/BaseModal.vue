@@ -2,10 +2,13 @@
   <div
     v-show="open"
     class="background"
-    @click.self="closeRequested"
+    @click.self="requestClose"
   >
     <div class="content">
-      <slot name="default" />
+      <slot
+        name="default"
+        v-bind="{ requestClose }"
+      />
     </div>
   </div>
 </template>
@@ -20,7 +23,7 @@ export default {
     }
   },
   methods: {
-    closeRequested () {
+    requestClose () {
       this.$emit('closeRequested', {})
     }
   }

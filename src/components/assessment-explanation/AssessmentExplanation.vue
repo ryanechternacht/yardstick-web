@@ -3,7 +3,7 @@
     :open="open"
     @closeRequested="closeRequested"
   >
-    <template #default>
+    <template #default="{ requestClose }">
       <div class="explanation">
         <h1>Why is the NWEA MAP Important</h1>
         <div class="explanation-text">
@@ -14,6 +14,10 @@
           Darryl’s scores at the end of the year maybe be a factor in determining what
           Math and ELA classes are available to him in high school
         </div>
+
+        <button @click="requestClose">
+          Close
+        </button>
       </div>
     </template>
   </base-modal>
