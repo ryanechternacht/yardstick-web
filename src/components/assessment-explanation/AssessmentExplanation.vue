@@ -3,31 +3,39 @@
     :open="open"
     @closeRequested="closeRequested"
   >
-    <template #default="{ requestClose }">
-      <div class="explanation">
-        <h1>Why is the NWEA MAP Important</h1>
-        <div class="explanation-text">
-          Your school uses the NWEA MAP Assessment as it’s primary tool for determing
-          student academic growth
-        </div>
-        <div class="explanation-text">
-          Darryl’s scores at the end of the year maybe be a factor in determining what
-          Math and ELA classes are available to him in high school
-        </div>
-
-        <button @click="requestClose">
-          Close
-        </button>
-      </div>
+    <template #default="{}">
+      <base-spinner>
+        <template #item-1>
+          <page-one />
+        </template>
+        <template #item-2>
+          <page-two />
+        </template>
+        <template #item-3>
+          <page-three />
+        </template>
+      </base-spinner>
     </template>
   </base-modal>
 </template>
 
 <script>
 import BaseModal from '@/components/BaseModal'
+import BaseSpinner from '@/components/BaseSpinner'
+
+import PageOne from '@/components/assessment-explanation/PageOne'
+import PageTwo from '@/components/assessment-explanation/PageTwo'
+import PageThree from '@/components/assessment-explanation/PageThree'
+
 export default {
   name: 'AssessmentExplanation',
-  components: { BaseModal },
+  components: {
+    BaseModal,
+    BaseSpinner,
+    PageOne,
+    PageTwo,
+    PageThree
+  },
   props: {
     open: {
       type: Boolean,
@@ -43,19 +51,5 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-h1 {
-  @apply text-blue;
-  font-size: 40px;
-  line-height: 48px;
-}
 
-.explanation {
-  @apply flex flex-col items-center p-40;
-}
-
-.explanation-text {
-  @apply mt-40 text-center;
-  font-size: 32px;
-  line-height: 38.4px;
-}
 </style>
