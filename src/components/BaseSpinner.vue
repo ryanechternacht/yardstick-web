@@ -1,29 +1,42 @@
 <template>
-  <div>
-    <slot
-      v-if="currentItem === 'item-1'"
-      name="item-1"
-    />
-    <slot
-      v-if="currentItem === 'item-2'"
-      name="item-2"
-    />
-    <slot
-      v-if="currentItem === 'item-3'"
-      name="item-3"
-    />
-    <slot
-      v-if="currentItem === 'item-4'"
-      name="item-4"
-    />
-    <slot
-      v-if="currentItem === 'item-5'"
-      name="item-5"
-    />
-    <slot
-      v-if="currentItem === 'item-6'"
-      name="item-6"
-    />
+  <div class="spinner-base">
+    <div class="content">
+      <slot
+        v-if="currentItem === 'item-1'"
+        name="item-1"
+      />
+      <slot
+        v-if="currentItem === 'item-2'"
+        name="item-2"
+      />
+      <slot
+        v-if="currentItem === 'item-3'"
+        name="item-3"
+      />
+      <slot
+        v-if="currentItem === 'item-4'"
+        name="item-4"
+      />
+      <slot
+        v-if="currentItem === 'item-5'"
+        name="item-5"
+      />
+      <slot
+        v-if="currentItem === 'item-6'"
+        name="item-6"
+      />
+    </div>
+    <div class="item-selectors-area">
+      <div class="item-selectors">
+        <div
+          v-for="(item, i) in items"
+          :key="item"
+          class="item-selector"
+          :class="{'item-selector--selected': i === index}"
+          @click="goToItem(i)"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -64,10 +77,37 @@ export default {
 
       return items
     }
+  },
+  methods: {
+    goToItem (index) {
+      this.index = index
+    }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
+.spinner-base {
+  @apply w-full h-full flex flex-col;
+}
 
+.content {
+  @apply flex-grow;
+}
+
+.item-selectors-area {
+
+}
+
+.item-selectors {
+  @apply flex;
+}
+
+.item-selector {
+  @apply cursor-pointer rounded-full w-25 h-25 border-2 border-gray-graph-dark;
+}
+
+.item-selector--selected {
+  @apply bg-gray-graph-dark;
+}
 </style>
