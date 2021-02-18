@@ -28,7 +28,7 @@ export default {
 
 <style lang="postcss" scoped>
 .rating-bubble {
-  @apply flex items-center h-60 rounded-md mx-10 mt-15 mb-25;
+  @apply flex items-center h-60 rounded-md mx-10 mb-10;
   box-shadow: 3px 10px 4px rgba(0, 0, 0, 0.25);
 }
 

@@ -16,6 +16,7 @@
       <assessment-overview-rating
         :rating="rating"
         :horizontal-border="topBorder && i === 0"
+        :first="i === 0"
       />
     </fragment>
   </fragment>

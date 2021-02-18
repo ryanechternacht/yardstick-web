@@ -1,14 +1,19 @@
 <template>
   <fragment>
-    <div :class="{'horizontal-border': horizontalBorder}">
+    <div
+      class="pb-15"
+      :class="{'horizontal-border': horizontalBorder,
+               'pt-15': first}"
+    >
       <assessment-overview-bubble
         v-if="rating.score === 1"
         :rating="rating"
       />
     </div>
     <div
-      class="vertical-border"
-      :class="{'horizontal-border': horizontalBorder}"
+      class="vertical-border pb-15"
+      :class="{'horizontal-border': horizontalBorder,
+               'pt-15': first}"
     >
       <assessment-overview-bubble
         v-if="rating.score === 2"
@@ -16,8 +21,9 @@
       />
     </div>
     <div
-      class="vertical-border"
-      :class="{'horizontal-border': horizontalBorder}"
+      class="vertical-border pb-15"
+      :class="{'horizontal-border': horizontalBorder,
+               'pt-15': first}"
     >
       <assessment-overview-bubble
         v-if="rating.score === 3"
@@ -25,8 +31,9 @@
       />
     </div>
     <div
-      class="vertical-border"
-      :class="{'horizontal-border': horizontalBorder}"
+      class="vertical-border pb-15"
+      :class="{'horizontal-border': horizontalBorder,
+               'pt-15': first}"
     >
       <assessment-overview-bubble
         v-if="rating.score === 4"
@@ -34,8 +41,9 @@
       />
     </div>
     <div
-      class="vertical-border"
-      :class="{'horizontal-border': horizontalBorder}"
+      class="vertical-border pb-15"
+      :class="{'horizontal-border': horizontalBorder,
+               'pt-15': first}"
     >
       <assessment-overview-bubble
         v-if="rating.score === 5"
@@ -54,6 +62,10 @@ export default {
     AssessmentOverviewBubble
   },
   props: {
+    first: {
+      type: Boolean,
+      default: false
+    },
     horizontalBorder: {
       type: Boolean,
       default: true
