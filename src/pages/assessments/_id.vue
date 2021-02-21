@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     modalClosed () {
-      console.log('closed')
       this.showModal = false
     }
   }

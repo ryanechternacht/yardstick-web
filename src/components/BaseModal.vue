@@ -39,10 +39,10 @@ export default {
 
 .content {
   @apply fixed bg-white border-gray-graph-dark border-2;
-  width: 60%;
-  height: 60%;
-  top: 10%;
-  left: 20%;
+  width: 70%;
+  height: 77%;
+  top: 8%;
+  left: 15%;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 </style>
