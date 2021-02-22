@@ -1,5 +1,12 @@
 <template>
   <div class="spinner-base">
+    <div class="arrow-zone">
+      <img
+        v-if="index !== 0"
+        src="~/assets/svg/arrow_back.svg"
+        class="arrow"
+      >
+    </div>
     <div class="content">
       <slot
         v-if="currentItem === 'item-1'"
@@ -25,6 +32,13 @@
         v-if="currentItem === 'item-6'"
         name="item-6"
       />
+    </div>
+    <div class="arrow-zone">
+      <img
+        v-if="index !== items.length - 1"
+        src="~/assets/svg/arrow_forward.svg"
+        class="arrow"
+      >
     </div>
     <div class="item-selectors-area">
       <div class="item-selectors">
@@ -90,15 +104,27 @@ export default {
 /* TODO style the selectors and add the arrows
    this will make us switch to grid instead of flex */
 .spinner-base {
-  @apply w-full h-full flex flex-col;
+  @apply w-full h-full grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
 }
 
 .content {
   @apply flex-grow;
 }
 
-.item-selectors-area {
+.arrow-zone {
+  @apply flex flex-col items-center h-full justify-center;
+  grid-row: span 2;
+  width: 100px;
+}
 
+.arrow {
+  @apply cursor-pointer;
+}
+
+.item-selectors-area {
+  grid-column: 2 / span 1;
 }
 
 .item-selectors {
