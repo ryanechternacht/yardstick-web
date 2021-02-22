@@ -25,10 +25,10 @@
             This means MAP can measure Darryl’s growth from the start
             to end of a school year, as well as his growth over time.
           </p>
-          <div class="sub-text">
+          <p class="sub-text">
             <sup>*</sup>Growth Assessments similar to NWEA MAP are very
             common in K-12 Education
-          </div>
+          </p>
         </div>
       </div>
     </div>
