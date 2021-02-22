@@ -44,13 +44,13 @@ export default {
 
 <style lang="postcss" scoped>
 h1 {
-  @apply text-blue;
+  @apply text-blue text-center;
   font-size: 40px;
   line-height: 48px;
 }
 
 .explanation {
-  @apply flex flex-col items-center p-40;
+  @apply flex flex-col items-center mt-40;
 }
 
 .growth-image {

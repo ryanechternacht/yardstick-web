@@ -75,7 +75,7 @@ h1 {
 }
 
 .explanation {
-  @apply flex flex-col items-center p-40;
+  @apply flex flex-col items-center mt-40;
 }
 
 .traits {

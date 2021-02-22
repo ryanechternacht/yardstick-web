@@ -5,6 +5,7 @@
         v-if="index !== 0"
         src="~/assets/svg/arrow_back.svg"
         class="arrow"
+        @click="goToItem(index - 1)"
       >
     </div>
     <div class="content">
@@ -38,10 +39,11 @@
         v-if="index !== items.length - 1"
         src="~/assets/svg/arrow_forward.svg"
         class="arrow"
+        @click="goToItem(index + 1)"
       >
     </div>
     <div class="item-selectors-area">
-      <div class="item-selectors">
+      <div class="item-selectors space-x-10">
         <div
           v-for="(item, i) in items"
           :key="item"
@@ -124,11 +126,12 @@ export default {
 }
 
 .item-selectors-area {
+  @apply flex flex-col items-center w-full;
   grid-column: 2 / span 1;
 }
 
 .item-selectors {
-  @apply flex;
+  @apply flex mt-10 mb-25;
 }
 
 .item-selector {
