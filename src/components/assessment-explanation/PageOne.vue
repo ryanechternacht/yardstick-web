@@ -1,21 +1,34 @@
 <template>
   <div class="explanation">
-    <h1>Why is the NWEA MAP Important?</h1>
+    <h1>{{ pageOne.title }}</h1>
     <div class="explanation-text">
-      Your school uses the NWEA MAP Assessment as it’s primary tool for determing
-      student academic growth
+      {{ renderStudentTemplate(student, pageOne.p1) }}
     </div>
     <div class="explanation-text">
-      Darryl’s scores at the end of the year maybe be a factor in determining what
-      Math and ELA classes are available to him in high school
+      {{ renderStudentTemplate(student, pageOne.p2) }}
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'PageOne'
+import { mapGetters } from 'vuex'
 
+import pageOne from '@/assets/data/page-one'
+import { useRenderTemplate } from '@/composables/render-template'
+
+export default {
+  name: 'PageOne',
+  setup () {
+    const { renderStudentTemplate } = useRenderTemplate()
+
+    return {
+      renderStudentTemplate,
+      pageOne
+    }
+  },
+  computed: {
+    ...mapGetters('student', ['student'])
+  }
 }
 </script>
 

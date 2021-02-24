@@ -1,57 +1,63 @@
 <template>
   <div class="explanation">
-    <h1>How does the NWEA MAP Work?</h1>
+    <h1>{{ pageThree.title }}</h1>
     <div class="traits">
       <div>
-        <h2>Adaptive</h2>
+        <h2>{{ pageThree.traits[0].title }}</h2>
         <div class="trait-description">
           <img
-            src="~/assets/svg/adaptive-icon.svg"
+            :src="pageThree.traits[0].icon"
             class="trait-icon"
           >
-          <p>
-            NWEA MAP responds to how your student is performing,
-            getting harder or easier to gain a better understanding
-            of their abilities.
-          </p>
+          <!-- eslint-disable vue/no-v-html -->
+          <p
+            v-html="renderStudentTemplate(
+              student, pageThree.traits[0].description)"
+          />
+          <!-- eslint-enable vue/no-v-html -->
         </div>
       </div>
       <div>
-        <h2>Subject Based</h2>
+        <h2>{{ pageThree.traits[1].title }}</h2>
         <div class="trait-description">
-          <p>
-            Darryl takes one test per subject area. His most recent
-            testing was in Reading and Math.
-          </p>
+          <!-- eslint-disable vue/no-v-html -->
+          <p
+            v-html="renderStudentTemplate(
+              student, pageThree.traits[1].description)"
+          />
+          <!-- eslint-enable vue/no-v-html -->
           <img
-            src="~/assets/svg/subject-based-icon.svg"
+            :src="pageThree.traits[1].icon"
             class="trait-icon"
           >
         </div>
       </div>
       <div>
-        <h2>Reoccurring</h2>
+        <h2>{{ pageThree.traits[2].title }}</h2>
         <div class="trait-description">
           <img
-            src="~/assets/svg/reoccuring-icon.svg"
+            :src="pageThree.traits[2].icon"
             class="trait-icon"
           >
-          <p>
-            Darryl Takes the NWEA MAP assessment 3-4 times per year.
-
-            Normally once in the in the fall, winter and spring.
-          </p>
+          <!-- eslint-disable vue/no-v-html -->
+          <p
+            v-html="renderStudentTemplate(
+              student, pageThree.traits[2].description)"
+          />
+          <!-- eslint-enable vue/no-v-html -->
         </div>
       </div>
       <div>
-        <h2>Normative</h2>
+        <h2>{{ pageThree.traits[3].title }}</h2>
         <div class="trait-description">
-          <p>
-            Darryl’s NWEA MAP Scores can be easily compared to
-            students in his grade level all across the country.
-          </p>
+          <!-- eslint-disable vue/no-v-html -->
+          <p
+            v-html="renderStudentTemplate(
+              student, pageThree.traits[3].description)"
+          />
+          <!-- eslint-enable vue/no-v-html -->
           <img
-            src="~/assets/svg/normative-icon.svg"
+            :src="pageThree.traits[3].icon"
             class="trait-icon"
           >
         </div>
@@ -61,8 +67,24 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
+import pageThree from '@/assets/data/page-three'
+import { useRenderTemplate } from '@/composables/render-template'
+
 export default {
-  name: 'PageThree'
+  name: 'PageThree',
+  setup () {
+    const { renderStudentTemplate } = useRenderTemplate()
+
+    return {
+      renderStudentTemplate,
+      pageThree
+    }
+  },
+  computed: {
+    ...mapGetters('student', ['student'])
+  }
 
 }
 </script>

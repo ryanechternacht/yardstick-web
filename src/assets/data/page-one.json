@@ -1,0 +1,5 @@
+{
+  "title": "Why is the NWEA MAP important?",
+  "p1": "Your school uses the NWEA MAP as it’s primary tool for determing student academic growth",
+  "p2": "${student.name.possessive} scores at the end of the year maybe be a factor in determining what Math and ELA classes are available to ${student.pronouns.accusative} in high school"
+}
