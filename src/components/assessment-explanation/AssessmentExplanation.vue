@@ -1,7 +1,6 @@
 <template>
   <base-modal
     :open="open"
-    @closeRequested="closeRequested"
   >
     <template #default="">
       <base-spinner @pageChanged="pageChanged">
@@ -19,7 +18,7 @@
         v-if="pageIndex === 2"
         src="~/assets/svg/close.svg"
         class="close-button"
-        @click="open = false"
+        @click="closeRequested"
       >
     </template>
   </base-modal>
