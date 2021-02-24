@@ -3,8 +3,8 @@
     :open="open"
     @closeRequested="closeRequested"
   >
-    <template #default="{}">
-      <base-spinner>
+    <template #default="">
+      <base-spinner @pageChanged="pageChanged">
         <template #item-1>
           <page-one />
         </template>
@@ -15,6 +15,12 @@
           <page-three />
         </template>
       </base-spinner>
+      <img
+        v-if="pageIndex === 2"
+        src="~/assets/svg/close.svg"
+        class="close-button"
+        @click="open = false"
+      >
     </template>
   </base-modal>
 </template>
@@ -42,14 +48,26 @@ export default {
       default: false
     }
   },
+  data () {
+    return {
+      pageIndex: 0
+    }
+  },
   methods: {
     closeRequested () {
       this.$emit('closeRequested', {})
+    },
+    pageChanged ({ newIndex }) {
+      this.pageIndex = newIndex
     }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
-
+.close-button {
+  @apply absolute mt-15 mr-15 top-0 right-0 p-10 cursor-pointer;
+  width: 50px;
+  height: 50px;
+}
 </style>

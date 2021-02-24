@@ -1,6 +1,6 @@
 <template>
   <div class="explanation">
-    <h1>Why is the NWEA MAP Important</h1>
+    <h1>Why is the NWEA MAP Important?</h1>
     <div class="explanation-text">
       Your school uses the NWEA MAP Assessment as it’s primary tool for determing
       student academic growth

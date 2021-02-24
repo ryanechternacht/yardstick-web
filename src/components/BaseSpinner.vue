@@ -97,6 +97,7 @@ export default {
   methods: {
     goToItem (index) {
       this.index = index
+      this.$emit('pageChanged', { newIndex: index })
     }
   }
 }
