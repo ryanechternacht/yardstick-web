@@ -12,58 +12,40 @@
 
 <script>
 export default {
+  name: 'AssessmentOverview',
+  props: {
+    graphData: {
+      type: Array,
+      required: true
+    },
+    width: {
+      type: String,
+      default: '600px'
+    },
+    height: {
+      type: String,
+      default: '600px'
+    }
+  },
   data () {
-    const data = [
-      {
-        student: 226,
-        reference: 222,
-        hitGoal: true
-      },
-      {
-        student: 228,
-        reference: 220,
-        hitGoal: false
-      },
-      {
-        student: 229,
-        reference: 222,
-        hitGoal: true
-      },
-      {
-        student: 230,
-        reference: 224,
-        hitGoal: true
-      },
-      {
-        student: 227,
-        reference: 222,
-        hitGoal: true
-      },
-      {
-        student: 232,
-        reference: 224,
-        hitGoal: true
-      }
-    ]
-
     return {
       chartData: {
-        labels: ['Spring \'18', 'Fall \'19', 'Winter \'19', 'Spring \'20', 'Fall \'20', 'Now'],
+        labels: this.graphData.map(x => x.label),
         series: [
           {
             name: 'student',
-            data: data.map(x => x.student)
+            data: this.graphData.map(x => x.student)
           },
           {
             name: 'reference',
-            data: data.map(x => x.reference)
+            data: this.graphData.map(x => x.reference)
           }
         ]
       },
       chartOptions: {
         lineSmooth: false,
-        height: '400px',
-        width: '600px',
+        height: this.height,
+        width: this.width,
         axisY: {
           onlyInteger: true
         }
@@ -130,17 +112,17 @@ export default {
 }
 
 #my-chart .student.ct-point {
-  stroke-width: 10px;
+  stroke-width: 20px;
 }
 
 #my-chart .student.ct-line,
 #my-chart .reference.ct-line {
-  stroke-width: 2px;
+  stroke-width: 5px;
 }
 
 #my-chart .reference.ct-line {
   @apply stroke-current text-gray-graph-dark;
-  stroke-dasharray: 10px 5px;
+  stroke-dasharray: 5px 5px;
 }
 
 #my-chart .reference.ct-point {

@@ -50,7 +50,8 @@ module.exports = {
       40: '40px',
       50: '50px',
       60: '60px',
-      90: '90px'
+      90: '90px',
+      100: '100px'
     },
     borderWidth: {
       default: '1px',
