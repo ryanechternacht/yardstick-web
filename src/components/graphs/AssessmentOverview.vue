@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>My Chart</h1>
     <chartist
       id="my-chart"
       type="Line"
