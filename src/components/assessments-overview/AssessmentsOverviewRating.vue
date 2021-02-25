@@ -5,7 +5,7 @@
       :class="{'horizontal-border': horizontalBorder,
                'pt-15': first}"
     >
-      <assessment-overview-bubble
+      <assessments-overview-bubble
         v-if="rating.score === 1"
         :rating="rating"
       />
@@ -15,7 +15,7 @@
       :class="{'horizontal-border': horizontalBorder,
                'pt-15': first}"
     >
-      <assessment-overview-bubble
+      <assessments-overview-bubble
         v-if="rating.score === 2"
         :rating="rating"
       />
@@ -25,7 +25,7 @@
       :class="{'horizontal-border': horizontalBorder,
                'pt-15': first}"
     >
-      <assessment-overview-bubble
+      <assessments-overview-bubble
         v-if="rating.score === 3"
         :rating="rating"
       />
@@ -35,7 +35,7 @@
       :class="{'horizontal-border': horizontalBorder,
                'pt-15': first}"
     >
-      <assessment-overview-bubble
+      <assessments-overview-bubble
         v-if="rating.score === 4"
         :rating="rating"
       />
@@ -45,7 +45,7 @@
       :class="{'horizontal-border': horizontalBorder,
                'pt-15': first}"
     >
-      <assessment-overview-bubble
+      <assessments-overview-bubble
         v-if="rating.score === 5"
         :rating="rating"
       />
@@ -54,12 +54,12 @@
 </template>
 
 <script>
-import AssessmentOverviewBubble from '@/components/assessment-overview/AssessmentOverviewBubble'
+import AssessmentsOverviewBubble from '@/components/assessments-overview/AssessmentsOverviewBubble'
 
 export default {
-  name: 'AssessmentOverviewRating',
+  name: 'AssessmentsOverviewRating',
   components: {
-    AssessmentOverviewBubble
+    AssessmentsOverviewBubble
   },
   props: {
     first: {

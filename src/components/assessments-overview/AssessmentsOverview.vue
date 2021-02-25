@@ -1,5 +1,5 @@
 <template>
-  <div class="assessment-overview">
+  <div class="assessments-overview">
     <div />
     <div class="header border-red-off-track">
       Off Track
@@ -17,17 +17,17 @@
       Advanced
     </div>
 
-    <assessment-overview-subject
-      :subject="assessmentData.general"
+    <assessments-overview-subject
+      :subject="assessmentsData.general"
       subject-name="General"
     />
-    <assessment-overview-subject
-      :subject="assessmentData.math"
+    <assessments-overview-subject
+      :subject="assessmentsData.math"
       subject-name="Mathematics"
       :top-border="true"
     />
-    <assessment-overview-subject
-      :subject="assessmentData.ela"
+    <assessments-overview-subject
+      :subject="assessmentsData.ela"
       subject-name="Reading/ELA"
       :top-border="true"
     />
@@ -35,15 +35,15 @@
 </template>
 
 <script>
-import AssessmentOverviewSubject from '@/components/assessment-overview/AssessmentOverviewSubject'
+import AssessmentsOverviewSubject from '@/components/assessments-overview/AssessmentsOverviewSubject'
 
 export default {
-  name: 'AssessmentOverview',
+  name: 'AssessmentsOverview',
   components: {
-    AssessmentOverviewSubject
+    AssessmentsOverviewSubject
   },
   props: {
-    assessmentData: {
+    assessmentsData: {
       type: Object,
       required: true
     }
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style scoped lang="postcss">
-.assessment-overview {
+.assessments-overview {
   @apply grid;
   grid-template-columns: auto repeat(5, 1fr);
   grid-template-rows: auto;

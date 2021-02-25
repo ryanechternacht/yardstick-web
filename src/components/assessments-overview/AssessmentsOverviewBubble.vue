@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: 'AssessmentsOverviewBubble',
   props: {
     rating: {
       type: Object,

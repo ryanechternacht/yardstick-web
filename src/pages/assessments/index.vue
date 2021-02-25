@@ -2,24 +2,24 @@
   <div class="mt-50">
     <h1>Assessment Scorecard</h1>
 
-    <assessment-overview
+    <assessments-overview
       class="mt-50 mb-90"
-      :assessment-data="assessmentData"
+      :assessments-data="assessmentsData"
     />
   </div>
 </template>
 
 <script>
-import assessmentData from '@/assets/data/assessment-data'
-import AssessmentOverview from '@/components/assessment-overview/AssessmentOverview'
+import assessmentsData from '@/assets/data/assessments-data'
+import AssessmentsOverview from '@/components/assessments-overview/AssessmentsOverview'
 
 export default {
   components: {
-    AssessmentOverview
+    AssessmentsOverview
   },
   data () {
     return {
-      assessmentData
+      assessmentsData
     }
   }
 }

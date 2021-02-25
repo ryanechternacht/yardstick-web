@@ -13,7 +13,7 @@
           {{ subjectName }}
         </div>
       </div>
-      <assessment-overview-rating
+      <assessments-overview-rating
         :rating="rating"
         :horizontal-border="topBorder && i === 0"
         :first="i === 0"
@@ -23,12 +23,12 @@
 </template>
 
 <script>
-import AssessmentOverviewRating from '@/components/assessment-overview/AssessmentOverviewRating'
+import AssessmentsOverviewRating from '@/components/assessments-overview/AssessmentsOverviewRating'
 
 export default {
-  name: 'AssessmentOverviewSubject',
+  name: 'AssessmentsOverviewSubject',
   components: {
-    AssessmentOverviewRating
+    AssessmentsOverviewRating
   },
   props: {
     subject: {
