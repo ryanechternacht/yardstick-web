@@ -14,7 +14,7 @@
         <img :src="o.image">
         <div class="award-description">
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="renderStudentTemplate(student, o.description)" />
+          <div v-html="renderTemplate(o.description, { student })" />
         </div>
       </div>
     </div>
@@ -37,10 +37,10 @@ import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate
+      renderTemplate
     }
   },
   data () {

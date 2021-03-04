@@ -5,7 +5,7 @@
         Question:
       </span>
       <span class="q-and-a-content">
-        {{ renderStudentTemplate(student, obstacle.question) }}
+        {{ renderTemplate(obstacle.question, { student }) }}
       </span>
     </div>
 
@@ -16,7 +16,7 @@
       </span>
       <span
         class="q-and-a-content"
-        v-html="renderStudentTemplate(student, obstacle.answer)"
+        v-html="renderTemplate(obstacle.answer, { student })"
       />
       <div class="passages gap-x-50">
         <div class="passage">
@@ -79,10 +79,10 @@ export default {
     }
   },
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate,
+      renderTemplate,
       samples
     }
   },

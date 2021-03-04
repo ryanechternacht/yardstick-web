@@ -8,7 +8,7 @@
       >
         <div class="flex flex-col items-center space-y-50">
           <p>
-            {{ renderStudentTemplate(student, pageTwo.p1) }}
+            {{ renderTemplate(pageTwo.p1, { student }) }}
           </p>
           <img
             src="~/assets/svg/growth-icon.svg"
@@ -22,12 +22,12 @@
       >
         <div class="flex flex-col items-center space-y-50">
           <p>
-            {{ renderStudentTemplate(student, pageTwo.p2) }}
+            {{ renderTemplate(pageTwo.p2, { student }) }}
           </p>
           <!-- eslint-disable vue/no-v-html -->
           <p
             class="sub-text"
-            v-html="renderStudentTemplate(student, pageTwo.p3)"
+            v-html="renderTemplate(pageTwo.p3, { student })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
@@ -45,10 +45,10 @@ import { useRenderTemplate } from '@/composables/render-template'
 export default {
   name: 'PageTwo',
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate,
+      renderTemplate,
       pageTwo
     }
   },

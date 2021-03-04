@@ -2,10 +2,10 @@
   <div class="explanation">
     <h1>{{ pageOne.title }}</h1>
     <div class="explanation-text">
-      {{ renderStudentTemplate(student, pageOne.p1) }}
+      {{ renderTemplate(pageOne.p1, { student }) }}
     </div>
     <div class="explanation-text">
-      {{ renderStudentTemplate(student, pageOne.p2) }}
+      {{ renderTemplate(pageOne.p2, { student }) }}
     </div>
   </div>
 </template>
@@ -19,10 +19,10 @@ import { useRenderTemplate } from '@/composables/render-template'
 export default {
   name: 'PageOne',
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate,
+      renderTemplate,
       pageOne
     }
   },

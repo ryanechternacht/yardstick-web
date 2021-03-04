@@ -5,7 +5,7 @@
         Question:
       </span>
       <span class="q-and-a-content">
-        {{ renderStudentTemplate(student, obstacle.question) }}
+        {{ renderTemplate(obstacle.question, { student }) }}
       </span>
     </div>
 
@@ -18,7 +18,7 @@
       </span>
       <span
         class="q-and-a-content"
-        v-html="renderStudentTemplate(student, obstacle.answer)"
+        v-html="renderTemplate(obstacle.answer, { student })"
       />
     </div>
     <!-- eslint-enable vue/no-v-html -->
@@ -56,10 +56,10 @@ export default {
     }
   },
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate
+      renderTemplate
     }
   },
   mounted () {

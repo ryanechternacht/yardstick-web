@@ -22,7 +22,7 @@
     >
       <div class="next-question">
         <nuxt-link :to="{ path: `/obstacles-and-opportunities/obstacles/${nq.id}` }">
-          {{ renderStudentTemplate(student, nq.question) }}
+          {{ renderTemplate(nq.question, { student }) }}
         </nuxt-link>
       </div>
     </div>
@@ -60,10 +60,10 @@ export default {
     }
   },
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate
+      renderTemplate
     }
   },
   computed: {

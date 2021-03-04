@@ -11,8 +11,8 @@
           >
           <!-- eslint-disable vue/no-v-html -->
           <p
-            v-html="renderStudentTemplate(
-              student, pageThree.traits[0].description)"
+            v-html="renderTemplate(
+              pageThree.traits[0].description, { student })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
@@ -22,8 +22,8 @@
         <div class="trait-description">
           <!-- eslint-disable vue/no-v-html -->
           <p
-            v-html="renderStudentTemplate(
-              student, pageThree.traits[1].description)"
+            v-html="renderTemplate(
+              pageThree.traits[1].description, { student })"
           />
           <!-- eslint-enable vue/no-v-html -->
           <img
@@ -41,8 +41,8 @@
           >
           <!-- eslint-disable vue/no-v-html -->
           <p
-            v-html="renderStudentTemplate(
-              student, pageThree.traits[2].description)"
+            v-html="renderTemplate(
+              pageThree.traits[2].description, { student })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
@@ -52,8 +52,8 @@
         <div class="trait-description">
           <!-- eslint-disable vue/no-v-html -->
           <p
-            v-html="renderStudentTemplate(
-              student, pageThree.traits[3].description)"
+            v-html="renderTemplate(
+              pageThree.traits[3].description, { student })"
           />
           <!-- eslint-enable vue/no-v-html -->
           <img
@@ -75,10 +75,10 @@ import { useRenderTemplate } from '@/composables/render-template'
 export default {
   name: 'PageThree',
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate,
+      renderTemplate,
       pageThree
     }
   },

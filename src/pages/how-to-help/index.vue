@@ -9,7 +9,7 @@
         :key="ri"
         class="recommendation"
       >
-        <h2>{{ renderStudentTemplate(student, recommendation.title) }}</h2>
+        <h2>{{ renderTemplate(recommendation.title, { student }) }}</h2>
         <div class="tags">
           <div
             v-for="(tag, ti) in recommendation.tags"
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div>
-          {{ renderStudentTemplate(student, recommendation.description) }}
+          {{ renderTemplate(recommendation.description, { student }) }}
         </div>
         <div class="flex flex-row-reverse">
           <nuxt-link
@@ -43,10 +43,10 @@ import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate
+      renderTemplate
     }
   },
   data () {

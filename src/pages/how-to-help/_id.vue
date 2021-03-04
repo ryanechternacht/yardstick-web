@@ -19,7 +19,7 @@
         <h3>{{ s.title }}</h3>
         <p class="step-text">
           <!-- TODO this should have a link in it -->
-          {{ renderStudentTemplate(student, s.text) }}
+          {{ renderTemplate(s.text, { student }) }}
         </p>
       </div>
     </div>
@@ -34,10 +34,10 @@ import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
   setup () {
-    const { renderStudentTemplate } = useRenderTemplate()
+    const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderStudentTemplate
+      renderTemplate
     }
   },
   data () {
