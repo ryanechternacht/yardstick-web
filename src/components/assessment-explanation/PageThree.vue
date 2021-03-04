@@ -1,6 +1,6 @@
 <template>
   <div class="explanation">
-    <h1>{{ pageThree.title }}</h1>
+    <h1>{{ renderTemplate(pageThree.title, { assessment }) }}</h1>
     <div class="traits">
       <div>
         <h2>{{ pageThree.traits[0].title }}</h2>
@@ -12,7 +12,7 @@
           <!-- eslint-disable vue/no-v-html -->
           <p
             v-html="renderTemplate(
-              pageThree.traits[0].description, { student })"
+              pageThree.traits[0].description, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
@@ -23,7 +23,7 @@
           <!-- eslint-disable vue/no-v-html -->
           <p
             v-html="renderTemplate(
-              pageThree.traits[1].description, { student })"
+              pageThree.traits[1].description, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
           <img
@@ -42,7 +42,7 @@
           <!-- eslint-disable vue/no-v-html -->
           <p
             v-html="renderTemplate(
-              pageThree.traits[2].description, { student })"
+              pageThree.traits[2].description, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
@@ -53,7 +53,7 @@
           <!-- eslint-disable vue/no-v-html -->
           <p
             v-html="renderTemplate(
-              pageThree.traits[3].description, { student })"
+              pageThree.traits[3].description, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
           <img
@@ -80,6 +80,12 @@ export default {
     return {
       renderTemplate,
       pageThree
+    }
+  },
+  props: {
+    assessment: {
+      type: Object,
+      required: true
     }
   },
   computed: {

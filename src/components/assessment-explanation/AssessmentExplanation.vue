@@ -5,13 +5,19 @@
     <template #default="">
       <base-spinner @pageChanged="pageChanged">
         <template #item-1>
-          <page-one />
+          <page-one
+            :assessment="assessment"
+          />
         </template>
         <template #item-2>
-          <page-two />
+          <page-two
+            :assessment="assessment"
+          />
         </template>
         <template #item-3>
-          <page-three />
+          <page-three
+            :assessment="assessment"
+          />
         </template>
       </base-spinner>
       <img
@@ -42,6 +48,10 @@ export default {
     PageThree
   },
   props: {
+    assessment: {
+      type: Object,
+      required: true
+    },
     open: {
       type: Boolean,
       default: false

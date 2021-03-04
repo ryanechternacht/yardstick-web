@@ -1,11 +1,11 @@
 <template>
   <div class="explanation">
-    <h1>{{ pageOne.title }}</h1>
+    <h1>{{ renderTemplate(pageOne.title, { assessment }) }}</h1>
     <div class="explanation-text">
-      {{ renderTemplate(pageOne.p1, { student }) }}
+      {{ renderTemplate(pageOne.p1, { student, assessment }) }}
     </div>
     <div class="explanation-text">
-      {{ renderTemplate(pageOne.p2, { student }) }}
+      {{ renderTemplate(pageOne.p2, { student, assessment }) }}
     </div>
   </div>
 </template>
@@ -24,6 +24,12 @@ export default {
     return {
       renderTemplate,
       pageOne
+    }
+  },
+  props: {
+    assessment: {
+      type: Object,
+      required: true
     }
   },
   computed: {

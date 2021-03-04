@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>NWEA MAP - Mathematics</h1>
+    <h1>{{ assessment.name }} - {{ subject.name }}</h1>
 
     <h2 class="mt-50">
       Darryl is Consistently Meeting His Growth Goals in Math. All While Performing Well Above
@@ -15,6 +15,7 @@
     />
 
     <assessment-explanation
+      :assessment="assessment"
       :open="showModal"
       @closeRequested="modalClosed"
     />
@@ -40,7 +41,15 @@ export default {
   },
   data () {
     return {
-      showModal: false
+      showModal: false,
+      // TODO where does these come from?
+      assessment: {
+        name: 'NWEA MAP',
+        shortName: 'MAP'
+      },
+      subject: {
+        name: 'Mathematics2'
+      }
     }
   },
   methods: {

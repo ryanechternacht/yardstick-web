@@ -3,13 +3,13 @@
     "id": 1,
     "title": "Shooting Star",
     "image": "/images/opportunities-star.png",
-    "description": "Holy Moly! ${student.name.first} grew more than <span class=\"font-bold\">88% of ${student.pronouns.possessive} peers</span> on the most recent NWEA MAP Assessment"
+    "description": "Holy Moly! ${student.name.first} grew more than <span class=\"font-bold\">88% of ${student.pronouns.possessive} peers</span> on the most recent ${assessment.name} Assessment"
   },
   {
     "id": 2,
     "title": "Top of Class",
     "image": "/images/opportunities-award.png",
-    "description": "${student.name.first} has the highest NWEA MAP score in <span class=\"font-bold\">The Real and Complex Number System</span> in ${student.pronouns.possessive} class. Is ice cream in order?"
+    "description": "${student.name.first} has the highest ${assessment.name} score in <span class=\"font-bold\">The Real and Complex Number System</span> in ${student.pronouns.possessive} class. Is ice cream in order?"
   },
   {
     "id": 3,

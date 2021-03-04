@@ -1,4 +1,4 @@
-function renderTemplate (template, { student }) {
+function renderTemplate (template, { student, assessment }) {
   // eslint-disable-next-line no-eval
   return eval('`' + template + '`')
 }

@@ -1,9 +1,9 @@
 {
-  "title": "How does the NWEA MAP Work?",
+  "title": "How does the ${assessment.name} Work?",
   "traits": [
     {
       "title": "Adaptive",
-      "description": "NWEA MAP responds to how your student is performing, getting harder or easier to gain a better understanding of their abilities.",
+      "description": "${assessment.name} responds to how your student is performing, getting harder or easier to gain a better understanding of their abilities.",
       "icon": "/images/adaptive-icon.svg"
     },
     {
@@ -13,12 +13,12 @@
     },
     {
       "title": "Reoccurring",
-      "description": "${student.name.first} takes the NWEA MAP assessment 3-4 times per year. <br><br> Normally once in the in the fall, winter and spring.",
+      "description": "${student.name.first} takes the ${assessment.name} assessment 3-4 times per year. <br><br> Normally once in the in the fall, winter and spring.",
       "icon": "/images/reoccuring-icon.svg"
     },
     {
       "title": "Normative",
-      "description": "${student.name.possessive} NWEA MAP Scores can be easily compared to students in ${student.pronouns.possessive} grade level all across the country.",
+      "description": "${student.name.possessive} ${assessment.name} Scores can be easily compared to students in ${student.pronouns.possessive} grade level all across the country.",
       "icon": "/images/normative-icon.svg"
     }
   ]

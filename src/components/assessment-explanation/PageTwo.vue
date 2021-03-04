@@ -1,6 +1,6 @@
 <template>
   <div class="explanation">
-    <h1>{{ pageTwo.title }}</h1>
+    <h1>{{ renderTemplate(pageTwo.title, { assessment }) }}</h1>
     <div class="flex flex-row space-x-50 mt-50">
       <div
         class="flex-grow"
@@ -8,7 +8,7 @@
       >
         <div class="flex flex-col items-center space-y-50">
           <p>
-            {{ renderTemplate(pageTwo.p1, { student }) }}
+            {{ renderTemplate(pageTwo.p1, { student, assessment }) }}
           </p>
           <img
             src="~/assets/svg/growth-icon.svg"
@@ -22,12 +22,12 @@
       >
         <div class="flex flex-col items-center space-y-50">
           <p>
-            {{ renderTemplate(pageTwo.p2, { student }) }}
+            {{ renderTemplate(pageTwo.p2, { student, assessment }) }}
           </p>
           <!-- eslint-disable vue/no-v-html -->
           <p
             class="sub-text"
-            v-html="renderTemplate(pageTwo.p3, { student })"
+            v-html="renderTemplate(pageTwo.p3, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
@@ -50,6 +50,12 @@ export default {
     return {
       renderTemplate,
       pageTwo
+    }
+  },
+  props: {
+    assessment: {
+      type: Object,
+      required: true
     }
   },
   computed: {

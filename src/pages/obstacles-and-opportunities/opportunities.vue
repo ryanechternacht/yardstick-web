@@ -14,7 +14,7 @@
         <img :src="o.image">
         <div class="award-description">
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="renderTemplate(o.description, { student })" />
+          <div v-html="renderTemplate(o.description, { student, assessment })" />
         </div>
       </div>
     </div>
@@ -45,7 +45,12 @@ export default {
   },
   data () {
     return {
-      opportunities
+      opportunities,
+      // TODO Where should this come from?
+      assessment: {
+        name: 'NWEA MAP',
+        shortName: 'MAP'
+      }
     }
   },
   computed: {
