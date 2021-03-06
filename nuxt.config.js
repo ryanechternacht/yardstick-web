@@ -18,7 +18,8 @@ export default {
   plugins: [
     '@/plugins/chartist',
     '@/plugins/fort-awesome',
-    '@/plugins/vue-fragment'
+    '@/plugins/vue-fragment',
+    '@/plugins/tree-view'
   ],
 
   components: true,
