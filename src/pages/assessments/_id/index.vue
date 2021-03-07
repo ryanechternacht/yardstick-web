@@ -48,7 +48,7 @@ export default {
         shortName: 'MAP'
       },
       subject: {
-        name: 'Mathematics2'
+        name: 'Mathematics'
       }
     }
   },
