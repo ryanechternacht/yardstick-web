@@ -4,25 +4,25 @@
     <h2 class="mt-50">
       Growth v. Achievement ({{ term.fullName }})
     </h2>
-    <tetherball
+    <percentile
       name="Achievement"
       :percentile="achievement"
-      width="1200"
+      :width="1200"
     />
-    <tetherball
+    <percentile
       name="Growth"
       :percentile="growth"
-      width="1200"
+      :width="1200"
     />
   </div>
 </template>
 
 <script>
-import Tetherball from '@/components/graphs/Tetherball'
+import Percentile from '@/components/graphs/Percentile'
 
 export default {
   components: {
-    Tetherball
+    Percentile
   },
   data () {
     return {

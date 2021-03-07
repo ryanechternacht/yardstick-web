@@ -62,7 +62,7 @@
 
 <script>
 export default {
-  name: 'Tetherball',
+  name: 'Percentile',
   props: {
     name: {
       type: String,
