@@ -48,6 +48,15 @@
     >
       {{ percentile }}{{ percentileTextSuffix }}
     </text>
+    <text
+      class="marker-header"
+      :x="markerX"
+      :y="markerHeaderY"
+    >
+      {{ name }}
+    </text>
+
+    <!-- TODO show popup using foreign object -->
   </svg>
 </template>
 
@@ -70,7 +79,7 @@ export default {
   },
   data () {
     return {
-      height: 170,
+      height: 200,
       circleRadius: 50,
       axisTextSize: 18,
       markerTextSize: 35
@@ -91,6 +100,9 @@ export default {
     },
     markerX () {
       return (this.axisX2 - this.axisX1) / 100 * this.percentile + this.axisX1
+    },
+    markerHeaderY () {
+      return this.axisY - (this.circleRadius) - 20
     },
     percentileTextSuffix () {
       const ones = this.percentile % 10
@@ -125,8 +137,12 @@ export default {
 
 .marker-text {
   font-size: 35px;
-  line-height: 42px;
   text-anchor: middle;
   dominant-baseline: middle;
+}
+
+.marker-header {
+  font-size: 25px;
+  text-anchor: middle;
 }
 </style>
