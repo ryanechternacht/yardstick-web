@@ -20,18 +20,26 @@
       :domains="term.domains"
     />
     <div style="height: 50px" />
+    <rit-html
+      :x-axis-label="`${assessment.name} ${subject.name} Domains`"
+      :y-axis-label="assessment.scale"
+      :domains="term.domains"
+    />
+    <div style="height: 50px" />
   </div>
 </template>
 
 <script>
 import Percentile from '@/components/graphs/Percentile'
 import Rit from '@/components/graphs/Rit'
+import RitHtml from '@/components/graphs/RitHtml'
 
 // TODO nuxt screen size - https://www.npmjs.com/package/nuxt-ssr-screen-size
 export default {
   components: {
     Percentile,
-    Rit
+    Rit,
+    RitHtml
   },
   data () {
     return {
