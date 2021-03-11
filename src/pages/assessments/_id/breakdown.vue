@@ -14,28 +14,57 @@
       :percentile="growth"
       :width="1200"
     />
+    <rit
+      :x-axis-label="`${assessment.name} ${subject.name} Domains`"
+      :y-axis-label="assessment.scale"
+      :domains="term.domains"
+    />
+    <div style="height: 50px" />
   </div>
 </template>
 
 <script>
 import Percentile from '@/components/graphs/Percentile'
+import Rit from '@/components/graphs/Rit'
 
+// TODO nuxt screen size - https://www.npmjs.com/package/nuxt-ssr-screen-size
 export default {
   components: {
-    Percentile
+    Percentile,
+    Rit
   },
   data () {
     return {
       // TODO where does these come from?
       assessment: {
         name: 'NWEA MAP',
-        shortName: 'MAP'
+        shortName: 'MAP',
+        scale: 'RIT Score'
       },
       subject: {
         name: 'Mathematics'
       },
       term: {
-        fullName: 'Winter 2021'
+        fullName: 'Winter 2021',
+        gradeLevelAverage: 280,
+        domains: [
+          {
+            name: 'Geometry',
+            score: 278
+          },
+          {
+            name: 'Statistics and Probability',
+            score: 282
+          },
+          {
+            name: 'Operations and Algebraic Thinking',
+            score: 283
+          },
+          {
+            name: 'The REal and Complex Number System',
+            score: 284
+          }
+        ]
       },
       achievement: 72,
       growth: 98
