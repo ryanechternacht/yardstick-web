@@ -1,30 +1,46 @@
 <template>
   <div class="chart-container">
     <div class="y-axis">
-      <div class="flex h-full items-center">
+      <div class="y-axis-label-container">
         <p class="y-axis-label">
           {{ yAxisLabel }}
         </p>
       </div>
     </div>
-    <div
-      :style="{ height: `${chartHeight}px`,
-                'grid-template-columns': `repeat(${domains.length}, 1fr)` }"
-      class="grid gap-x-60"
-    >
+    <div>
       <div
-        v-for="(d, i) in domains"
-        :key="i"
-        class="bar-area"
+        class="grade-level-average-reference"
       >
         <div
-          class="bar"
-          :style="{ height: `${barHeight(d.score)}px` }"
-          :class="{ 'at-risk': isAtRisk(d.score) }"
+          class="grade-level-average-reference-line"
+          :style="{ top: `${gradeLevelAverageHeight}px` }"
+        />
+        <div
+          class="grade-level-average-reference-label"
+          :style="{ top: `${gradeLevelAverageHeight - 60}px` }"
         >
-          <p class="bar-label">
-            {{ d.name }}
-          </p>
+          Grade Level Average
+        </div>
+      </div>
+      <div
+        :style="{ height: `${chartHeight}px`,
+                  'grid-template-columns': `repeat(${domains.length}, 1fr)` }"
+        class="grid gap-x-60"
+      >
+        <div
+          v-for="(d, i) in domains"
+          :key="i"
+          class="bar-area"
+        >
+          <div
+            class="bar"
+            :style="{ height: `${barHeight(d.score)}px` }"
+            :class="{ 'at-risk': isAtRisk(d.score) }"
+          >
+            <p class="bar-label">
+              {{ d.name }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -67,6 +83,9 @@ export default {
     }
   },
   computed: {
+    gradeLevelAverageHeight () {
+      return this.chartHeight - this.barHeight(this.gradeLevelAverage)
+    },
     yMax () {
       // TODO calc this
       return 286
@@ -101,8 +120,12 @@ export default {
   @apply border-gray-graph-dark border-r-2;
 }
 
+.y-axis-label-container {
+  @apply flex flex-row-reverse h-full items-center;
+}
+
 .y-axis-label {
-  @apply text-gray-graph-dark;
+  @apply text-gray-graph-dark mr-5;
   font-size: 18px;
   line-height: 21.6px;
   writing-mode: vertical-rl;
@@ -115,7 +138,23 @@ export default {
 }
 
 .x-axis-label {
-  @apply mt-10 text-center text-gray-graph-dark;
+  @apply mt-20 text-center text-gray-graph-dark;
+}
+
+.grade-level-average-reference {
+  @apply w-full relative;
+}
+
+.grade-level-average-reference-line {
+  @apply border border-gray-graph-dark border-dashed absolute w-full;
+  z-index: -1;
+}
+
+.grade-level-average-reference-label {
+  @apply text-gray-graph-dark absolute text-center;
+  font-size: 24px;
+  line-height: 28.8px;
+  width: 150px;
 }
 
 .chart {
