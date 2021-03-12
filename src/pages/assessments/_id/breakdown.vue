@@ -14,16 +14,12 @@
       :percentile="growth"
       :width="1200"
     />
-    <rit
-      :x-axis-label="`${assessment.name} ${subject.name} Domains`"
-      :y-axis-label="assessment.scale"
-      :domains="term.domains"
-    />
     <div style="height: 50px" />
     <rit-html
       :x-axis-label="`${assessment.name} ${subject.name} Domains`"
       :y-axis-label="assessment.scale"
       :domains="term.domains"
+      :grade-level-average="term.gradeLevelAverage"
     />
     <div style="height: 50px" />
   </div>
@@ -31,14 +27,12 @@
 
 <script>
 import Percentile from '@/components/graphs/Percentile'
-import Rit from '@/components/graphs/Rit'
 import RitHtml from '@/components/graphs/RitHtml'
 
 // TODO nuxt screen size - https://www.npmjs.com/package/nuxt-ssr-screen-size
 export default {
   components: {
     Percentile,
-    Rit,
     RitHtml
   },
   data () {
@@ -69,7 +63,7 @@ export default {
             score: 283
           },
           {
-            name: 'The REal and Complex Number System',
+            name: 'The Real and Complex Number System',
             score: 284
           }
         ]
