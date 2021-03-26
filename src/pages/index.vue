@@ -11,21 +11,30 @@
       <h1>What should we show you next?</h1>
 
       <div class="button-links">
-        <div class="button-link">
+        <nuxt-link
+          class="button-link"
+          to="/how-to-help"
+        >
           <h4 class="p-20">
             How you can help Darryl be more prepared.
           </h4>
-        </div>
-        <div class="button-link">
+        </nuxt-link>
+        <nuxt-link
+          class="button-link"
+          to="/assessments"
+        >
           <h4 class="p-20">
             How Darryl is doing across all of his assessments.
           </h4>
-        </div>
-        <div class="button-link">
+        </nuxt-link>
+        <nuxt-link
+          class="button-link"
+          to="/obstacles-and-opportunities"
+        >
           <h4 class="p-20">
             Where Darryl is doing well and where he has room to grow.
           </h4>
-        </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -70,7 +79,7 @@ h1 {
 
 .button-link {
   @apply flex flex-row items-center text-center mx-24 border-3 border-blue-lighter
-    rounded-lg text-blue-lighter cursor-pointer;
+    rounded-lg text-blue-lighter;
   height: 180px;
 }
 
