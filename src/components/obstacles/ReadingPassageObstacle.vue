@@ -23,17 +23,17 @@
           <div class="passage-title">
             {{ student.name.first }}
           </div>
-          <div class="passage-text">
+          <p class="small passage-text">
             {{ samples.reading[6] /* TODO */ }}
-          </div>
+          </p>
         </div>
         <div class="passage">
           <div class="passage-title">
             On Track Reader
           </div>
-          <div class="passage-text">
+          <p class="small passage-text">
             {{ samples.reading[student.grade.cardinal] }}
-          </div>
+          </p>
         </div>
       </div>
 
@@ -155,8 +155,6 @@ export default {
 
 .passage-text {
   @apply my-20 px-10 text-justify;
-  font-size: 14px;
-  line-height: 16.8px;
 }
 
 .next-questions {

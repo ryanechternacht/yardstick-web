@@ -4,11 +4,11 @@
       v-if="ctaAbove"
       class="mb-50"
     >
-      <div class="cta">
+      <p class="small cta">
         <nuxt-link to="/how-to-help">
           Learn How to Help
         </nuxt-link>
-      </div>
+      </p>
     </div>
 
     <h4 v-if="nextQuestions.length">
@@ -20,11 +20,11 @@
       :key="nq.id"
       class="mt-24"
     >
-      <div class="next-question">
+      <p class="next-question">
         <nuxt-link :to="{ path: `/obstacles-and-opportunities/obstacles/${nq.id}` }">
           {{ renderTemplate(nq.question, { student }) }}
         </nuxt-link>
-      </div>
+      </p>
     </div>
 
     <div
@@ -32,11 +32,11 @@
       class="mt-50"
     >
       <h4>Or</h4>
-      <div class="cta mt-24">
+      <p class="small cta mt-24">
         <nuxt-link to="/how-to-help">
           Learn How to Help
         </nuxt-link>
-      </div>
+      </p>
     </div>
   </div>
 </template>
@@ -84,13 +84,9 @@ h4 {
 
 .next-question {
   @apply inline-block rounded-lg bg-gray-graph py-6 px-10;
-  font-size: 18px;
-  line-height: 21.6px;
 }
 
 .cta {
   @apply inline-block text-white rounded-lg bg-red py-10 px-16 uppercase;
-  font-size: 14px;
-  line-height: 16.8px;
 }
 </style>

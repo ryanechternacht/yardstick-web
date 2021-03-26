@@ -14,112 +14,112 @@
       </div>
 
       <div />
-      <div
+      <p
         v-for="t in terms"
         :key="t.id"
-        class="term-header"
+        class="text-center bg-gray-graph py-4"
       >
         {{ t.term }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         RIT Score
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.ritScore }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         Norm
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.norm }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         Growth Goal
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.growthGoal }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         Met Goal?
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.metGoal }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         Percentile
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.percentile }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         Growth Percentile
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.growthPercentile }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         ACT College Readiness
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.actCollegeReadiness }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         Forward Projection
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.forwardProjection }}
-      </div>
+      </p>
 
-      <div class="row-header">
+      <p class="row-header">
         Test Duration (Mins)
-      </div>
-      <div
+      </p>
+      <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
         {{ t.testDuration }}
-      </div>
+      </p>
     </div>
   </div>
 </template>
@@ -249,21 +249,11 @@ export default {
   line-height: 26px;
 }
 
-.term-header {
-  @apply text-center bg-gray-graph py-4;
-  font-size: 18px;
-  line-height: 21.6px;
-}
-
 .row-header {
   @apply text-center text-gray-graph-dark;
-  font-size: 18px;
-  line-height: 21.6px;
 }
 
 .cell {
   @apply flex items-center justify-center;
-  font-size: 18px;
-  line-height: 21.6px;
 }
 </style>

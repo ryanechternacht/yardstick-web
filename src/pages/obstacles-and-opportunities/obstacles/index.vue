@@ -21,7 +21,9 @@
         class="start-the-conversation"
         to="/obstacles-and-opportunities/obstacles/1"
       >
-        Start the Conversation
+        <p class="small">
+          Start the Conversation
+        </p>
       </nuxt-link>
     </div>
   </div>
@@ -47,7 +49,5 @@ export default {
 .start-the-conversation {
   @apply bg-red text-white rounded-full px-16 py-10 uppercase;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 14px;
-  line-height: 17px;
 }
 </style>

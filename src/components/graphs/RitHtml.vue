@@ -126,8 +126,6 @@ export default {
 
 .y-axis-label {
   @apply text-gray-graph-dark mr-5;
-  font-size: 18px;
-  line-height: 21.6px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform: rotate(180deg);

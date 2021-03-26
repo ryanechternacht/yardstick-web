@@ -13,13 +13,13 @@
           {{ renderTemplate(recommendation.title, { student }) }}
         </h2>
         <div class="tags">
-          <div
+          <p
             v-for="(tag, ti) in recommendation.tags"
             :key="ti"
-            class="tag"
+            class="small tag"
           >
             {{ tag.text }}
-          </div>
+          </p>
         </div>
         <div>
           {{ renderTemplate(recommendation.description, { student }) }}
@@ -29,7 +29,9 @@
             class="open-recommendation"
             :to="{ path: `/how-to-help/${recommendation.id}` }"
           >
-            {{ recommendation.action }}
+            <p class="small">
+              {{ recommendation.action }}
+            </p>
           </nuxt-link>
         </div>
       </div>
@@ -77,14 +79,10 @@ export default {
 
 .tag {
   @apply mr-10 px-10 py-6 bg-gray-graph rounded-full;
-  font-size: 14px;
-  line-height: 17px;
 }
 
 .open-recommendation {
   @apply mt-20 bg-red text-white rounded-full px-16 py-10 uppercase float-right;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 14px;
-  line-height: 17px;
 }
 </style>
