@@ -1,12 +1,12 @@
 <template>
   <div class="explanation">
     <h1>{{ renderTemplate(pageOne.title, { assessment }) }}</h1>
-    <div class="explanation-text">
+    <h2 class="explanation-text">
       {{ renderTemplate(pageOne.p1, { student, assessment }) }}
-    </div>
-    <div class="explanation-text">
+    </h2>
+    <h2 class="explanation-text">
       {{ renderTemplate(pageOne.p2, { student, assessment }) }}
-    </div>
+    </h2>
   </div>
 </template>
 
@@ -45,7 +45,5 @@ export default {
 
 .explanation-text {
   @apply mt-40 text-center;
-  font-size: 32px;
-  line-height: 38.4px;
 }
 </style>

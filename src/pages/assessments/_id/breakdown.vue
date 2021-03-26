@@ -76,8 +76,4 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-h2 {
-  font-size: 32px;
-  line-height: 38.4px;
-}
 </style>

@@ -16,11 +16,13 @@
         :key="i"
         class="step"
       >
-        <h3>{{ s.title }}</h3>
-        <p class="step-text">
+        <h2 class="uppercase font-bold">
+          {{ s.title }}
+        </h2>
+        <h2 class="text-center mt-20">
           <!-- TODO this should have a link in it -->
           {{ renderTemplate(s.text, { student }) }}
-        </p>
+        </h2>
       </div>
     </div>
   </div>
@@ -66,17 +68,5 @@ export default {
 
 .step {
   @apply flex flex-col items-center;
-}
-
-h3 {
-  @apply uppercase font-bold;
-  font-size: 32px;
-  line-height: 38px;
-}
-
-.step-text {
-  @apply text-center mt-20;
-  font-size: 32px;
-  line-height: 38px;
 }
 </style>

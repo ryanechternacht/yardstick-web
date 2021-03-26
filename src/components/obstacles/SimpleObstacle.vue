@@ -1,22 +1,22 @@
 <template>
   <div class="q-and-a">
     <div class="question">
-      <span class="q-and-a-label">
+      <h2 class="q-and-a-label">
         Question:
-      </span>
-      <span class="q-and-a-content">
+      </h2>
+      <h2 class="q-and-a-content">
         {{ renderTemplate(obstacle.question, { student }) }}
-      </span>
+      </h2>
     </div>
 
     <!-- eslint-disable vue/no-v-html -->
     <div
       class="answer"
     >
-      <span class="q-and-a-label">
+      <h2 class="q-and-a-label">
         Answer:
-      </span>
-      <span
+      </h2>
+      <h2
         class="q-and-a-content"
         v-html="renderTemplate(obstacle.answer, { student })"
       />
@@ -97,15 +97,11 @@ export default {
 }
 
 .q-and-a-label {
-  @apply font-medium text-blue;
-  font-size: 32px;
-  line-height: 38.4px;
+  @apply font-medium text-blue inline;
 }
 
 .q-and-a-content {
-  @apply italic font-light;
-  font-size: 32px;
-  line-height: 38.4px;
+  @apply italic font-light inline;
 }
 
 .question {

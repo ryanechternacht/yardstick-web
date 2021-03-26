@@ -41,7 +41,7 @@ export default {
   },
   data () {
     return {
-      showModal: false,
+      showModal: true,
       // TODO where does these come from?
       assessment: {
         name: 'NWEA MAP',
@@ -61,11 +61,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-h2 {
-  font-size: 32px;
-  line-height: 38.4px;
-}
-
 .my-graph {
   @apply mt-100;
   height: 600px;

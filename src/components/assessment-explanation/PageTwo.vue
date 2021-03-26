@@ -9,9 +9,7 @@
         style="flex-basis: 0"
       >
         <div class="flex flex-col items-center space-y-50">
-          <p>
-            {{ renderTemplate(pageTwo.p1, { student, assessment }) }}
-          </p>
+          <h2>{{ renderTemplate(pageTwo.p1, { student, assessment }) }}</h2>
           <img
             src="~/assets/svg/growth-icon.svg"
             class="growth-image"
@@ -23,11 +21,9 @@
         style="flex-basis: 0"
       >
         <div class="flex flex-col items-center space-y-50">
-          <p>
-            {{ renderTemplate(pageTwo.p2, { student, assessment }) }}
-          </p>
+          <h2>{{ renderTemplate(pageTwo.p2, { student, assessment }) }}</h2>
           <!-- eslint-disable vue/no-v-html -->
-          <p
+          <div
             class="sub-text"
             v-html="renderTemplate(pageTwo.p3, { student, assessment })"
           />
@@ -75,13 +71,11 @@ export default {
   max-width: 200px;
 }
 
-p {
+h2 {
   @apply text-center;
-  font-size: 32px;
-  line-height: 38.4px;
 }
 
-p.sub-text {
+.sub-text {
   @apply text-center italic;
   font-size: 28px;
   line-height: 33.6px;

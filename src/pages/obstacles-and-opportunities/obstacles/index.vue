@@ -3,10 +3,10 @@
     <h1>Obstacles</h1>
 
     <div class="flex flex-col mt-50 space-y-50">
-      <p class="first">
+      <h2 class="text-blue font-medium text-center">
         All kids have enormous potential to learn and grow, but almost all of them have
         some areas of their learning that are holding them back.
-      </p>
+      </h2>
       <p class="second">
         {{ second }}
       </p>
@@ -44,12 +44,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.first {
-  @apply text-blue font-bold text-center;
-  font-size: 32px;
-  line-height: 38.4px;
-}
-
 .second {
   @apply text-center;
   font-size: 28px;

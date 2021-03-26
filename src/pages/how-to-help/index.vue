@@ -9,7 +9,9 @@
         :key="ri"
         class="recommendation"
       >
-        <h2>{{ renderTemplate(recommendation.title, { student }) }}</h2>
+        <h2 class="font-bold my-10">
+          {{ renderTemplate(recommendation.title, { student }) }}
+        </h2>
         <div class="tags">
           <div
             v-for="(tag, ti) in recommendation.tags"
@@ -67,12 +69,6 @@ export default {
 
 .recommendation {
   @apply mb-50 py-20;
-}
-
-h2 {
-  @apply font-bold my-10;
-  font-size: 32px;
-  line-height: 38px;
 }
 
 .tags {

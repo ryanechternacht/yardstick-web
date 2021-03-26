@@ -106,8 +106,6 @@ export default {
 
 h2 {
   @apply text-center;
-  font-size: 32px;
-  line-height: 38.4px;
 }
 
 .trait-description {
