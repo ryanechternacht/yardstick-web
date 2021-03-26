@@ -39,12 +39,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-h1 {
-  @apply text-blue;
-  font-size: 40px;
-  line-height: 48px;
-}
-
 .explanation {
   @apply flex flex-col items-center mt-40;
 }

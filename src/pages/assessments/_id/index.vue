@@ -61,12 +61,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-h1 {
-  @apply text-blue;
-  font-size: 40px;
-  line-height: 48px;
-}
-
 h2 {
   font-size: 32px;
   line-height: 38.4px;

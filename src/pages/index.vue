@@ -1,14 +1,14 @@
 <template>
   <div class="content">
-    <h2>Based on 27 data points we would say</h2>
+    <h1>Based on 27 data points we would say</h1>
 
-    <h1 class="mt-24">
+    <div class="headline mt-24">
       Darryl is <span class="at-risk">At Risk</span> in Reading and
       <span class="advanced">Advanced</span> in Mathematics
-    </h1>
+    </div>
 
     <div class="links">
-      <h2>What should we show you next?</h2>
+      <h1>What should we show you next?</h1>
 
       <div class="button-links">
         <div class="button-link">
@@ -36,19 +36,17 @@ export default {}
 </script>
 
 <style lang="postcss" scoped>
+h1 {
+  @apply text-black text-center;
+}
+
 .content {
   @apply flex flex-col items-center;
   margin-top: 100px;
   margin-bottom: 200px;
 }
 
-h2 {
-  @apply text-center;
-  font-size: 40px;
-  line-height: 48px;
-}
-
-h1 {
+.headline {
   @apply text-center;
   font-size: 70px;
   line-height: 84px;

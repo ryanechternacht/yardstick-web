@@ -1,6 +1,8 @@
 <template>
   <div class="explanation">
-    <h1>{{ renderTemplate(pageTwo.title, { assessment }) }}</h1>
+    <h1 class="text-center">
+      {{ renderTemplate(pageTwo.title, { assessment }) }}
+    </h1>
     <div class="flex flex-row space-x-50 mt-50">
       <div
         class="flex-grow"
@@ -65,12 +67,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-h1 {
-  @apply text-blue text-center;
-  font-size: 40px;
-  line-height: 48px;
-}
-
 .explanation {
   @apply flex flex-col items-center mt-40;
 }

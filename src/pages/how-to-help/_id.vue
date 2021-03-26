@@ -52,12 +52,6 @@ export default {
 </script>
 
 <style scoped lang="postcss">
-h1 {
-  @apply text-blue;
-  font-size: 40px;
-  line-height: 48px;
-}
-
 .description {
   @apply mt-20;
   font-size: 20px;

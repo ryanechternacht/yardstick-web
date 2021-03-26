@@ -236,12 +236,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-h1 {
-  @apply text-blue;
-  font-size: 40px;
-  line-height: 48px;
-}
-
 .assessment-details {
   @apply grid gap-10;
   grid-template-columns: repeat(7, 1fr);

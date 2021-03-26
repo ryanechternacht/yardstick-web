@@ -1,0 +1,4 @@
+/* The @nuxtjs/tailwindcss plugin doesn't seem to properly support the node_modules import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
