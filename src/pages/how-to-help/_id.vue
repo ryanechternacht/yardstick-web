@@ -2,13 +2,13 @@
   <div class="mt-50">
     <h1>{{ actionPlan.title }}</h1>
 
-    <p class="description">
+    <h5 class="description">
       {{ actionPlan.subtitle }}
-    </p>
+    </h5>
 
-    <p class="description">
+    <h5 class="description">
       {{ actionPlan.description }}
-    </p>
+    </h5>
 
     <div class="steps">
       <div
@@ -56,8 +56,6 @@ export default {
 <style scoped lang="postcss">
 .description {
   @apply mt-20;
-  font-size: 20px;
-  line-height: 24px;
 }
 
 .steps {

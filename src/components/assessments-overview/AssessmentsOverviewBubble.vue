@@ -9,9 +9,9 @@
              'bg-purple-advanced': rating.score === 5}"
     :to="{path: `/assessments/${rating.id}`}"
   >
-    <div class="rating-text">
+    <h5 class="rating-text">
       {{ rating.name }}
-    </div>
+    </h5>
   </nuxt-link>
 </template>
 
@@ -35,7 +35,5 @@ export default {
 
 .rating-text {
   @apply text-center text-white font-bold w-full mx-10;
-  font-size: 20px;
-  line-height: 24px;
 }
 </style>

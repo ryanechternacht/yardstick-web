@@ -7,7 +7,9 @@
       class="sub-nav-item"
       :class="{'sub-nav-item--active': l.active}"
     >
-      {{ l.text }}
+      <h5>
+        {{ l.text }}
+      </h5>
     </nuxt-link>
   </nav>
 </template>
@@ -31,8 +33,6 @@ export default {
 
 .sub-nav-item {
   @apply py-10 text-center mx-10 text-gray-graph-dark font-medium;
-  font-size: 20px;
-  line-height: 24px;
   width: 280px;
 }
 

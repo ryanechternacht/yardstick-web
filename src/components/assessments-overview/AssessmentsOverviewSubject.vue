@@ -9,9 +9,9 @@
         :style="`grid-row-end: span ${subject.length}`"
         class="subject-header"
       >
-        <div class="subject">
+        <h5 class="subject">
           {{ subjectName }}
-        </div>
+        </h5>
       </div>
       <assessments-overview-rating
         :rating="rating"
@@ -54,7 +54,5 @@ export default {
 
 .subject {
   @apply w-full text-center mr-20;
-  font-size: 20px;
-  line-height: 24px;
 }
 </style>
