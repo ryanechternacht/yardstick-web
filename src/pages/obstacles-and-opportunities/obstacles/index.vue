@@ -7,13 +7,13 @@
         All kids have enormous potential to learn and grow, but almost all of them have
         some areas of their learning that are holding them back.
       </h2>
-      <p class="second">
+      <h3 class="text-center">
         {{ second }}
-      </p>
-      <p class="third">
+      </h3>
+      <h4 class="text-center">
         The conversation should take around 3-4 minutes and we recomemend engaging with it,
         start to finish, in a single sitting.
-      </p>
+      </h4>
     </div>
 
     <div class="mt-50 text-center">
@@ -44,18 +44,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.second {
-  @apply text-center;
-  font-size: 28px;
-  line-height: 33.6px;
-}
-
-.third {
-  @apply text-center;
-  font-size: 24px;
-  line-height: 28.8px;
-}
-
 .start-the-conversation {
   @apply bg-red text-white rounded-full px-16 py-10 uppercase;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

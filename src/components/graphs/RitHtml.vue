@@ -15,12 +15,12 @@
           class="grade-level-average-reference-line"
           :style="{ top: `${gradeLevelAverageHeight}px` }"
         />
-        <div
+        <h3
           class="grade-level-average-reference-label"
           :style="{ top: `${gradeLevelAverageHeight - 60}px` }"
         >
           Grade Level Average
-        </div>
+        </h3>
       </div>
       <div
         :style="{ height: `${chartHeight}px`,
@@ -37,9 +37,9 @@
             :style="{ height: `${barHeight(d.score)}px` }"
             :class="{ 'at-risk': isAtRisk(d.score) }"
           >
-            <p class="bar-label">
+            <h4 class="bar-label">
               {{ d.name }}
-            </p>
+            </h4>
           </div>
         </div>
       </div>
@@ -152,8 +152,6 @@ export default {
 
 .grade-level-average-reference-label {
   @apply text-gray-graph-dark absolute text-center;
-  font-size: 24px;
-  line-height: 28.8px;
   width: 150px;
 }
 
@@ -175,7 +173,5 @@ export default {
 
 .bar-label {
   @apply flex-grow text-center px-10;
-  font-size: 24px;
-  line-height: 28.8px;
 }
 </style>

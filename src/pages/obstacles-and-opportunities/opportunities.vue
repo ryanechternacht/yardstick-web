@@ -8,14 +8,14 @@
         :key="o.id"
         class="award"
       >
-        <div class="award-header">
+        <h4 class="my-20">
           {{ o.title }}
-        </div>
+        </h4>
         <img :src="o.image">
-        <div class="award-description">
+        <h4 class="award-description">
           <!-- eslint-disable-next-line vue/no-v-html -->
           <div v-html="renderTemplate(o.description, { student, assessment })" />
-        </div>
+        </h4>
       </div>
     </div>
 
@@ -70,16 +70,8 @@ export default {
   margin-top: 70px;
 }
 
-.award-header {
-  @apply my-20;
-  font-size: 24px;
-  line-height: 29px;
-}
-
 .award-description {
   @apply w-full p-20 mt-20 bg-gray-graph text-center;
-  font-size: 24px;
-  line-height: 29px;
 }
 
 .obstacles-link {

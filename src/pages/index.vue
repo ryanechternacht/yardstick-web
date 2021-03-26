@@ -12,19 +12,19 @@
 
       <div class="button-links">
         <div class="button-link">
-          <div class="p-20">
+          <h4 class="p-20">
             How you can help Darryl be more prepared.
-          </div>
+          </h4>
         </div>
         <div class="button-link">
-          <div class="p-20">
+          <h4 class="p-20">
             How Darryl is doing across all of his assessments.
-          </div>
+          </h4>
         </div>
         <div class="button-link">
-          <div class="p-20">
+          <h4 class="p-20">
             Where Darryl is doing well and where he has room to grow.
-          </div>
+          </h4>
         </div>
       </div>
     </div>
@@ -72,8 +72,6 @@ h1 {
   @apply flex flex-row items-center text-center mx-24 border-3 border-blue-lighter
     rounded-lg text-blue-lighter cursor-pointer;
   height: 180px;
-  font-size: 28px;
-  line-height: 34px;
 }
 
 .button-link:hover {

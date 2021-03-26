@@ -2,20 +2,20 @@
   <div class="full-height mt-20">
     <div class="template-grid">
       <div class="template-text">
-        <h3 class="mb-10">
+        <h4 class="mb-10">
           Template Text
-        </h3>
+        </h4>
         <textarea
           v-model="inputText"
           class="input-text"
         />
       </div>
       <div class="data-sidebar">
-        <h3>Data Fields</h3>
+        <h4>Data Fields</h4>
         <tree-view :data="{ student, assessment }" />
-        <h3 class="mt-10">
+        <h4 class="mt-10">
           Acceptable Html
-        </h3>
+        </h4>
         <ul>
           <li>&lt;b&gt;<b>bold</b>&lt;/b&gt;</li>
           <li>&lt;u&gt;<u>underline</u>&lt;/u&gt;</li>
@@ -23,9 +23,9 @@
         </ul>
       </div>
       <div class="w-full h-full">
-        <h3 class="mb-10">
+        <h4 class="mb-10">
           Rendered Output
-        </h3>
+        </h4>
 
         <!-- eslint-disable vue/no-v-html -->
         <div
@@ -109,10 +109,8 @@ export default {
   grid-template-rows: 1fr 1fr;
 }
 
-h3 {
+h4 {
   @apply font-medium;
-  font-size: 24px;
-  line-height: 28.8px;
 }
 
 .template-text {

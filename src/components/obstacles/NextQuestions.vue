@@ -11,9 +11,9 @@
       </div>
     </div>
 
-    <h3 v-if="nextQuestions.length">
+    <h4 v-if="nextQuestions.length">
       Ask Another Question:
-    </h3>
+    </h4>
 
     <div
       v-for="nq in nextQuestions"
@@ -31,7 +31,7 @@
       v-if="ctaBelow"
       class="mt-50"
     >
-      <h3>Or</h3>
+      <h4>Or</h4>
       <div class="cta mt-24">
         <nuxt-link to="/how-to-help">
           Learn How to Help
@@ -78,10 +78,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-h3 {
+h4 {
   @apply font-medium;
-  font-size: 24px;
-  line-height: 28.8px;
 }
 
 .next-question {
