@@ -17,6 +17,7 @@
     <assessment-explanation
       :assessment="assessment"
       :open="showModal"
+      :student="student"
       @closeRequested="modalClosed"
     />
   </div>

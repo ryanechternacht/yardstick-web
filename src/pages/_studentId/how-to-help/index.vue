@@ -27,7 +27,7 @@
         <div class="flex flex-row-reverse">
           <nuxt-link
             class="open-recommendation"
-            :to="{ path: `/how-to-help/${recommendation.id}` }"
+            :to="`/${studentId}/how-to-help/${recommendation.id}`"
           >
             <p class="small">
               {{ recommendation.action }}

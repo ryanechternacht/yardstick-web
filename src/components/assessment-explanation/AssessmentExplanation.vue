@@ -7,16 +7,19 @@
         <template #item-1>
           <page-one
             :assessment="assessment"
+            :student="student"
           />
         </template>
         <template #item-2>
           <page-two
             :assessment="assessment"
+            :student="student"
           />
         </template>
         <template #item-3>
           <page-three
             :assessment="assessment"
+            :student="student"
           />
         </template>
       </base-spinner>
@@ -55,6 +58,10 @@ export default {
     open: {
       type: Boolean,
       default: false
+    },
+    student: {
+      type: Object,
+      required: true
     }
   },
   data () {

@@ -5,7 +5,7 @@
       class="mb-50"
     >
       <p class="small cta">
-        <nuxt-link to="/how-to-help">
+        <nuxt-link :to="`/${student.studentId}/how-to-help`">
           Learn How to Help
         </nuxt-link>
       </p>
@@ -21,7 +21,7 @@
       class="mt-24"
     >
       <p class="next-question">
-        <nuxt-link :to="{ path: `/obstacles-and-opportunities/obstacles/${nq.id}` }">
+        <nuxt-link :to="`/${student.studentId}/obstacles-and-opportunities/obstacles/${nq.id}`">
           {{ renderTemplate(nq.question, { student }) }}
         </nuxt-link>
       </p>
@@ -33,7 +33,7 @@
     >
       <h4>Or</h4>
       <p class="small cta mt-24">
-        <nuxt-link to="/how-to-help">
+        <nuxt-link :to="`/${student.studentId}/how-to-help`">
           Learn How to Help
         </nuxt-link>
       </p>
@@ -42,9 +42,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
+  name: 'NextQuestions',
   props: {
     cta: {
       default: null,
@@ -67,11 +69,15 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('settings', ['settings']),
     ctaAbove () {
       return this.cta && this.cta.position === 'above'
     },
     ctaBelow () {
       return this.cta && this.cta.position === 'below'
+    },
+    studentId () {
+      return this.settings.currentStudent
     }
   }
 }

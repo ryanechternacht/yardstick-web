@@ -67,8 +67,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import pageThree from '@/assets/data/page-three'
 import { useRenderTemplate } from '@/composables/render-template'
 
@@ -86,20 +84,12 @@ export default {
     assessment: {
       type: Object,
       required: true
-    }
-  },
-  asyncData ({ params }) {
-    return {
-      studentId: params.studentId
-    }
-  },
-  computed: {
-    ...mapGetters('student', ['studentById']),
-    student () {
-      return this.studentById(this.studentId)
+    },
+    student: {
+      type: Object,
+      required: true
     }
   }
-
 }
 </script>
 

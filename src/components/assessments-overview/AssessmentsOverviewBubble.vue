@@ -7,7 +7,7 @@
              'bg-yellow-likely-on-track': rating.score === 3,
              'bg-green-on-track': rating.score === 4,
              'bg-purple-advanced': rating.score === 5}"
-    :to="{path: `/assessments/${rating.id}`}"
+    :to="`/${studentId}/assessments/${rating.id}`"
   >
     <h5 class="rating-text">
       {{ rating.name }}
@@ -16,12 +16,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'AssessmentsOverviewBubble',
   props: {
     rating: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    ...mapGetters('settings', ['settings']),
+    studentId () {
+      return this.settings.currentStudent
     }
   }
 }

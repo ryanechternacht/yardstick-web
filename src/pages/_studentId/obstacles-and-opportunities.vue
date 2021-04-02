@@ -7,19 +7,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   computed: {
+    ...mapGetters('settings', ['settings']),
     links () {
+      const studentId = this.settings.studentId
       return [
         {
           active: this.isOpportunities,
           text: 'Opportunities',
-          to: '/obstacles-and-opportunities/opportunities'
+          to: `/${studentId}/obstacles-and-opportunities/opportunities`
         },
         {
           active: this.isObstacles,
           text: 'Obstacles',
-          to: '/obstacles-and-opportunities/obstacles'
+          to: `/${studentId}/obstacles-and-opportunities/obstacles`
         }
       ]
     },

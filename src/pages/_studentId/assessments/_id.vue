@@ -10,7 +10,8 @@
 export default {
   asyncData ({ params }) {
     return {
-      assessmentId: params.id
+      assessmentId: params.id,
+      studentId: params.studentId
     }
   },
   computed: {
@@ -19,22 +20,22 @@ export default {
         {
           active: this.isOverview,
           text: 'Overview',
-          to: `/assessments/${this.assessmentId}`
+          to: `${this.studentId}/assessments/${this.assessmentId}`
         },
         {
           active: this.isBreakdown,
           text: 'Breakdown',
-          to: `/assessments/${this.assessmentId}/breakdown`
+          to: `${this.studentId}/assessments/${this.assessmentId}/breakdown`
         },
         {
           active: this.isDetails,
           text: 'Details',
-          to: `/assessments/${this.assessmentId}/details`
+          to: `${this.studentId}/assessments/${this.assessmentId}/details`
         }
       ]
     },
     page () {
-      return this.$route.fullPath.split('/')[3]
+      return this.$route.fullPath.split('/')[4]
     },
     isOverview () {
       return this.page === undefined

@@ -6,7 +6,7 @@
       <nuxt-link
         class="link"
         :class="{'link--active': siteSection === 'home'}"
-        to="/"
+        :to="`/${studentId}`"
       >
         <font-awesome-icon
           :icon="['fas', 'home']"
@@ -20,7 +20,7 @@
       <nuxt-link
         class="link"
         :class="{'link--active': siteSection === 'how-to-help'}"
-        to="/how-to-help"
+        :to="`/${studentId}/how-to-help`"
       >
         <font-awesome-icon
           :icon="['fas', 'head-side-virus']"
@@ -34,7 +34,7 @@
       <nuxt-link
         class="link"
         :class="{'link--active': siteSection === 'obstacles-and-opportunities'}"
-        to="/obstacles-and-opportunities"
+        :to="`/${studentId}/obstacles-and-opportunities`"
       >
         <font-awesome-icon
           :icon="['fas', 'flag']"
@@ -48,7 +48,7 @@
       <nuxt-link
         class="link"
         :class="{'link--active': siteSection === 'assessments'}"
-        to="/assessments"
+        :to="`/${studentId}/assessments`"
       >
         <font-awesome-icon
           :icon="['fas', 'chart-bar']"
@@ -63,11 +63,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'TheSideRail',
   data () {
     return {
       siteSection: ''
+    }
+  },
+  computed: {
+    ...mapGetters('settings', ['settings']),
+    studentId () {
+      return this.settings.currentStudent
     }
   },
   watch: {
@@ -80,12 +88,13 @@ export default {
   },
   methods: {
     updateSiteSection () {
+      // Is there a better way to do this?
       const path = (this.$route.matched.length && this.$route.matched[0].path) || ''
-      if (path.startsWith('/how-to-help')) {
+      if (path.includes('how-to-help')) {
         this.siteSection = 'how-to-help'
-      } else if (path.startsWith('/obstacles-and-opportunities')) {
+      } else if (path.includes('obstacles-and-opportunities')) {
         this.siteSection = 'obstacles-and-opportunities'
-      } else if (path.startsWith('/assessments')) {
+      } else if (path.includes('assessments')) {
         this.siteSection = 'assessments'
       } else {
         this.siteSection = 'home'
