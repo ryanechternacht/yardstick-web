@@ -5,7 +5,7 @@
       class="mb-50"
     >
       <p class="small cta">
-        <nuxt-link :to="`/${student.studentId}/how-to-help`">
+        <nuxt-link :to="`/${student.id}/how-to-help`">
           Learn How to Help
         </nuxt-link>
       </p>
@@ -21,7 +21,7 @@
       class="mt-24"
     >
       <p class="next-question">
-        <nuxt-link :to="`/${student.studentId}/obstacles-and-opportunities/obstacles/${nq.id}`">
+        <nuxt-link :to="`/${student.id}/obstacles-and-opportunities/obstacles/${nq.id}`">
           {{ renderTemplate(nq.question, { student }) }}
         </nuxt-link>
       </p>
@@ -33,7 +33,7 @@
     >
       <h4>Or</h4>
       <p class="small cta mt-24">
-        <nuxt-link :to="`/${student.studentId}/how-to-help`">
+        <nuxt-link :to="`/${student.id}/how-to-help`">
           Learn How to Help
         </nuxt-link>
       </p>

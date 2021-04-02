@@ -1,7 +1,8 @@
 <script>
 export default {
-  middleware ({ redirect }) {
-    redirect('/obstacles-and-opportunities/opportunities')
+  middleware ({ redirect, params }) {
+    const studentId = params.studentId
+    redirect(`/${studentId}/obstacles-and-opportunities/opportunities`)
   }
 }
 </script>

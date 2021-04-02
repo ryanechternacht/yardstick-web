@@ -7,28 +7,29 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
+  asyncData ({ params }) {
+    return {
+      studentId: params.studentId
+    }
+  },
   computed: {
-    ...mapGetters('settings', ['settings']),
     links () {
-      const studentId = this.settings.studentId
       return [
         {
           active: this.isOpportunities,
           text: 'Opportunities',
-          to: `/${studentId}/obstacles-and-opportunities/opportunities`
+          to: `/${this.studentId}/obstacles-and-opportunities/opportunities`
         },
         {
           active: this.isObstacles,
           text: 'Obstacles',
-          to: `/${studentId}/obstacles-and-opportunities/obstacles`
+          to: `/${this.studentId}/obstacles-and-opportunities/obstacles`
         }
       ]
     },
     page () {
-      return this.$route.fullPath.split('/')[2]
+      return this.$route.fullPath.split('/')[3]
     },
     isOpportunities () {
       return this.page === 'opportunities'
