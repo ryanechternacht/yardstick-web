@@ -1,13 +1,15 @@
 export const state = () => ({
-  student: null
+  students: {}
 })
 
 export const getters = {
-  student: state => state.student
+  studentById: state => studentId => state.students[studentId]
 }
 
 export const mutations = {
-  loadStudent (state, { student }) {
-    state.student = student
+  loadStudents (state, { students }) {
+    for (const s of students) {
+      state.students[s.id] = s
+    }
   }
 }

@@ -34,7 +34,11 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('student', ['student']),
+    ...mapGetters('student', ['studentById']),
+    ...mapGetters('settings', ['settings']),
+    student () {
+      return this.studentById(this.settings.currentStudent)
+    },
     second () {
       return `To learn about the obstacles ${this.student.name.first} is facing with regards to
         ${this.student.pronouns.possessive} learning, we will guide you through a digital

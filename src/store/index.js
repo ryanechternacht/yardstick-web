@@ -1,31 +1,21 @@
-const studentPreloaded = {
-  name: {
-    first: 'Darryl',
-    last: 'Hurt',
-    full: 'Darryl Hurt',
-    possessive: 'Darryl\'s'
-  },
-  pronouns: {
-    nominative: 'he',
-    nominativeUpper: 'He',
-    possessive: 'his',
-    possessiveUpper: 'His',
-    accusative: 'him',
-    accusativeUpper: 'Him'
-  },
-  grade: {
-    ordinal: '8th',
-    cardinal: 8
-  }
+import studentData from '@/assets/data/student'
+
+const prefixedSettings = {
+  currentStudent: 1
 }
 
 export const actions = {
   async nuxtServerInit ({ commit }, { $axios }) {
-    // replace false flag with call to backend
-    const req = process.env.NUXT_ENV_STATIC
-      ? { data: studentPreloaded }
-      : await $axios.get('http://localhost:3001/v0.1/student')
+    if (process.env.NUXT_ENV_STATIC) {
+      commit('student/loadStudents', { students: [studentData] })
+      commit('settings/loadSettings', { settings: prefixedSettings })
+    } else {
+      // TODO This also needs to support loading multiple at a time
+      const req = await $axios.get('http://localhost:3001/v0.1/student')
+      commit('student/loadStudents', { students: req.data })
 
-    commit('student/loadStudent', { student: req.data })
+      // TODO a route for this
+      commit('settings/loadSettings', { settings: prefixedSettings })
+    }
   }
 }

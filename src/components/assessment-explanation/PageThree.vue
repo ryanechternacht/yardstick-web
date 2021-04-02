@@ -89,7 +89,11 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('student', ['student'])
+    ...mapGetters('student', ['studentById']),
+    ...mapGetters('settings', ['settings']),
+    student () {
+      return this.studentById(this.settings.currentStudent)
+    }
   }
 
 }

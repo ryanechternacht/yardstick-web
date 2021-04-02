@@ -40,6 +40,7 @@
 
 <script>
 import { useRenderTemplate } from '@/composables/render-template'
+import studentData from '@/assets/data/student'
 
 export default {
   setup () {
@@ -51,26 +52,7 @@ export default {
   },
   data () {
     return {
-      student: {
-        name: {
-          first: 'Darryl',
-          last: 'Hurt',
-          full: 'Darryl Hurt',
-          possessive: 'Darryl\'s'
-        },
-        pronouns: {
-          nominative: 'he',
-          nominativeUpper: 'He',
-          possessive: 'his',
-          possessiveUpper: 'His',
-          accusative: 'him',
-          accusativeUpper: 'Him'
-        },
-        grade: {
-          ordinal: '8th',
-          cardinal: 8
-        }
-      },
+      student: studentData,
       assessment: {
         name: 'NWEA MAP',
         shortName: 'MAP'
