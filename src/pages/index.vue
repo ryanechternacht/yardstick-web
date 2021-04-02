@@ -3,7 +3,7 @@
     <h1>Based on 27 data points we would say</h1>
 
     <div class="headline mt-24">
-      Darryl is <span class="at-risk">At Risk</span> in Reading and
+      {{ student.name.first }} is <span class="at-risk">At Risk</span> in Reading and
       <span class="advanced">Advanced</span> in Mathematics
     </div>
 
@@ -16,7 +16,7 @@
           to="/how-to-help"
         >
           <h4 class="p-20">
-            How you can help Darryl be more prepared.
+            How you can help {{ student.name.first }} be more prepared.
           </h4>
         </nuxt-link>
         <nuxt-link
@@ -24,7 +24,7 @@
           to="/assessments"
         >
           <h4 class="p-20">
-            How Darryl is doing across all of his assessments.
+            How {{ student.name.first }} is doing across all of {{ student.pronouns.possessive }} assessments.
           </h4>
         </nuxt-link>
         <nuxt-link
@@ -32,7 +32,7 @@
           to="/obstacles-and-opportunities"
         >
           <h4 class="p-20">
-            Where Darryl is doing well and where he has room to grow.
+            Where {{ student.name.first }} is doing well and where {{ student.pronouns.nominative }} has room to grow.
           </h4>
         </nuxt-link>
       </div>
@@ -41,7 +41,13 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters('student', ['student'])
+  }
+}
 </script>
 
 <style lang="postcss" scoped>

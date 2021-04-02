@@ -3,8 +3,8 @@
     <h1>{{ assessment.name }} - {{ subject.name }}</h1>
 
     <h2 class="mt-50">
-      Darryl is Consistently Meeting His Growth Goals in Math. All While Performing Well Above
-      the Average For His Grade Level.
+      {{ student.name.first }} is Consistently Meeting {{ student.pronouns.possessiveUpper }} Growth Goals in Math. All While Performing Well Above
+      the Average For {{ student.pronouns.possessiveUpper }} Grade Level.
     </h2>
 
     <assessment-overview
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import AssessmentExplanation from '@/components/assessment-explanation/AssessmentExplanation'
 import AssessmentOverview from '@/components/graphs/AssessmentOverview'
 import graphData from '@/assets/data/graph-data'
@@ -51,6 +53,9 @@ export default {
         name: 'Mathematics'
       }
     }
+  },
+  computed: {
+    ...mapGetters('student', ['student'])
   },
   methods: {
     modalClosed () {
