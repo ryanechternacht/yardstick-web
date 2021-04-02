@@ -11,11 +11,13 @@ export const actions = {
       commit('settings/loadSettings', { settings: prefixedSettings })
     } else {
       // TODO This also needs to support loading multiple at a time
-      const req = await $axios.get('http://localhost:3001/v0.1/student')
-      commit('student/loadStudents', { students: req.data })
+      const [studentsReq, settingsReq] = await Promise.all([
+        $axios.get('http://localhost:3001/v0.1/students'),
+        $axios.get('http://localhost:3001/v0.1/settings')
+      ])
 
-      // TODO a route for this
-      commit('settings/loadSettings', { settings: prefixedSettings })
+      commit('student/loadStudents', { students: studentsReq.data })
+      commit('settings/loadSettings', { settings: settingsReq.data })
     }
   }
 }
