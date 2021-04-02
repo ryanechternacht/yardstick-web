@@ -35,6 +35,11 @@ export default {
     Percentile,
     RitHtml
   },
+  asyncData ({ params }) {
+    return {
+      studentId: params.studentId
+    }
+  },
   data () {
     return {
       // TODO where does these come from?

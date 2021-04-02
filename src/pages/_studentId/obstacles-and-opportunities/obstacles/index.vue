@@ -33,11 +33,15 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  asyncData ({ params }) {
+    return {
+      studentId: params.studentId
+    }
+  },
   computed: {
     ...mapGetters('student', ['studentById']),
-    ...mapGetters('settings', ['settings']),
     student () {
-      return this.studentById(this.settings.currentStudent)
+      return this.studentById(this.studentId)
     },
     second () {
       return `To learn about the obstacles ${this.student.name.first} is facing with regards to

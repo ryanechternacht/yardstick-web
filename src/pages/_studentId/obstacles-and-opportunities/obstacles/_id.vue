@@ -44,7 +44,8 @@ export default {
     return {
       delays,
       nextQuestions,
-      obstacle
+      obstacle,
+      studentId: params.studentId
     }
   },
   data () {
@@ -55,9 +56,8 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['studentById']),
-    ...mapGetters('settings', ['settings']),
     student () {
-      return this.studentById(this.settings.currentStudent)
+      return this.studentById(this.studentId)
     }
   }
 }

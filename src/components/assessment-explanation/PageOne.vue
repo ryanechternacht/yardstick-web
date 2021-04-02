@@ -32,11 +32,15 @@ export default {
       required: true
     }
   },
+  asyncData ({ params }) {
+    return {
+      studentId: params.studentId
+    }
+  },
   computed: {
     ...mapGetters('student', ['studentById']),
-    ...mapGetters('settings', ['settings']),
     student () {
-      return this.studentById(this.settings.currentStudent)
+      return this.studentById(this.studentId)
     }
   }
 }

@@ -43,6 +43,11 @@ export default {
       renderTemplate
     }
   },
+  asyncData ({ params }) {
+    return {
+      studentId: params.studentId
+    }
+  },
   data () {
     return {
       opportunities,
@@ -55,9 +60,8 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['studentById']),
-    ...mapGetters('settings', ['settings']),
     student () {
-      return this.studentById(this.settings.currentStudent)
+      return this.studentById(this.studentId)
     }
   }
 }
