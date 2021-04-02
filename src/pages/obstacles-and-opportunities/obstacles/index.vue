@@ -21,7 +21,7 @@
         class="start-the-conversation"
         to="/obstacles-and-opportunities/obstacles/1"
       >
-        <p class="small">
+        <p class="small inline">
           Start the Conversation
         </p>
       </nuxt-link>

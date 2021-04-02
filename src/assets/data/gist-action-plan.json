@@ -17,7 +17,7 @@
     },
     {
       "title": "For This Long",
-      "text": "Keep this up for 4 weeks or until you start to see ${student.name.possessive} ability to accuratley share the Gist of what ${student.pronouns.nominative} read improve"
+      "text": "Keep this up for 4 weeks or until you start to see ${student.name.possessive} ability to accurately share the Gist of what ${student.pronouns.nominative} read improve"
     }
   ]
 }

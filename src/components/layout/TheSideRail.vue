@@ -81,19 +81,14 @@ export default {
   methods: {
     updateSiteSection () {
       const path = (this.$route.matched.length && this.$route.matched[0].path) || ''
-      switch (path) {
-        case '/how-to-help':
-          this.siteSection = 'how-to-help'
-          break
-        case '/obstacles-and-opportunities':
-          this.siteSection = 'obstacles-and-opportunities'
-          break
-        case '/assessments':
-          this.siteSection = 'assessments'
-          break
-        case '/':
-        default:
-          this.siteSection = 'home'
+      if (path.startsWith('/how-to-help')) {
+        this.siteSection = 'how-to-help'
+      } else if (path.startsWith('/obstacles-and-opportunities')) {
+        this.siteSection = 'obstacles-and-opportunities'
+      } else if (path.startsWith('/assessments')) {
+        this.siteSection = 'assessments'
+      } else {
+        this.siteSection = 'home'
       }
     }
   }
