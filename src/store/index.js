@@ -20,12 +20,12 @@ const studentPreloaded = {
 }
 
 export const actions = {
-  async nuxtServerInit ({ commit }, { req }) {
+  async nuxtServerInit ({ commit }, { $axios }) {
     // replace false flag with call to backend
-    const student = process.env.NUXT_ENV_STATIC
-      ? studentPreloaded
-      : await new Promise(resolve => setTimeout(resolve(studentPreloaded), 0))
+    const req = process.env.NUXT_ENV_STATIC
+      ? { data: studentPreloaded }
+      : await $axios.get('http://localhost:3001/v0.1/student')
 
-    commit('student/loadStudent', { student })
+    commit('student/loadStudent', { student: req.data })
   }
 }
