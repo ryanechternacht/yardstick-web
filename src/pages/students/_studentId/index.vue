@@ -13,7 +13,7 @@
       <div class="button-links">
         <nuxt-link
           class="button-link"
-          :to="`/${studentId}/how-to-help`"
+          :to="`/students/${studentId}/how-to-help`"
         >
           <h4 class="p-20">
             How you can help {{ student.name.first }} be more prepared.
@@ -21,7 +21,7 @@
         </nuxt-link>
         <nuxt-link
           class="button-link"
-          :to="`/${studentId}/assessments`"
+          :to="`/students/${studentId}/assessments`"
         >
           <h4 class="p-20">
             How {{ student.name.first }} is doing across all of {{ student.pronouns.possessive }} assessments.
@@ -29,7 +29,7 @@
         </nuxt-link>
         <nuxt-link
           class="button-link"
-          :to="`/${studentId}/obstacles-and-opportunities`"
+          :to="`/students/${studentId}/obstacles-and-opportunities`"
         >
           <h4 class="p-20">
             Where {{ student.name.first }} is doing well and where {{ student.pronouns.nominative }} has room to grow.

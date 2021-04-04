@@ -19,7 +19,7 @@
     <div class="mt-50 text-center">
       <nuxt-link
         class="start-the-conversation"
-        :to="`/${studentId}/obstacles-and-opportunities/obstacles/1`"
+        :to="`/students/${studentId}/obstacles-and-opportunities/obstacles/1`"
       >
         <p class="small inline">
           Start the Conversation

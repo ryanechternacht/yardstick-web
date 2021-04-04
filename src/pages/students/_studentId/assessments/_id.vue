@@ -7,7 +7,12 @@
 </template>
 
 <script>
+import TheSubNav from '@/components/layout/TheSubNav'
+
 export default {
+  components: {
+    TheSubNav
+  },
   asyncData ({ params }) {
     return {
       assessmentId: params.id,
@@ -20,22 +25,22 @@ export default {
         {
           active: this.isOverview,
           text: 'Overview',
-          to: `${this.studentId}/assessments/${this.assessmentId}`
+          to: `/students/${this.studentId}/assessments/${this.assessmentId}`
         },
         {
           active: this.isBreakdown,
           text: 'Breakdown',
-          to: `${this.studentId}/assessments/${this.assessmentId}/breakdown`
+          to: `/students/${this.studentId}/assessments/${this.assessmentId}/breakdown`
         },
         {
           active: this.isDetails,
           text: 'Details',
-          to: `${this.studentId}/assessments/${this.assessmentId}/details`
+          to: `/students/${this.studentId}/assessments/${this.assessmentId}/details`
         }
       ]
     },
     page () {
-      return this.$route.fullPath.split('/')[4]
+      return this.$route.fullPath.split('/')[5]
     },
     isOverview () {
       return this.page === undefined

@@ -6,7 +6,7 @@
       <nuxt-link
         class="link"
         :class="{'link--active': siteSection === 'home'}"
-        :to="`/${studentId}`"
+        :to="`/students/${studentId}`"
       >
         <font-awesome-icon
           :icon="['fas', 'home']"
@@ -20,7 +20,7 @@
       <nuxt-link
         class="link"
         :class="{'link--active': siteSection === 'how-to-help'}"
-        :to="`/${studentId}/how-to-help`"
+        :to="`/students/${studentId}/how-to-help`"
       >
         <font-awesome-icon
           :icon="['fas', 'head-side-virus']"
@@ -34,7 +34,7 @@
       <nuxt-link
         class="link"
         :class="{'link--active': siteSection === 'obstacles-and-opportunities'}"
-        :to="`/${studentId}/obstacles-and-opportunities`"
+        :to="`/students/${studentId}/obstacles-and-opportunities`"
       >
         <font-awesome-icon
           :icon="['fas', 'flag']"
@@ -48,7 +48,7 @@
       <nuxt-link
         class="link"
         :class="{'link--active': siteSection === 'assessments'}"
-        :to="`/${studentId}/assessments`"
+        :to="`/students/${studentId}/assessments`"
       >
         <font-awesome-icon
           :icon="['fas', 'chart-bar']"

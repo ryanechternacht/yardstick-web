@@ -7,7 +7,7 @@
              'bg-yellow-likely-on-track': rating.score === 3,
              'bg-green-on-track': rating.score === 4,
              'bg-purple-advanced': rating.score === 5}"
-    :to="`/${studentId}/assessments/${rating.id}`"
+    :to="`/students/${studentId}/assessments/${rating.id}`"
   >
     <h5 class="rating-text">
       {{ rating.name }}

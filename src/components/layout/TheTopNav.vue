@@ -1,6 +1,7 @@
 <template>
   <nav>
     <div class="site-link">
+      <!-- TODO link this? -->
       Yardstick
     </div>
     <!-- TODO student dropdown -->

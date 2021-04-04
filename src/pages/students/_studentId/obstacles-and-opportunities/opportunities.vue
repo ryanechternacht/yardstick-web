@@ -21,7 +21,7 @@
 
     <div class="obstacles-link">
       <nuxt-link
-        :to="`/${studentId}/obstacles-and-opportunities/obstacles`"
+        :to="`/students/${studentId}/obstacles-and-opportunities/obstacles`"
       >
         Explore {{ student.name.possessive }} Obstacles
       </nuxt-link>
