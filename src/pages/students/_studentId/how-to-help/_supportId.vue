@@ -1,18 +1,18 @@
 <template>
   <div class="mt-50">
-    <h1>{{ actionPlan.title }}</h1>
+    <h1>{{ support.details.title }}</h1>
 
     <h5 class="description">
-      {{ actionPlan.subtitle }}
+      {{ support.details.subtitle }}
     </h5>
 
     <h5 class="description">
-      {{ actionPlan.description }}
+      {{ support.details.description }}
     </h5>
 
     <div class="steps">
       <div
-        v-for="(s, i) in actionPlan.steps"
+        v-for="(s, i) in support.details.steps"
         :key="i"
         class="step"
       >
@@ -31,7 +31,6 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import actionPlan from '@/assets/data/gist-action-plan'
 import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
@@ -44,18 +43,18 @@ export default {
   },
   asyncData ({ params }) {
     return {
-      studentId: params.studentId
-    }
-  },
-  data () {
-    return {
-      actionPlan
+      studentId: params.studentId,
+      supportId: params.supportId
     }
   },
   computed: {
     ...mapGetters('student', ['studentById']),
+    ...mapGetters('supports', ['supportById']),
     student () {
       return this.studentById(this.studentId)
+    },
+    support () {
+      return this.supportById(this.supportId)
     }
   }
 }

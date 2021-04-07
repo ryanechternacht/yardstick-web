@@ -5,16 +5,16 @@
     </h1>
     <div class="recommendations">
       <div
-        v-for="(recommendation, ri) in recommendations"
+        v-for="(support, ri) in allSupports"
         :key="ri"
         class="recommendation"
       >
         <h2 class="font-bold my-10">
-          {{ renderTemplate(recommendation.title, { student }) }}
+          {{ renderTemplate(support.overview.title, { student }) }}
         </h2>
         <div class="tags">
           <p
-            v-for="(tag, ti) in recommendation.tags"
+            v-for="(tag, ti) in support.overview.tags"
             :key="ti"
             class="small tag"
           >
@@ -22,15 +22,15 @@
           </p>
         </div>
         <div>
-          {{ renderTemplate(recommendation.description, { student }) }}
+          {{ renderTemplate(support.overview.description, { student }) }}
         </div>
         <div class="flex flex-row-reverse">
           <nuxt-link
             class="open-recommendation"
-            :to="`/students/${studentId}/how-to-help/${recommendation.id}`"
+            :to="`/students/${studentId}/how-to-help/${support.id}`"
           >
             <p class="small">
-              {{ recommendation.action }}
+              {{ support.overview.action }}
             </p>
           </nuxt-link>
         </div>
@@ -42,7 +42,6 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import recommendations from '@/assets/data/how-to-help'
 import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
@@ -58,13 +57,9 @@ export default {
       studentId: params.studentId
     }
   },
-  data () {
-    return {
-      recommendations
-    }
-  },
   computed: {
     ...mapGetters('student', ['studentById']),
+    ...mapGetters('supports', ['allSupports']),
     student () {
       return this.studentById(this.studentId)
     }
