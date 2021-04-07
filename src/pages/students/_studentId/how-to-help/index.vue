@@ -52,9 +52,13 @@ export default {
       renderTemplate
     }
   },
-  asyncData ({ params }) {
+  async asyncData ({ params, store }) {
+    const studentId = params.studentId
+
+    await store.dispatch('supports/fetchSupports', { studentId })
+
     return {
-      studentId: params.studentId
+      studentId
     }
   },
   computed: {
