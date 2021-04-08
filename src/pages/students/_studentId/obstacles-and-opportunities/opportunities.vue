@@ -32,7 +32,6 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import opportunities from '@/assets/data/opportunities'
 import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
@@ -50,7 +49,6 @@ export default {
   },
   data () {
     return {
-      opportunities,
       // TODO Where should this come from?
       assessment: {
         name: 'NWEA MAP',
@@ -60,8 +58,12 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['studentById']),
+    ...mapGetters('opportunities', ['opportunitiesByStudent']),
     student () {
       return this.studentById(this.studentId)
+    },
+    opportunities () {
+      return this.opportunitiesByStudent(this.studentId)
     }
   }
 }
