@@ -53,12 +53,12 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['studentById']),
-    ...mapGetters('supports', ['supportById']),
+    ...mapGetters('supports', ['supportByStudentAndId']),
     student () {
       return this.studentById(this.studentId)
     },
     support () {
-      return this.supportById(this.supportId)
+      return this.supportByStudentAndId(this.studentId, this.supportId)
     }
   }
 }

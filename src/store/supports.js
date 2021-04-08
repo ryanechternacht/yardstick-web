@@ -3,15 +3,19 @@ export const state = () => ({
 })
 
 export const getters = {
-  supportById: state => supportId => state.supports[supportId],
-  allSupports: state => state.supports
+  supportByStudentAndId: state => (studentId, supportId) =>
+    state.supports[studentId] && state.supports[studentId][supportId],
+  supportsByStudent: state => studentId =>
+    state.supports[studentId]
 }
 
 export const mutations = {
-  loadSupports (state, { supports }) {
+  loadSupports (state, { supports, studentId }) {
+    // TODO delete old recors before adding new ones
     for (const s of supports) {
-      state.supports[s.id] = s
+      supports[s.id] = s
     }
+    state.supports[studentId] = supports
   }
 }
 
@@ -22,10 +26,9 @@ export const actions = {
       return
     }
 
-    // TODO do the work
     const supports = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/supports`)
 
-    commit('loadSupports', { supports })
+    commit('loadSupports', { studentId, supports })
   }
 }

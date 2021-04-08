@@ -5,7 +5,7 @@
     </h1>
     <div class="recommendations">
       <div
-        v-for="(support, ri) in allSupports"
+        v-for="(support, ri) in supports"
         :key="ri"
         class="recommendation"
       >
@@ -63,9 +63,12 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['studentById']),
-    ...mapGetters('supports', ['allSupports']),
+    ...mapGetters('supports', ['supportsByStudent']),
     student () {
       return this.studentById(this.studentId)
+    },
+    supports () {
+      return this.supportsByStudent(this.studentId)
     }
   }
 }
