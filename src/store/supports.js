@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const getters = {
   supportByStudentAndId: state => (studentId, supportId) =>
-    state.supports[studentId] && state.supports[studentId][supportId],
+    state.supports[studentId] && state.supports[studentId].find(s => s.id === supportId),
   supportsByStudent: state => studentId =>
     state.supports[studentId]
 }
@@ -12,9 +12,6 @@ export const getters = {
 export const mutations = {
   loadSupports (state, { supports, studentId }) {
     // TODO delete old recors before adding new ones
-    for (const s of supports) {
-      supports[s.id] = s
-    }
     state.supports[studentId] = supports
   }
 }

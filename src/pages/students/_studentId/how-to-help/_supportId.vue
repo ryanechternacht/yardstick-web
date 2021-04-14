@@ -43,12 +43,13 @@ export default {
   },
   async asyncData ({ params, store }) {
     const studentId = params.studentId
+    const supportId = parseInt(params.supportId, 10)
 
     await store.dispatch('supports/fetchSupports', { studentId })
 
     return {
       studentId,
-      supportId: params.supportId
+      supportId
     }
   },
   computed: {
