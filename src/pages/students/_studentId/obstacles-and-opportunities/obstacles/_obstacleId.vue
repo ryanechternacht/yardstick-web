@@ -13,8 +13,6 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import obstacles from '@/assets/data/obstacles'
-
 import ReadingPassageObstacle from '@/components/obstacles/ReadingPassageObstacle'
 import SimpleObstacle from '@/components/obstacles/SimpleObstacle'
 
@@ -23,10 +21,14 @@ export default {
     ReadingPassageObstacle,
     SimpleObstacle
   },
-  asyncData ({ params }) {
-    const id = parseInt(params.id, 10)
-    const obstacle = obstacles.find(o => o.id === id)
-    const nextQuestions = obstacles.filter(o => o.id > id)
+  async asyncData ({ params, store }) {
+    const studentId = params.studentId
+    const obstacleId = parseInt(params.obstacleId, 10)
+
+    await store.dispatch('obstacles/fetchObstacles', { studentId })
+
+    // TODO a better way to do this
+    // const nextQuestions = obstacles.filter(o => o.id > id)
 
     // TODO where does this come from? maybe we have a few page templates and an
     // "obstacle type" field which does dynamic dispatch to the correct page?
@@ -43,21 +45,21 @@ export default {
 
     return {
       delays,
-      nextQuestions,
-      obstacle,
-      studentId: params.studentId
-    }
-  },
-  data () {
-    return {
-      showAnswer: false,
-      showNextQuestions: false
+      obstacleId,
+      studentId
     }
   },
   computed: {
     ...mapGetters('student', ['studentById']),
+    ...mapGetters('obstacles', ['obstacleByStudentAndId', 'nextObstaclesByStudentAndId']),
     student () {
       return this.studentById(this.studentId)
+    },
+    obstacle () {
+      return this.obstacleByStudentAndId(this.studentId, this.obstacleId)
+    },
+    nextQuestions () {
+      return this.nextObstaclesByStudentAndId(this.studentId, this.obstacleId)
     }
   }
 }

@@ -2,9 +2,11 @@
 import studentData from '@/assets/data/student'
 import supports from '@/assets/data/supports'
 import opportunities from '@/assets/data/opportunities'
+import obstacles from '@/assets/data/obstacles'
 
+const studentId = 1
 const prefixedSettings = {
-  currentStudent: 1
+  currentStudent: studentId
 }
 
 export const actions = {
@@ -12,8 +14,9 @@ export const actions = {
     if (process.env.NUXT_ENV_STATIC) {
       commit('student/loadStudents', { students: [studentData] })
       commit('settings/loadSettings', { settings: prefixedSettings })
-      commit('supports/loadSupports', { supports })
-      commit('opportunities/loadOpportunities', { opportunities })
+      commit('supports/loadSupports', { supports, studentId })
+      commit('opportunities/loadOpportunities', { opportunities, studentId })
+      commit('obstacles/loadObstacles', { obstacles, studentId })
     } else {
       // TODO This also needs to support loading multiple at a time
       const [studentsReq, settingsReq] = await Promise.all([

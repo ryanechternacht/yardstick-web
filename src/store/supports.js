@@ -11,7 +11,6 @@ export const getters = {
 
 export const mutations = {
   loadSupports (state, { supports, studentId }) {
-    // TODO delete old recors before adding new ones
     state.supports[studentId] = supports
   }
 }

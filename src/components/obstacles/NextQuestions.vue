@@ -21,7 +21,7 @@
       class="mt-24"
     >
       <p class="next-question">
-        <nuxt-link :to="`/${student.id}/obstacles-and-opportunities/obstacles/${nq.id}`">
+        <nuxt-link :to="`/students/${student.id}/obstacles-and-opportunities/obstacles/${nq.id}`">
           {{ renderTemplate(nq.question, { student }) }}
         </nuxt-link>
       </p>
