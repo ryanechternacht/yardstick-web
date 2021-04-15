@@ -5,20 +5,23 @@
     <template #default="">
       <base-spinner @pageChanged="pageChanged">
         <template #item-1>
-          <page-one
+          <assessment-explanation-overview
             :assessment="assessment"
+            :content="explanation.overview"
             :student="student"
           />
         </template>
         <template #item-2>
-          <page-two
+          <assessment-explanation-type
             :assessment="assessment"
+            :content="explanation.type"
             :student="student"
           />
         </template>
         <template #item-3>
-          <page-three
+          <assessment-explanation-traits
             :assessment="assessment"
+            :content="explanation.traits"
             :student="student"
           />
         </template>
@@ -37,21 +40,25 @@
 import BaseModal from '@/components/BaseModal'
 import BaseSpinner from '@/components/BaseSpinner'
 
-import PageOne from '@/components/assessment-explanation/PageOne'
-import PageTwo from '@/components/assessment-explanation/PageTwo'
-import PageThree from '@/components/assessment-explanation/PageThree'
+import AssessmentExplanationOverview from '@/components/assessment-explanation/AssessmentExplanationOverview'
+import AssessmentExplanationType from '@/components/assessment-explanation/AssessmentExplanationType'
+import AssessmentExplanationTraits from '@/components/assessment-explanation/AssessmentExplanationTraits'
 
 export default {
   name: 'AssessmentExplanation',
   components: {
     BaseModal,
     BaseSpinner,
-    PageOne,
-    PageTwo,
-    PageThree
+    AssessmentExplanationOverview,
+    AssessmentExplanationType,
+    AssessmentExplanationTraits
   },
   props: {
     assessment: {
+      type: Object,
+      required: true
+    },
+    explanation: {
       type: Object,
       required: true
     },

@@ -1,31 +1,33 @@
 <template>
   <div class="explanation">
-    <h1>{{ renderTemplate(pageOne.title, { assessment }) }}</h1>
+    <h1>{{ renderTemplate(content.title, { assessment }) }}</h1>
     <h2 class="explanation-text">
-      {{ renderTemplate(pageOne.p1, { student, assessment }) }}
+      {{ renderTemplate(content.p1, { student, assessment }) }}
     </h2>
     <h2 class="explanation-text">
-      {{ renderTemplate(pageOne.p2, { student, assessment }) }}
+      {{ renderTemplate(content.p2, { student, assessment }) }}
     </h2>
   </div>
 </template>
 
 <script>
-import pageOne from '@/assets/data/page-one'
 import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
-  name: 'PageOne',
+  name: 'AssessmentExplanationOverview',
   setup () {
     const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderTemplate,
-      pageOne
+      renderTemplate
     }
   },
   props: {
     assessment: {
+      type: Object,
+      required: true
+    },
+    content: {
       type: Object,
       required: true
     },

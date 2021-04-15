@@ -1,7 +1,7 @@
 <template>
   <div class="explanation">
     <h1 class="text-center">
-      {{ renderTemplate(pageTwo.title, { assessment }) }}
+      {{ renderTemplate(content.title, { assessment }) }}
     </h1>
     <div class="flex flex-row space-x-50 mt-50">
       <div
@@ -10,7 +10,7 @@
       >
         <div class="flex flex-col items-center space-y-50">
           <h2 class="text-center">
-            {{ renderTemplate(pageTwo.p1, { student, assessment }) }}
+            {{ renderTemplate(content.p1, { student, assessment }) }}
           </h2>
           <img
             src="~/assets/svg/growth-icon.svg"
@@ -24,12 +24,12 @@
       >
         <div class="flex flex-col items-center space-y-50">
           <h2 class="text-center">
-            {{ renderTemplate(pageTwo.p2, { student, assessment }) }}
+            {{ renderTemplate(content.p2, { student, assessment }) }}
           </h2>
           <!-- eslint-disable vue/no-v-html -->
           <h4
             class="text-center italic"
-            v-html="renderTemplate(pageTwo.p3, { student, assessment })"
+            v-html="renderTemplate(content.p3, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
@@ -39,21 +39,23 @@
 </template>
 
 <script>
-import pageTwo from '@/assets/data/page-two'
 import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
-  name: 'PageTwo',
+  name: 'AssessmentExplanationType',
   setup () {
     const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderTemplate,
-      pageTwo
+      renderTemplate
     }
   },
   props: {
     assessment: {
+      type: Object,
+      required: true
+    },
+    content: {
       type: Object,
       required: true
     },

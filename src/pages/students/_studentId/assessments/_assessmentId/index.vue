@@ -16,6 +16,7 @@
 
     <assessment-explanation
       :assessment="assessment"
+      :explanation="explanation"
       :open="showModal"
       :student="student"
       @closeRequested="modalClosed"
@@ -37,10 +38,12 @@ export default {
   },
   asyncData ({ params }) {
     graphData.slice(-1)[0].label = 'Now'
+    const assessmentId = parseInt(params.assessmentId)
 
     return {
       graphData,
-      studentId: params.studentId
+      studentId: params.studentId,
+      assessmentId
     }
   },
   data () {
@@ -58,8 +61,12 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['studentById']),
+    ...mapGetters('assessmentExplanations', ['explanationByStudentAndId']),
     student () {
       return this.studentById(this.studentId)
+    },
+    explanation () {
+      return this.explanationByStudentAndId(this.studentId, this.assessmentId)
     }
   },
   methods: {

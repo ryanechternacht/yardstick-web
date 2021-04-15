@@ -15,7 +15,7 @@ export default {
   },
   asyncData ({ params }) {
     return {
-      assessmentId: params.id,
+      assessmentId: params.assessmentId,
       studentId: params.studentId
     }
   },

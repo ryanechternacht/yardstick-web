@@ -1,63 +1,63 @@
 <template>
   <div class="explanation">
-    <h1>{{ renderTemplate(pageThree.title, { assessment }) }}</h1>
+    <h1>{{ renderTemplate(content.title, { assessment }) }}</h1>
     <div class="traits">
       <div>
-        <h2>{{ pageThree.traits[0].title }}</h2>
+        <h2>{{ content.traits[0].title }}</h2>
         <div class="trait-description">
           <img
-            :src="pageThree.traits[0].icon"
+            :src="content.traits[0].icon"
             class="trait-icon"
           >
           <!-- eslint-disable vue/no-v-html -->
           <p
             v-html="renderTemplate(
-              pageThree.traits[0].description, { student, assessment })"
+              content.traits[0].description, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
       </div>
       <div>
-        <h2>{{ pageThree.traits[1].title }}</h2>
+        <h2>{{ content.traits[1].title }}</h2>
         <div class="trait-description">
           <!-- eslint-disable vue/no-v-html -->
           <p
             v-html="renderTemplate(
-              pageThree.traits[1].description, { student, assessment })"
+              content.traits[1].description, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
           <img
-            :src="pageThree.traits[1].icon"
+            :src="content.traits[1].icon"
             class="trait-icon"
           >
         </div>
       </div>
       <div>
-        <h2>{{ pageThree.traits[2].title }}</h2>
+        <h2>{{ content.traits[2].title }}</h2>
         <div class="trait-description">
           <img
-            :src="pageThree.traits[2].icon"
+            :src="content.traits[2].icon"
             class="trait-icon"
           >
           <!-- eslint-disable vue/no-v-html -->
           <p
             v-html="renderTemplate(
-              pageThree.traits[2].description, { student, assessment })"
+              content.traits[2].description, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
         </div>
       </div>
       <div>
-        <h2>{{ pageThree.traits[3].title }}</h2>
+        <h2>{{ content.traits[3].title }}</h2>
         <div class="trait-description">
           <!-- eslint-disable vue/no-v-html -->
           <p
             v-html="renderTemplate(
-              pageThree.traits[3].description, { student, assessment })"
+              content.traits[3].description, { student, assessment })"
           />
           <!-- eslint-enable vue/no-v-html -->
           <img
-            :src="pageThree.traits[3].icon"
+            :src="content.traits[3].icon"
             class="trait-icon"
           >
         </div>
@@ -67,21 +67,23 @@
 </template>
 
 <script>
-import pageThree from '@/assets/data/page-three'
 import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
-  name: 'PageThree',
+  name: 'AssessmentExplanationTraits',
   setup () {
     const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderTemplate,
-      pageThree
+      renderTemplate
     }
   },
   props: {
     assessment: {
+      type: Object,
+      required: true
+    },
+    content: {
       type: Object,
       required: true
     },

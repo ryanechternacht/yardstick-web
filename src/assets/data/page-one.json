@@ -1,5 +1,0 @@
-{
-  "title": "Why is the ${assessment.name} important?",
-  "p1": "Your school uses the ${assessment.name} as it’s primary tool for determing student academic growth",
-  "p2": "${student.name.possessive} scores at the end of the year maybe be a factor in determining what Math and ELA classes are available to ${student.pronouns.accusative} in high school"
-}
