@@ -12,6 +12,8 @@ const prefixedSettings = {
   currentStudent: studentId
 }
 
+const assessmentIds = [1, 2, 3, 4, 5]
+
 export const actions = {
   async nuxtServerInit ({ commit }, { $axios }) {
     if (process.env.NUXT_ENV_STATIC) {
@@ -20,7 +22,13 @@ export const actions = {
       commit('supports/loadSupports', { supports, studentId })
       commit('opportunities/loadOpportunities', { opportunities, studentId })
       commit('obstacles/loadObstacles', { obstacles, studentId })
-      commit('assessments/loadExplanations', { explanations, studentId })
+      assessmentIds.forEach(id =>
+        commit('assessments/loadExplanation', {
+          explanation: explanations.find(e => e.assessmentId === id),
+          assessmentId: id,
+          studentId
+        })
+      )
       commit('assessments/loadOverviews', { overviews, studentId })
       commit('assessments/loadResults', { results, studentId })
     } else {

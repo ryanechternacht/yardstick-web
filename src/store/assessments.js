@@ -17,8 +17,11 @@ export const mutations = {
   loadOverviews (state, { overviews, studentId }) {
     state.overviews[studentId] = overviews
   },
-  loadExplanations (state, { explanations, studentId }) {
-    state.explanations[studentId] = explanations
+  loadExplanation (state, { explanation, studentId }) {
+    if (!state.explanations[studentId]) {
+      state.explanations[studentId] = []
+    }
+    state.explanations[studentId].push(explanation)
   },
   loadResults (state, { results, studentId }) {
     state.results[studentId] = results
@@ -39,16 +42,16 @@ export const actions = {
     commit('loadOverviews', { studentId, overviews })
   },
   // TODO avoid refetching if data is fresh
-  async fetchExplanations ({ commit }, { studentId }) {
+  async fetchExplanations ({ commit }, { studentId, assessmentId }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
     }
 
     // TODO change this url
-    const explanations = await this.$axios.$get(
-      `http://localhost:3001/v0.1/student/${studentId}/explanations`)
+    const explanation = await this.$axios.$get(
+      `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
 
-    commit('loadExplanations', { studentId, explanations })
+    commit('loadExplanation', { studentId, assessmentId, explanation })
   },
   // TODO avoid refetching if data is fresh
   async fetchResults ({ commit }, { studentId }) {

@@ -104,8 +104,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-/* TODO style the selectors and add the arrows
-   this will make us switch to grid instead of flex */
 .spinner-base {
   @apply w-full h-full grid;
   grid-template-columns: auto 1fr auto;

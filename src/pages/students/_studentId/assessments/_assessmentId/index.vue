@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h1>{{ assessment.name }} - {{ subject.name }}</h1>
+    <h1>{{ assessment.name }} - {{ assessment.subject }}</h1>
 
     <h2 class="mt-50">
-      {{ student.name.first }} is Consistently Meeting {{ student.pronouns.possessiveUpper }} Growth Goals in Math. All While Performing Well Above
+      <!-- TODO where does this text come from? -->
+      {{ student.name.first }} is Consistently Meeting {{ student.pronouns.possessiveUpper }} Growth Goals in {{ assessment.subject }}. All While Performing Well Above
       the Average For {{ student.pronouns.possessiveUpper }} Grade Level.
     </h2>
 
@@ -48,25 +49,20 @@ export default {
   },
   data () {
     return {
-      showModal: true,
-      // TODO where does these come from?
-      assessment: {
-        name: 'NWEA MAP',
-        shortName: 'MAP'
-      },
-      subject: {
-        name: 'Mathematics'
-      }
+      showModal: true
     }
   },
   computed: {
     ...mapGetters('student', ['studentById']),
-    ...mapGetters('assessments', ['explanationByStudentAndId']),
+    ...mapGetters('assessments', ['explanationByStudentAndId', 'resultsByStudentAndId']),
     student () {
       return this.studentById(this.studentId)
     },
     explanation () {
       return this.explanationByStudentAndId(this.studentId, this.assessmentId)
+    },
+    assessment () {
+      return this.resultsByStudentAndId(this.studentId, this.assessmentId)
     }
   },
   methods: {
