@@ -1,30 +1,33 @@
 export const state = () => ({
   overviews: {},
-  explanations: {},
-  results: {}
+  results: {},
+  explanations: {}
 })
 
 export const getters = {
   overviewsByStudent: state => studentId =>
     state.overviews[studentId],
-  explanationByStudentAndId: state => (studentId, assessmentId) =>
-    state.explanations[studentId] && state.explanations[studentId].find(e => e.assessmentId === assessmentId),
   resultsByStudentAndId: state => (studentId, assessmentId) =>
-    state.results[studentId] && state.results[studentId].find(r => r.id === assessmentId)
+    state.results[studentId] && state.results[studentId][assessmentId],
+  explanationByStudentAndId: state => (studentId, assessmentId) =>
+    state.explanations[studentId] && state.explanations[studentId][assessmentId]
 }
 
 export const mutations = {
   loadOverviews (state, { overviews, studentId }) {
     state.overviews[studentId] = overviews
   },
-  loadExplanation (state, { explanation, studentId }) {
-    if (!state.explanations[studentId]) {
-      state.explanations[studentId] = []
+  loadResult (state, { result, assessmentId, studentId }) {
+    if (!state.results[studentId]) {
+      state.results[studentId] = {}
     }
-    state.explanations[studentId].push(explanation)
+    state.results[studentId][assessmentId] = result
   },
-  loadResults (state, { results, studentId }) {
-    state.results[studentId] = results
+  loadExplanation (state, { explanation, assessmentId, studentId }) {
+    if (!state.explanations[studentId]) {
+      state.explanations[studentId] = {}
+    }
+    state.explanations[studentId][assessmentId] = explanation
   }
 }
 
@@ -42,6 +45,18 @@ export const actions = {
     commit('loadOverviews', { studentId, overviews })
   },
   // TODO avoid refetching if data is fresh
+  async fetchResults ({ commit }, { studentId, assessmentId }) {
+    if (process.env.NUXT_ENV_STATIC) {
+      return
+    }
+
+    // TODO change this url
+    const results = await this.$axios.$get(
+      `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}`)
+
+    commit('loadResult', { studentId, assessmentId, results })
+  },
+  // TODO avoid refetching if data is fresh
   async fetchExplanations ({ commit }, { studentId, assessmentId }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
@@ -52,17 +67,5 @@ export const actions = {
       `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
 
     commit('loadExplanation', { studentId, assessmentId, explanation })
-  },
-  // TODO avoid refetching if data is fresh
-  async fetchResults ({ commit }, { studentId }) {
-    if (process.env.NUXT_ENV_STATIC) {
-      return
-    }
-
-    // TODO change this url
-    const results = await this.$axios.$get(
-      `http://localhost:3001/v0.1/student/${studentId}/results`)
-
-    commit('loadResults', { studentId, results })
   }
 }

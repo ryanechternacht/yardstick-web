@@ -58,6 +58,7 @@ export default {
     student () {
       return this.studentById(this.studentId)
     },
+    // TODO lazy load this?
     explanation () {
       return this.explanationByStudentAndId(this.studentId, this.assessmentId)
     },

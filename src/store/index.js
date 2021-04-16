@@ -22,15 +22,19 @@ export const actions = {
       commit('supports/loadSupports', { supports, studentId })
       commit('opportunities/loadOpportunities', { opportunities, studentId })
       commit('obstacles/loadObstacles', { obstacles, studentId })
-      assessmentIds.forEach(id =>
+      commit('assessments/loadOverviews', { overviews, studentId })
+      assessmentIds.forEach((id) => {
         commit('assessments/loadExplanation', {
           explanation: explanations.find(e => e.assessmentId === id),
           assessmentId: id,
           studentId
         })
-      )
-      commit('assessments/loadOverviews', { overviews, studentId })
-      commit('assessments/loadResults', { results, studentId })
+        commit('assessments/loadResult', {
+          result: results.find(r => r.id === id),
+          assessmentId: id,
+          studentId
+        })
+      })
     } else {
       // TODO This also needs to support loading multiple at a time
       const [studentsReq, settingsReq] = await Promise.all([
