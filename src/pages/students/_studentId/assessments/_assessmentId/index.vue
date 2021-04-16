@@ -61,7 +61,7 @@ export default {
   },
   computed: {
     ...mapGetters('student', ['studentById']),
-    ...mapGetters('assessmentExplanations', ['explanationByStudentAndId']),
+    ...mapGetters('assessments', ['explanationByStudentAndId']),
     student () {
       return this.studentById(this.studentId)
     },

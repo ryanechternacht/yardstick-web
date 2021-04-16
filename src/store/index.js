@@ -4,6 +4,7 @@ import supports from '@/assets/data/supports'
 import opportunities from '@/assets/data/opportunities'
 import obstacles from '@/assets/data/obstacles'
 import explanations from '@/assets/data/assessment-explanations'
+import overviews from '@/assets/data/assessment-overviews'
 
 const studentId = 1
 const prefixedSettings = {
@@ -18,7 +19,8 @@ export const actions = {
       commit('supports/loadSupports', { supports, studentId })
       commit('opportunities/loadOpportunities', { opportunities, studentId })
       commit('obstacles/loadObstacles', { obstacles, studentId })
-      commit('assessmentExplanations/loadExplanations', { explanations, studentId })
+      commit('assessments/loadExplanations', { explanations, studentId })
+      commit('assessments/loadOverviews', { overviews, studentId })
     } else {
       // TODO This also needs to support loading multiple at a time
       const [studentsReq, settingsReq] = await Promise.all([

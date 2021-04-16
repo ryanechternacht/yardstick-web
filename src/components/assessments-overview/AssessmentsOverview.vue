@@ -44,7 +44,7 @@ export default {
   },
   props: {
     assessments: {
-      type: Object,
+      type: Array,
       required: true
     }
   },

@@ -4,22 +4,29 @@
 
     <assessments-overview
       class="mt-50 mb-90"
-      :assessments="assessments"
+      :assessments="overviews"
     />
   </div>
 </template>
 
 <script>
-import assessments from '@/assets/data/assessments'
+import { mapGetters } from 'vuex'
+
 import AssessmentsOverview from '@/components/assessments-overview/AssessmentsOverview'
 
 export default {
   components: {
     AssessmentsOverview
   },
-  data () {
+  asyncData ({ params }) {
     return {
-      assessments
+      studentId: params.studentId
+    }
+  },
+  computed: {
+    ...mapGetters('assessments', ['overviewsByStudent']),
+    overviews () {
+      return this.overviewsByStudent(this.studentId)
     }
   }
 }
