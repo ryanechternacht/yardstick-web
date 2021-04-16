@@ -24,7 +24,7 @@
             {{ student.name.first }}
           </div>
           <p class="small passage-text">
-            {{ samples.reading[6] /* TODO */ }}
+            {{ obstacle.studentLevel }}
           </p>
         </div>
         <div class="passage">
@@ -32,7 +32,7 @@
             On Track Reader
           </div>
           <p class="small passage-text">
-            {{ samples.reading[student.grade.cardinal] }}
+            {{ obstacle.targetLevel }}
           </p>
         </div>
       </div>
@@ -55,8 +55,6 @@
 
 <script>
 import { useRenderTemplate } from '@/composables/render-template'
-
-import samples from '@/assets/data/samples'
 
 export default {
   name: 'ReadingPassageObstacle',
@@ -82,8 +80,7 @@ export default {
     const { renderTemplate } = useRenderTemplate()
 
     return {
-      renderTemplate,
-      samples
+      renderTemplate
     }
   },
   mounted () {
