@@ -25,6 +25,7 @@ export const mutations = {
   }
 }
 
+// TODO make subject an object instead of a flat prop
 export const actions = {
   // TODO avoid refetching if data is fresh
   async fetchOverviews ({ commit }, { studentId }) {
