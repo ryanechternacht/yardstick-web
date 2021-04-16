@@ -1,31 +1,33 @@
 <template>
   <div>
-    <h1>{{ assessment.name }} - {{ subject.name }} Breakdown</h1>
+    <h1>{{ assessment.name }} - {{ assessment.subject }} Breakdown</h1>
     <h2 class="mt-50">
-      Growth v. Achievement ({{ term.fullName }})
+      Growth v. Achievement ({{ assessment.latestTerm.fullName }})
     </h2>
     <percentile
       name="Achievement"
-      :percentile="achievement"
+      :percentile="assessment.achievement"
       :width="1200"
     />
     <percentile
       name="Growth"
-      :percentile="growth"
+      :percentile="assessment.growth"
       :width="1200"
     />
     <div style="height: 50px" />
     <rit-html
-      :x-axis-label="`${assessment.name} ${subject.name} Domains`"
+      :x-axis-label="`${assessment.name} ${assessment.subject} Domains`"
       :y-axis-label="assessment.scale"
-      :domains="term.domains"
-      :grade-level-average="term.gradeLevelAverage"
+      :domains="assessment.latestTerm.domains"
+      :grade-level-average="assessment.latestTerm.gradeLevelAverage"
     />
     <div style="height: 50px" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import Percentile from '@/components/graphs/Percentile'
 import RitHtml from '@/components/graphs/RitHtml'
 
@@ -36,45 +38,17 @@ export default {
     RitHtml
   },
   asyncData ({ params }) {
+    const assessmentId = parseInt(params.assessmentId)
+
     return {
-      studentId: params.studentId
+      studentId: params.studentId,
+      assessmentId
     }
   },
-  data () {
-    return {
-      // TODO where does these come from?
-      assessment: {
-        name: 'NWEA MAP',
-        shortName: 'MAP',
-        scale: 'RIT Score'
-      },
-      subject: {
-        name: 'Mathematics'
-      },
-      term: {
-        fullName: 'Winter 2021',
-        gradeLevelAverage: 280,
-        domains: [
-          {
-            name: 'Geometry',
-            score: 278
-          },
-          {
-            name: 'Statistics and Probability',
-            score: 282
-          },
-          {
-            name: 'Operations and Algebraic Thinking',
-            score: 283
-          },
-          {
-            name: 'The Real and Complex Number System',
-            score: 284
-          }
-        ]
-      },
-      achievement: 72,
-      growth: 98
+  computed: {
+    ...mapGetters('assessments', ['resultsByStudentAndId']),
+    assessment () {
+      return this.resultsByStudentAndId(this.studentId, this.assessmentId)
     }
   }
 }
