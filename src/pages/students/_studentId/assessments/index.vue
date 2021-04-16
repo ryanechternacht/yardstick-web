@@ -4,13 +4,13 @@
 
     <assessments-overview
       class="mt-50 mb-90"
-      :assessments-data="assessmentsData"
+      :assessments="assessments"
     />
   </div>
 </template>
 
 <script>
-import assessmentsData from '@/assets/data/assessments-data'
+import assessments from '@/assets/data/assessments'
 import AssessmentsOverview from '@/components/assessments-overview/AssessmentsOverview'
 
 export default {
@@ -19,7 +19,7 @@ export default {
   },
   data () {
     return {
-      assessmentsData
+      assessments
     }
   }
 }

@@ -6,7 +6,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.score === 1"
+        v-if="rating.rating === 1"
         :rating="rating"
       />
     </div>
@@ -16,7 +16,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.score === 2"
+        v-if="rating.rating === 2"
         :rating="rating"
       />
     </div>
@@ -26,7 +26,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.score === 3"
+        v-if="rating.rating === 3"
         :rating="rating"
       />
     </div>
@@ -36,7 +36,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.score === 4"
+        v-if="rating.rating === 4"
         :rating="rating"
       />
     </div>
@@ -46,7 +46,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.score === 5"
+        v-if="rating.rating === 5"
         :rating="rating"
       />
     </div>

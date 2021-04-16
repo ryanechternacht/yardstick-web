@@ -18,16 +18,16 @@
     </div>
 
     <assessments-overview-subject
-      :subject="assessmentsData.general"
+      :subject="general"
       subject-name="General"
     />
     <assessments-overview-subject
-      :subject="assessmentsData.math"
+      :subject="math"
       subject-name="Mathematics"
       :top-border="true"
     />
     <assessments-overview-subject
-      :subject="assessmentsData.ela"
+      :subject="ela"
       subject-name="Reading/ELA"
       :top-border="true"
     />
@@ -43,9 +43,20 @@ export default {
     AssessmentsOverviewSubject
   },
   props: {
-    assessmentsData: {
+    assessments: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    general () {
+      return this.assessments.filter(a => a.type === 'general')
+    },
+    math () {
+      return this.assessments.filter(a => a.type === 'math')
+    },
+    ela () {
+      return this.assessments.filter(a => a.type === 'ela')
     }
   }
 }
