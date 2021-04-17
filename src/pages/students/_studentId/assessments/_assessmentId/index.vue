@@ -37,13 +37,17 @@ export default {
     AssessmentExplanation,
     AssessmentOverview
   },
-  asyncData ({ params }) {
+  async asyncData ({ params, store }) {
     graphData.slice(-1)[0].label = 'Now'
     const assessmentId = parseInt(params.assessmentId)
+    const studentId = params.studentId
+
+    await store.dispatch('assessments/fetchResult', { studentId, assessmentId })
+    await store.dispatch('assessments/fetchExplanation', { studentId, assessmentId })
 
     return {
       graphData,
-      studentId: params.studentId,
+      studentId,
       assessmentId
     }
   },

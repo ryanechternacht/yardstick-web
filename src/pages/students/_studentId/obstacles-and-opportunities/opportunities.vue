@@ -42,9 +42,13 @@ export default {
       renderTemplate
     }
   },
-  asyncData ({ params }) {
+  async asyncData ({ params, store }) {
+    const studentId = params.studentId
+
+    await store.dispatch('opportunities/fetchOpportunities', { studentId })
+
     return {
-      studentId: params.studentId
+      studentId
     }
   },
   data () {

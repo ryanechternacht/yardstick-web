@@ -45,19 +45,19 @@ export const actions = {
     commit('loadOverviews', { studentId, overviews })
   },
   // TODO avoid refetching if data is fresh
-  async fetchResults ({ commit }, { studentId, assessmentId }) {
+  async fetchResult ({ commit }, { studentId, assessmentId }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
     }
 
     // TODO change this url
-    const results = await this.$axios.$get(
+    const result = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}`)
 
-    commit('loadResult', { studentId, assessmentId, results })
+    commit('loadResult', { studentId, assessmentId, result })
   },
   // TODO avoid refetching if data is fresh
-  async fetchExplanations ({ commit }, { studentId, assessmentId }) {
+  async fetchExplanation ({ commit }, { studentId, assessmentId }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
     }

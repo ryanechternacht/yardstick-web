@@ -18,9 +18,13 @@ export default {
   components: {
     AssessmentsOverview
   },
-  asyncData ({ params }) {
+  async asyncData ({ params, store }) {
+    const studentId = params.studentId
+
+    await store.dispatch('assessments/fetchOverviews', { studentId })
+
     return {
-      studentId: params.studentId
+      studentId
     }
   },
   computed: {

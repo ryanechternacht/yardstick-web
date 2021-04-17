@@ -37,11 +37,14 @@ export default {
     Percentile,
     RitHtml
   },
-  asyncData ({ params }) {
+  async asyncData ({ params, store }) {
     const assessmentId = parseInt(params.assessmentId)
+    const studentId = params.studentId
+
+    await store.dispatch('assessments/fetchResult', { studentId, assessmentId })
 
     return {
-      studentId: params.studentId,
+      studentId,
       assessmentId
     }
   },
