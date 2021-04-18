@@ -20,7 +20,7 @@ export default {
     AssessmentsOverview
   },
   async asyncData ({ params, store }) {
-    const studentId = params.studentId
+    const studentId = parseInt(params.studentId, 10)
 
     await store.dispatch('assessments/fetchOverviews', { studentId })
 

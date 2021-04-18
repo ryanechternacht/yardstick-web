@@ -46,7 +46,7 @@ import { mapGetters } from 'vuex'
 export default {
   asyncData ({ params }) {
     return {
-      studentId: params.studentId
+      studentId: parseInt(params.studentId, 10)
     }
   },
   computed: {

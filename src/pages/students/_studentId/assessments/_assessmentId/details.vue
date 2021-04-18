@@ -131,8 +131,8 @@ import { mapGetters } from 'vuex'
 
 export default {
   async asyncData ({ params, store }) {
-    const assessmentId = parseInt(params.assessmentId)
-    const studentId = params.studentId
+    const assessmentId = parseInt(params.assessmentId, 10)
+    const studentId = parseInt(params.studentId, 10)
 
     await store.dispatch('assessments/fetchResult', { studentId, assessmentId })
 

@@ -4,11 +4,11 @@ export const state = () => ({
 
 export const getters = {
   getObstacleByStudentAndId: state => (studentId, obstacleId) =>
-    state.obstacles[studentId] && state.obstacles[studentId].find(o => o.id === obstacleId),
+    state.obstacles[studentId] && state.obstacles[studentId].content.find(o => o.id === obstacleId),
   // TODO build this when loading obstacles?
   getNextObstaclesByStudentAndId: (state, getters) => (studentId, obstacleId) => {
     const obstacle = getters.getObstacleByStudentAndId(studentId, obstacleId)
-    return state.obstacles[studentId].filter(o => o.order > obstacle.order)
+    return state.obstacles[studentId].content.filter(o => o.order > obstacle.order)
   }
 }
 
@@ -28,6 +28,6 @@ export const actions = {
     const obstacles = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/obstacles`)
 
-    commit('loadObstacles', { studentId, obstacles })
+    commit('loadObstacles', { studentId, obstacles: { content: obstacles } })
   }
 }

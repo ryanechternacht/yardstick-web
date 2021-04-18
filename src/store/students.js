@@ -1,7 +1,7 @@
 export const state = () => ({
   students: {}
 })
-// TODO make plural
+
 export const getters = {
   getStudentById: state => studentId => state.students[studentId]
 }

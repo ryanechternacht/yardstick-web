@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const getters = {
   getOpportunitiesByStudent: state => studentId =>
-    state.opportunities[studentId]
+    state.opportunities[studentId].content
 }
 
 export const mutations = {
@@ -23,6 +23,6 @@ export const actions = {
     const opportunities = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/opportunities`)
 
-    commit('loadOpportunities', { studentId, opportunities })
+    commit('loadOpportunities', { studentId, opportunities: { content: opportunities } })
   }
 }

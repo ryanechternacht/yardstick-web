@@ -38,7 +38,7 @@ export default {
     RitHtml
   },
   async asyncData ({ params, store }) {
-    const assessmentId = parseInt(params.assessmentId)
+    const assessmentId = parseInt(params.assessmentId, 10)
     const studentId = params.studentId
 
     await store.dispatch('assessments/fetchResult', { studentId, assessmentId })

@@ -6,11 +6,11 @@ export const state = () => ({
 
 export const getters = {
   getOverviewsByStudent: state => studentId =>
-    state.overviews[studentId],
+    state.overviews[studentId].content,
   getResultsByStudentAndId: state => (studentId, assessmentId) =>
-    state.results[studentId] && state.results[studentId][assessmentId],
+    state.results[studentId] && state.results[studentId][assessmentId].content,
   getExplanationByStudentAndId: state => (studentId, assessmentId) =>
-    state.explanations[studentId] && state.explanations[studentId][assessmentId]
+    state.explanations[studentId] && state.explanations[studentId][assessmentId].content
 }
 
 export const mutations = {
@@ -41,7 +41,7 @@ export const actions = {
     const overviews = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/assessments`)
 
-    commit('loadOverviews', { studentId, overviews })
+    commit('loadOverviews', { studentId, overviews: { content: overviews } })
   },
   // TODO avoid refetching if data is fresh
   async fetchResult ({ commit }, { studentId, assessmentId }) {
@@ -52,7 +52,7 @@ export const actions = {
     const result = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}`)
 
-    commit('loadResult', { studentId, assessmentId, result })
+    commit('loadResult', { studentId, assessmentId, result: { content: result } })
   },
   // TODO avoid refetching if data is fresh
   async fetchExplanation ({ commit }, { studentId, assessmentId }) {
@@ -63,6 +63,6 @@ export const actions = {
     const explanation = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
 
-    commit('loadExplanation', { studentId, assessmentId, explanation })
+    commit('loadExplanation', { studentId, assessmentId, explanation: { content: explanation } })
   }
 }

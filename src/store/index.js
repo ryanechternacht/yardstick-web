@@ -19,18 +19,22 @@ export const actions = {
     if (process.env.NUXT_ENV_STATIC) {
       commit('students/loadStudents', { students: [studentData] })
       commit('settings/loadSettings', { settings: prefixedSettings })
-      commit('supports/loadSupports', { supports, studentId })
-      commit('opportunities/loadOpportunities', { opportunities, studentId })
-      commit('obstacles/loadObstacles', { obstacles, studentId })
-      commit('assessments/loadOverviews', { overviews, studentId })
+      commit('supports/loadSupports', { supports: { content: supports }, studentId })
+      commit('opportunities/loadOpportunities', { opportunities: { content: opportunities }, studentId })
+      commit('obstacles/loadObstacles', { obstacles: { content: obstacles }, studentId })
+      commit('assessments/loadOverviews', { overviews: { content: overviews }, studentId })
       assessmentIds.forEach((id) => {
         commit('assessments/loadExplanation', {
-          explanation: explanations.find(e => e.assessmentId === id),
+          explanation: {
+            content: explanations.find(e => e.assessmentId === id)
+          },
           assessmentId: id,
           studentId
         })
         commit('assessments/loadResult', {
-          result: results.find(r => r.id === id),
+          result: {
+            content: results.find(r => r.id === id)
+          },
           assessmentId: id,
           studentId
         })

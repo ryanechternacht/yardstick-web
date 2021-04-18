@@ -39,8 +39,8 @@ export default {
   },
   async asyncData ({ params, store }) {
     graphData.slice(-1)[0].label = 'Now'
-    const assessmentId = parseInt(params.assessmentId)
-    const studentId = params.studentId
+    const assessmentId = parseInt(params.assessmentId, 10)
+    const studentId = parseInt(params.studentId, 10)
 
     await store.dispatch('assessments/fetchResult', { studentId, assessmentId })
     await store.dispatch('assessments/fetchExplanation', { studentId, assessmentId })
