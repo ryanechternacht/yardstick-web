@@ -27,9 +27,6 @@ export default {
 
     await store.dispatch('obstacles/fetchObstacles', { studentId })
 
-    // TODO a better way to do this
-    // const nextQuestions = obstacles.filter(o => o.id > id)
-
     // TODO where does this come from? maybe we have a few page templates and an
     // "obstacle type" field which does dynamic dispatch to the correct page?
     const delays = [

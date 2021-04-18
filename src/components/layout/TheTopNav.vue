@@ -1,8 +1,9 @@
 <template>
   <nav>
     <div class="site-link">
-      <!-- TODO link this? -->
-      Yardstick
+      <nuxt-link to="/">
+        Yardstick
+      </nuxt-link>
     </div>
     <!-- TODO student dropdown -->
 

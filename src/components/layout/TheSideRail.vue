@@ -133,6 +133,4 @@ nav {
 .top-nav-spacer {
   @apply h-60;
 }
-
-/* TODO active icons */
 </style>

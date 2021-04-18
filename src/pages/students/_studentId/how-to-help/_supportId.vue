@@ -19,10 +19,12 @@
         <h2 class="uppercase font-bold">
           {{ s.title }}
         </h2>
-        <h2 class="text-center mt-20">
-          <!-- TODO this should have a link in it -->
-          {{ renderTemplate(s.text, { student }) }}
-        </h2>
+        <!-- eslint-disable vue/no-v-html -->
+        <h2
+          class="step-explanation"
+          v-html="renderTemplate(s.text, { student })"
+        />
+        <!-- eslint-enable vue/no-v-html -->
       </div>
     </div>
   </div>
@@ -78,5 +80,13 @@ export default {
 
 .step {
   @apply flex flex-col items-center;
+}
+
+.step-explanation {
+  @apply mt-20 text-center;
+}
+
+.step-explanation >>> a {
+  color: blue;
 }
 </style>
