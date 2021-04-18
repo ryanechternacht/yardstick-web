@@ -5,11 +5,11 @@ export const state = () => ({
 })
 
 export const getters = {
-  overviewsByStudent: state => studentId =>
+  getOverviewsByStudent: state => studentId =>
     state.overviews[studentId],
-  resultsByStudentAndId: state => (studentId, assessmentId) =>
+  getResultsByStudentAndId: state => (studentId, assessmentId) =>
     state.results[studentId] && state.results[studentId][assessmentId],
-  explanationByStudentAndId: state => (studentId, assessmentId) =>
+  getExplanationByStudentAndId: state => (studentId, assessmentId) =>
     state.explanations[studentId] && state.explanations[studentId][assessmentId]
 }
 
@@ -31,7 +31,6 @@ export const mutations = {
   }
 }
 
-// TODO make subject an object instead of a flat prop
 export const actions = {
   // TODO avoid refetching if data is fresh
   async fetchOverviews ({ commit }, { studentId }) {
@@ -50,7 +49,6 @@ export const actions = {
       return
     }
 
-    // TODO change this url
     const result = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}`)
 
@@ -62,7 +60,6 @@ export const actions = {
       return
     }
 
-    // TODO change this url
     const explanation = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
 

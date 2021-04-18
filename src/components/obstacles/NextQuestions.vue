@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
@@ -69,15 +68,11 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('settings', ['settings']),
     ctaAbove () {
       return this.cta && this.cta.position === 'above'
     },
     ctaBelow () {
       return this.cta && this.cta.position === 'below'
-    },
-    studentId () {
-      return this.settings.currentStudent
     }
   }
 }

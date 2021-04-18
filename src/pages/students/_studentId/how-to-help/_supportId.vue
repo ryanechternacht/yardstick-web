@@ -55,13 +55,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('student', ['studentById']),
-    ...mapGetters('supports', ['supportByStudentAndId']),
+    ...mapGetters('students', ['getStudentById']),
+    ...mapGetters('supports', ['getSupportByStudentAndId']),
     student () {
-      return this.studentById(this.studentId)
+      return this.getStudentById(this.studentId)
     },
     support () {
-      return this.supportByStudentAndId(this.studentId, this.supportId)
+      return this.getSupportByStudentAndId(this.studentId, this.supportId)
     }
   }
 }

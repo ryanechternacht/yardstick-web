@@ -17,7 +17,7 @@ const assessmentIds = [1, 2, 3, 4, 5]
 export const actions = {
   async nuxtServerInit ({ commit }, { $axios }) {
     if (process.env.NUXT_ENV_STATIC) {
-      commit('student/loadStudents', { students: [studentData] })
+      commit('students/loadStudents', { students: [studentData] })
       commit('settings/loadSettings', { settings: prefixedSettings })
       commit('supports/loadSupports', { supports, studentId })
       commit('opportunities/loadOpportunities', { opportunities, studentId })
@@ -42,7 +42,7 @@ export const actions = {
         $axios.get('http://localhost:3001/v0.1/settings')
       ])
 
-      commit('student/loadStudents', { students: studentsReq.data })
+      commit('students/loadStudents', { students: studentsReq.data })
       commit('settings/loadSettings', { settings: settingsReq.data })
     }
   }

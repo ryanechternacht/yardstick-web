@@ -18,15 +18,18 @@
     </div>
 
     <assessments-overview-subject
+      :student-id="studentId"
       :subject="general"
       subject-name="General"
     />
     <assessments-overview-subject
+      :student-id="studentId"
       :subject="math"
       subject-name="Mathematics"
       :top-border="true"
     />
     <assessments-overview-subject
+      :student-id="studentId"
       :subject="ela"
       subject-name="Reading/ELA"
       :top-border="true"
@@ -45,6 +48,10 @@ export default {
   props: {
     assessments: {
       type: Array,
+      required: true
+    },
+    studentId: {
+      type: Number,
       required: true
     }
   },

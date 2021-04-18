@@ -8,6 +8,7 @@
       <assessments-overview-bubble
         v-if="rating.rating === 1"
         :rating="rating"
+        :student-id="studentId"
       />
     </div>
     <div
@@ -18,6 +19,7 @@
       <assessments-overview-bubble
         v-if="rating.rating === 2"
         :rating="rating"
+        :student-id="studentId"
       />
     </div>
     <div
@@ -28,6 +30,7 @@
       <assessments-overview-bubble
         v-if="rating.rating === 3"
         :rating="rating"
+        :student-id="studentId"
       />
     </div>
     <div
@@ -38,6 +41,7 @@
       <assessments-overview-bubble
         v-if="rating.rating === 4"
         :rating="rating"
+        :student-id="studentId"
       />
     </div>
     <div
@@ -48,6 +52,7 @@
       <assessments-overview-bubble
         v-if="rating.rating === 5"
         :rating="rating"
+        :student-id="studentId"
       />
     </div>
   </fragment>
@@ -72,6 +77,10 @@ export default {
     },
     rating: {
       type: Object,
+      required: true
+    },
+    studentId: {
+      type: Number,
       required: true
     }
   }

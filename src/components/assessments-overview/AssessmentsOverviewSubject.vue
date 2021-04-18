@@ -17,6 +17,7 @@
         :rating="rating"
         :horizontal-border="topBorder && i === 0"
         :first="i === 0"
+        :student-id="studentId"
       />
     </fragment>
   </fragment>
@@ -31,6 +32,10 @@ export default {
     AssessmentsOverviewRating
   },
   props: {
+    studentId: {
+      type: Number,
+      required: true
+    },
     subject: {
       type: Array,
       required: true

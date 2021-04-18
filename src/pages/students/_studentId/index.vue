@@ -50,9 +50,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('student', ['studentById']),
+    ...mapGetters('students', ['getStudentById']),
     student () {
-      return this.studentById(this.studentId)
+      return this.getStudentById(this.studentId)
     }
   }
 }

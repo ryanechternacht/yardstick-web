@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ assessment.name }} - {{ assessment.subject }} Breakdown</h1>
+    <h1>{{ assessment.name }} - {{ assessment.subject.name }} Breakdown</h1>
     <h2 class="mt-50">
       Growth v. Achievement ({{ assessment.latestTerm.fullName }})
     </h2>
@@ -16,7 +16,7 @@
     />
     <div style="height: 50px" />
     <rit-html
-      :x-axis-label="`${assessment.name} ${assessment.subject} Domains`"
+      :x-axis-label="`${assessment.name} ${assessment.subject.name} Domains`"
       :y-axis-label="assessment.scale"
       :domains="assessment.latestTerm.domains"
       :grade-level-average="assessment.latestTerm.gradeLevelAverage"
@@ -49,9 +49,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('assessments', ['resultsByStudentAndId']),
+    ...mapGetters('assessments', ['getResultsByStudentAndId']),
     assessment () {
-      return this.resultsByStudentAndId(this.studentId, this.assessmentId)
+      return this.getResultsByStudentAndId(this.studentId, this.assessmentId)
     }
   }
 }

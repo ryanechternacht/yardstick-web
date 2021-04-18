@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>{{ assessment.name }} - {{ assessment.subject }}</h1>
+    <h1>{{ assessment.name }} - {{ assessment.subject.name }}</h1>
 
     <h2 class="mt-50">
       <!-- TODO where does this text come from? -->
-      {{ student.name.first }} is Consistently Meeting {{ student.pronouns.possessiveUpper }} Growth Goals in {{ assessment.subject }}. All While Performing Well Above
+      {{ student.name.first }} is Consistently Meeting {{ student.pronouns.possessiveUpper }} Growth Goals in {{ assessment.subject.name }}. All While Performing Well Above
       the Average For {{ student.pronouns.possessiveUpper }} Grade Level.
     </h2>
 
@@ -57,17 +57,17 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('student', ['studentById']),
-    ...mapGetters('assessments', ['explanationByStudentAndId', 'resultsByStudentAndId']),
+    ...mapGetters('students', ['getStudentById']),
+    ...mapGetters('assessments', ['getExplanationByStudentAndId', 'getResultsByStudentAndId']),
     student () {
-      return this.studentById(this.studentId)
+      return this.getStudentById(this.studentId)
     },
     // TODO lazy load this?
     explanation () {
-      return this.explanationByStudentAndId(this.studentId, this.assessmentId)
+      return this.getExplanationByStudentAndId(this.studentId, this.assessmentId)
     },
     assessment () {
-      return this.resultsByStudentAndId(this.studentId, this.assessmentId)
+      return this.getResultsByStudentAndId(this.studentId, this.assessmentId)
     }
   },
   methods: {

@@ -3,7 +3,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  opportunitiesByStudent: state => studentId =>
+  getOpportunitiesByStudent: state => studentId =>
     state.opportunities[studentId]
 }
 
@@ -20,7 +20,6 @@ export const actions = {
       return
     }
 
-    // TODO do the work
     const opportunities = await this.$axios.$get(
       `http://localhost:3001/v0.1/student/${studentId}/opportunities`)
 

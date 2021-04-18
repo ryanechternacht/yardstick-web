@@ -3,9 +3,9 @@ export const state = () => ({
 })
 
 export const getters = {
-  supportByStudentAndId: state => (studentId, supportId) =>
+  getSupportByStudentAndId: state => (studentId, supportId) =>
     state.supports[studentId] && state.supports[studentId].find(s => s.id === supportId),
-  supportsByStudent: state => studentId =>
+  getSupportsByStudent: state => studentId =>
     state.supports[studentId]
 }
 

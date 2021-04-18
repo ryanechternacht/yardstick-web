@@ -47,16 +47,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('student', ['studentById']),
-    ...mapGetters('obstacles', ['obstacleByStudentAndId', 'nextObstaclesByStudentAndId']),
+    ...mapGetters('students', ['getStudentById']),
+    ...mapGetters('obstacles', ['getObstacleByStudentAndId', 'getNextObstaclesByStudentAndId']),
     student () {
-      return this.studentById(this.studentId)
+      return this.getStudentById(this.studentId)
     },
     obstacle () {
-      return this.obstacleByStudentAndId(this.studentId, this.obstacleId)
+      return this.getObstacleByStudentAndId(this.studentId, this.obstacleId)
     },
     nextQuestions () {
-      return this.nextObstaclesByStudentAndId(this.studentId, this.obstacleId)
+      return this.getNextObstaclesByStudentAndId(this.studentId, this.obstacleId)
     }
   }
 }

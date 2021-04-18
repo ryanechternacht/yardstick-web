@@ -16,20 +16,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
   name: 'AssessmentsOverviewBubble',
   props: {
     rating: {
       type: Object,
       required: true
-    }
-  },
-  computed: {
-    ...mapGetters('settings', ['settings']),
-    studentId () {
-      return this.settings.currentStudent
+    },
+    studentId: {
+      type: Number,
+      required: true
     }
   }
 }

@@ -61,13 +61,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('student', ['studentById']),
-    ...mapGetters('opportunities', ['opportunitiesByStudent']),
+    ...mapGetters('students', ['getStudentById']),
+    ...mapGetters('opportunities', ['getOpportunitiesByStudent']),
     student () {
-      return this.studentById(this.studentId)
+      return this.getStudentById(this.studentId)
     },
     opportunities () {
-      return this.opportunitiesByStudent(this.studentId)
+      return this.getOpportunitiesByStudent(this.studentId)
     }
   }
 }

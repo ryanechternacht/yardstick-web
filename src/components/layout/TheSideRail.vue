@@ -73,9 +73,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('settings', ['settings']),
+    ...mapGetters('settings', ['getSettings']),
     studentId () {
-      return this.settings.currentStudent
+      return this.getSettings.currentStudent
     }
   },
   watch: {

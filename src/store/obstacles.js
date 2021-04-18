@@ -3,13 +3,11 @@ export const state = () => ({
 })
 
 export const getters = {
-  obstacleByStudentAndId: state => (studentId, obstacleId) =>
+  getObstacleByStudentAndId: state => (studentId, obstacleId) =>
     state.obstacles[studentId] && state.obstacles[studentId].find(o => o.id === obstacleId),
-  obstaclesByStudent: state => studentId =>
-    state.obstacles[studentId],
   // TODO build this when loading obstacles?
-  nextObstaclesByStudentAndId: (state, getters) => (studentId, obstacleId) => {
-    const obstacle = getters.obstacleByStudentAndId(studentId, obstacleId)
+  getNextObstaclesByStudentAndId: (state, getters) => (studentId, obstacleId) => {
+    const obstacle = getters.getObstacleByStudentAndId(studentId, obstacleId)
     return state.obstacles[studentId].filter(o => o.order > obstacle.order)
   }
 }

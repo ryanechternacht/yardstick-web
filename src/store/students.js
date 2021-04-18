@@ -3,7 +3,7 @@ export const state = () => ({
 })
 // TODO make plural
 export const getters = {
-  studentById: state => studentId => state.students[studentId]
+  getStudentById: state => studentId => state.students[studentId]
 }
 
 export const mutations = {

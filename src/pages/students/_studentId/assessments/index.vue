@@ -5,6 +5,7 @@
     <assessments-overview
       class="mt-50 mb-90"
       :assessments="overviews"
+      :student-id="studentId"
     />
   </div>
 </template>
@@ -28,9 +29,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('assessments', ['overviewsByStudent']),
+    ...mapGetters('assessments', ['getOverviewsByStudent']),
     overviews () {
-      return this.overviewsByStudent(this.studentId)
+      return this.getOverviewsByStudent(this.studentId)
     }
   }
 }

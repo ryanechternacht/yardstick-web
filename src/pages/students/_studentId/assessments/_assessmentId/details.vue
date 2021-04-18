@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="mb-50">
-      {{ assessment.name }} - {{ assessment.subject }} Details
+      {{ assessment.name }} - {{ assessment.subject.name }} Details
     </h1>
 
     <div class="assessment-details">
@@ -142,9 +142,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('assessments', ['resultsByStudentAndId']),
+    ...mapGetters('assessments', ['getResultsByStudentAndId']),
     assessment () {
-      return this.resultsByStudentAndId(this.studentId, this.assessmentId)
+      return this.getResultsByStudentAndId(this.studentId, this.assessmentId)
     }
   }
 }

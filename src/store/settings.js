@@ -3,7 +3,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  settings: state => state.settings
+  getSettings: state => state.settings
 }
 
 export const mutations = {

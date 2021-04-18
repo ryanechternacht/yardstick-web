@@ -39,9 +39,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('student', ['studentById']),
+    ...mapGetters('students', ['getStudentById']),
     student () {
-      return this.studentById(this.studentId)
+      return this.getStudentById(this.studentId)
     },
     second () {
       return `To learn about the obstacles ${this.student.name.first} is facing with regards to
