@@ -1,3 +1,5 @@
+import { differenceInMinutes } from 'date-fns'
+
 export const state = () => ({
   overviews: {},
   results: {},
@@ -32,37 +34,70 @@ export const mutations = {
 }
 
 export const actions = {
-  // TODO avoid refetching if data is fresh
-  async fetchOverviews ({ commit }, { studentId }) {
+  async fetchOverviews ({ commit, state }, { studentId, forceRefresh }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
     }
 
-    const overviews = await this.$axios.$get(
-      `http://localhost:3001/v0.1/student/${studentId}/assessments`)
+    const now = Date.now()
+    if (!state.overviews[studentId] ||
+        forceRefresh ||
+        (differenceInMinutes(now, state.overviews[studentId].generatedAt) >= 10)) {
+      const overviews = await this.$axios.$get(
+        `http://localhost:3001/v0.1/student/${studentId}/assessments`)
 
-    commit('loadOverviews', { studentId, overviews: { content: overviews } })
+      commit('loadOverviews', {
+        studentId,
+        overviews: {
+          content: overviews,
+          generatedAt: now
+        }
+      })
+    }
   },
-  // TODO avoid refetching if data is fresh
-  async fetchResult ({ commit }, { studentId, assessmentId }) {
+
+  async fetchResult ({ commit, state }, { studentId, assessmentId, forceRefresh }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
     }
 
-    const result = await this.$axios.$get(
-      `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}`)
+    const now = Date.now()
+    if (!state.results[studentId] ||
+        forceRefresh ||
+        (differenceInMinutes(now, state.results[studentId].generatedAt) >= 10)) {
+      const result = await this.$axios.$get(
+        `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}`)
 
-    commit('loadResult', { studentId, assessmentId, result: { content: result } })
+      commit('loadResult', {
+        studentId,
+        assessmentId,
+        result: {
+          content: result,
+          generatedAt: now
+        }
+      })
+    }
   },
-  // TODO avoid refetching if data is fresh
-  async fetchExplanation ({ commit }, { studentId, assessmentId }) {
+  async fetchExplanation ({ commit, state }, { studentId, assessmentId, forceRefresh }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
     }
 
-    const explanation = await this.$axios.$get(
-      `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
+    const now = Date.now()
+    if (!state.explanations[studentId] ||
+        forceRefresh ||
+        (differenceInMinutes(now, state.explanations[studentId].generatedAt) >= 10)) {
+      const explanation = await this.$axios.$get(
+        `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
 
-    commit('loadExplanation', { studentId, assessmentId, explanation: { content: explanation } })
+      commit('loadExplanation', {
+        studentId,
+        assessmentId,
+        explanation: {
+          content: explanation,
+          generatedAt: now
+        }
+      })
+    }
   }
 }

@@ -16,17 +16,15 @@ export const mutations = {
 }
 
 export const actions = {
-  // TODO avoid refetching if data is fresh
-  async fetchOpportunities ({ commit, state }, { studentId }) {
+  async fetchOpportunities ({ commit, state }, { studentId, forceRefresh }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
     }
 
     const now = Date.now()
-    // TODO pull out the 5?
-    // TODO roll this out
     if (!state.opportunities[studentId] ||
-        (differenceInMinutes(now, state.opportunities[studentId].generatedAt) >= 5)) {
+        forceRefresh ||
+        (differenceInMinutes(now, state.opportunities[studentId].generatedAt) >= 10)) {
       const opportunities = await this.$axios.$get(
         `http://localhost:3001/v0.1/student/${studentId}/opportunities`)
 

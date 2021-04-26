@@ -1,3 +1,5 @@
+import { differenceInMinutes } from 'date-fns'
+
 export const state = () => ({
   supports: {}
 })
@@ -17,14 +19,25 @@ export const mutations = {
 
 export const actions = {
   // TODO avoid refetching if data is fresh
-  async fetchSupports ({ commit }, { studentId }) {
+  async fetchSupports ({ commit, state }, { studentId, forceRefresh }) {
     if (process.env.NUXT_ENV_STATIC) {
       return
     }
 
-    const supports = await this.$axios.$get(
-      `http://localhost:3001/v0.1/student/${studentId}/supports`)
+    const now = Date.now()
+    if (!state.supports[studentId] ||
+        forceRefresh ||
+        (differenceInMinutes(now, state.supports[studentId].generatedAt) >= 10)) {
+      const supports = await this.$axios.$get(
+        `http://localhost:3001/v0.1/student/${studentId}/supports`)
 
-    commit('loadSupports', { studentId, supports: { content: supports } })
+      commit('loadSupports', {
+        studentId,
+        supports: {
+          content: supports,
+          generatedAt: now
+        }
+      })
+    }
   }
 }
