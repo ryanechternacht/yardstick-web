@@ -2,6 +2,8 @@
 
 ## Build Setup
 
+install brew and npm https://changelog.com/posts/install-node-js-with-homebrew-on-os-x
+
 ```bash
 # install dependencies
 $ npm install
