@@ -8,6 +8,7 @@ export const getters = {
   getObstacleByStudentAndId: state => (studentId, obstacleId) =>
     state.obstacles[studentId] && state.obstacles[studentId].content.find(o => o.id === obstacleId),
   // TODO build this when loading obstacles?
+  // TODO build ctas here too
   getNextObstaclesByStudentAndId: (state, getters) => (studentId, obstacleId) => {
     const obstacle = getters.getObstacleByStudentAndId(studentId, obstacleId)
     return state.obstacles[studentId].content.filter(o => o.order > obstacle.order)
