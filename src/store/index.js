@@ -1,11 +1,11 @@
 // TODO Load these on the fly
-import studentData from '@/assets/data/student'
-import supports from '@/assets/data/supports'
-import opportunities from '@/assets/data/opportunities'
-import obstacles from '@/assets/data/obstacles'
-import explanations from '@/assets/data/assessment-explanations'
-import overviews from '@/assets/data/assessment-overviews'
-import results from '@/assets/data/assessment-results'
+import studentData from '@/assets/static-data/student'
+import supports from '@/assets/static-data/supports'
+import opportunities from '@/assets/static-data/opportunities'
+import obstacles from '@/assets/static-data/obstacles'
+import explanations from '@/assets/static-data/assessment-explanations'
+import overviews from '@/assets/static-data/assessment-overviews'
+import results from '@/assets/static-data/assessment-results'
 
 const studentId = 1
 const prefixedSettings = {

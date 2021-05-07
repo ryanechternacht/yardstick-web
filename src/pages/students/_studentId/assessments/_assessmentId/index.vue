@@ -30,7 +30,7 @@ import { mapGetters } from 'vuex'
 
 import AssessmentExplanation from '@/components/assessment-explanation/AssessmentExplanation'
 import AssessmentOverview from '@/components/graphs/AssessmentOverview'
-import graphData from '@/assets/data/graph-data'
+import graphData from '@/assets/static-data/graph-data'
 
 export default {
   components: {

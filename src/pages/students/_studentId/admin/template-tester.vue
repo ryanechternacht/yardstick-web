@@ -40,7 +40,7 @@
 
 <script>
 import { useRenderTemplate } from '@/composables/render-template'
-import studentData from '@/assets/data/student'
+import studentData from '@/assets/static-data/student'
 
 export default {
   setup () {
