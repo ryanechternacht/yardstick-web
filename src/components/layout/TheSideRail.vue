@@ -13,7 +13,7 @@
           class="icon"
         />
         <div class="link-text">
-          Home
+          {{ layout.home }}
         </div>
       </nuxt-link>
 
@@ -27,7 +27,7 @@
           class="icon"
         />
         <div class="link-text">
-          How to Help
+          {{ layout.howToHelp }}
         </div>
       </nuxt-link>
 
@@ -41,7 +41,7 @@
           class="icon"
         />
         <div class="link-text">
-          Obstacles &amp; Opportunities
+          {{ layout.obstaclesAndOpportunities }}
         </div>
       </nuxt-link>
 
@@ -55,7 +55,7 @@
           class="icon"
         />
         <div class="link-text">
-          Assessment Scorecard
+          {{ layout.assessment }}
         </div>
       </nuxt-link>
     </div>
@@ -74,6 +74,7 @@ export default {
   },
   computed: {
     ...mapGetters('settings', ['getSettings']),
+    ...mapGetters('layout', { layout: 'getLayout' }),
     studentId () {
       return this.getSettings.currentStudent
     }

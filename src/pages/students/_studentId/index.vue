@@ -1,14 +1,16 @@
 <template>
   <div class="content">
-    <h1>Based on 27 data points we would say</h1>
+    <h1>{{ home.preHeadline }}</h1>
 
-    <div class="headline mt-24">
-      {{ student.name.first }} is <span class="at-risk">At Risk</span> in Reading and
-      <span class="advanced">Advanced</span> in Mathematics
-    </div>
+    <!-- eslint-disable vue/no-v-html -->
+    <div
+      class="headline mt-24"
+      v-html="renderTemplate(home.headline, { student })"
+    />
+    <!-- eslint-enable vue/no-v-html -->
 
     <div class="links">
-      <h1>What should we show you next?</h1>
+      <h1>{{ home.nav }}</h1>
 
       <div class="button-links">
         <nuxt-link
@@ -16,7 +18,7 @@
           :to="`/students/${studentId}/how-to-help`"
         >
           <h4 class="p-20">
-            How you can help {{ student.name.first }} be more prepared.
+            {{ renderTemplate(home.navHowToHelp, { student }) }}
           </h4>
         </nuxt-link>
         <nuxt-link
@@ -24,7 +26,7 @@
           :to="`/students/${studentId}/assessments`"
         >
           <h4 class="p-20">
-            How {{ student.name.first }} is doing across all of {{ student.pronouns.possessive }} assessments.
+            {{ renderTemplate(home.navAssessment, { student }) }}
           </h4>
         </nuxt-link>
         <nuxt-link
@@ -32,7 +34,7 @@
           :to="`/students/${studentId}/obstacles-and-opportunities`"
         >
           <h4 class="p-20">
-            Where {{ student.name.first }} is doing well and where {{ student.pronouns.nominative }} has room to grow.
+            {{ renderTemplate(home.navObstaclesAndOpportunities, { student }) }}
           </h4>
         </nuxt-link>
       </div>
@@ -42,8 +44,16 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { useRenderTemplate } from '@/composables/render-template'
 
 export default {
+  setup () {
+    const { renderTemplate } = useRenderTemplate()
+
+    return {
+      renderTemplate
+    }
+  },
   asyncData ({ params }) {
     return {
       studentId: parseInt(params.studentId, 10)
@@ -51,6 +61,7 @@ export default {
   },
   computed: {
     ...mapGetters('students', ['getStudentById']),
+    ...mapGetters('layout', { home: 'getHome' }),
     student () {
       return this.getStudentById(this.studentId)
     }
@@ -75,11 +86,11 @@ h1 {
   line-height: 84px;
 }
 
-.at-risk {
+>>> .at-risk {
   @apply text-orange-at-risk underline;
 }
 
-.advanced {
+>>> .advanced {
   @apply text-purple-advanced underline;
 }
 

@@ -6,6 +6,7 @@ import obstacles from '@/assets/static-data/obstacles'
 import explanations from '@/assets/static-data/assessment-explanations'
 import overviews from '@/assets/static-data/assessment-overviews'
 import results from '@/assets/static-data/assessment-results'
+import layout from '@/assets/static-data/layout'
 
 const studentId = 1
 const prefixedSettings = {
@@ -19,6 +20,7 @@ export const actions = {
     if (process.env.NUXT_ENV_STATIC) {
       commit('students/loadStudents', { students: [studentData] })
       commit('settings/loadSettings', { settings: prefixedSettings })
+      commit('layout/loadLayout', { layout })
       commit('supports/loadSupports', { supports: { content: supports }, studentId })
       commit('opportunities/loadOpportunities', { opportunities: { content: opportunities }, studentId })
       commit('obstacles/loadObstacles', { obstacles: { content: obstacles }, studentId })
@@ -41,13 +43,15 @@ export const actions = {
       })
     } else {
       // TODO This also needs to support loading multiple at a time
-      const [studentsReq, settingsReq] = await Promise.all([
+      const [studentsReq, settingsReq, layoutReq] = await Promise.all([
         $axios.get('http://localhost:3001/v0.1/students'),
-        $axios.get('http://localhost:3001/v0.1/settings')
+        $axios.get('http://localhost:3001/v0.1/settings'),
+        $axios.get('http://localhost:3001/v0.1/students/layout')
       ])
 
       commit('students/loadStudents', { students: studentsReq.data })
       commit('settings/loadSettings', { settings: settingsReq.data })
+      commit('layout/loadLayout', { layout: layoutReq.data })
     }
   }
 }
