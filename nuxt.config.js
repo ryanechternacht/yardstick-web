@@ -32,8 +32,16 @@ export default {
   ],
 
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+
+  proxy: {
+    '/api': { 
+      target: 'http://localhost:3001',
+      pathRewrite: { '^/api/': '' }
+    }
+  },
 
   axios: {}
 }

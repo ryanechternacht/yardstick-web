@@ -9,6 +9,26 @@
 
     <div class="flex-grow" />
 
+    <button
+      class="bg-white p-4 border-black border mr-8 rounded"
+      @click="login"
+    >
+      Login
+    </button>
+    <button
+      class="bg-white p-4 border-black border mr-8 rounded"
+      @click="getUser"
+    >
+      get user
+    </button>
+
+    <div
+      v-if="user"
+      class="mx-10"
+    >
+      Hello {{ user.first_name }}
+    </div>
+
     <div class="icons">
       <font-awesome-icon
         class="icon"
@@ -25,7 +45,33 @@
 
 <script>
 export default {
-  name: 'TheTopNav'
+  name: 'TheTopNav',
+  data () {
+    return {
+      user: null
+    }
+  },
+  methods: {
+    async login () {
+      try {
+        await this.$axios.post('/api/v0.1/users/login', {
+          username: 'ryan@echternacht.org',
+          password: '123'
+        })
+        window.location.reload()
+      } catch ($ex) {
+        console.log($ex)
+      }
+    },
+    async getUser () {
+      try {
+        const resp = await this.$axios.get('/api/v0.1/users/me')
+        this.user = resp.data
+      } catch ($ex) {
+        console.log($ex)
+      }
+    }
+  }
 }
 </script>
 

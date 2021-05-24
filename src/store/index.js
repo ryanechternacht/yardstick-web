@@ -42,7 +42,7 @@ export const actions = {
     } else {
       // TODO This also needs to support loading multiple at a time
       const [studentsReq, settingsReq] = await Promise.all([
-        $axios.get('http://localhost:3001/v0.1/students'),
+        $axios.get('/api/v0.1/students'),
         $axios.get('http://localhost:3001/v0.1/settings')
       ])
 
