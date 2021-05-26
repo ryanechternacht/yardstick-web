@@ -44,7 +44,7 @@ export const actions = {
         forceRefresh ||
         (differenceInMinutes(now, state.overviews[studentId].generatedAt) >= 10)) {
       const overviews = await this.$axios.$get(
-        `http://localhost:3001/v0.1/student/${studentId}/assessments`)
+        `/api/v0.1/student/${studentId}/assessments`)
 
       commit('loadOverviews', {
         studentId,
@@ -66,7 +66,7 @@ export const actions = {
         forceRefresh ||
         (differenceInMinutes(now, state.results[studentId].generatedAt) >= 10)) {
       const result = await this.$axios.$get(
-        `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}`)
+        `/api/v0.1/student/${studentId}/assessment/${assessmentId}`)
 
       commit('loadResult', {
         studentId,
@@ -88,7 +88,7 @@ export const actions = {
         forceRefresh ||
         (differenceInMinutes(now, state.explanations[studentId].generatedAt) >= 10)) {
       const explanation = await this.$axios.$get(
-        `http://localhost:3001/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
+        `/api/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
 
       commit('loadExplanation', {
         studentId,

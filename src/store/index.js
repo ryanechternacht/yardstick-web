@@ -41,13 +41,20 @@ export const actions = {
       })
     } else {
       // TODO This also needs to support loading multiple at a time
-      const [studentsReq, settingsReq] = await Promise.all([
-        $axios.get('/api/v0.1/students'),
-        $axios.get('http://localhost:3001/v0.1/settings')
-      ])
+      const [userReq, studentsReq, settingsReq] =
+        await Promise.allSettled([
+          $axios.get('/api/v0.1/users/me'),
+          $axios.get('/api/v0.1/students'),
+          $axios.get('/api/v0.1/settings')
+        ])
 
-      commit('students/loadStudents', { students: studentsReq.data })
-      commit('settings/loadSettings', { settings: settingsReq.data })
+      if (userReq.status === 'rejected') {
+        commit('user/loadUser', { user: null })
+      } else {
+        commit('user/loadUser', { user: userReq.value.data })
+        commit('students/loadStudents', { students: studentsReq.value.data })
+        commit('settings/loadSettings', { settings: settingsReq.value.data })
+      }
     }
   }
 }

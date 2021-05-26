@@ -9,19 +9,6 @@
 
     <div class="flex-grow" />
 
-    <button
-      class="bg-white p-4 border-black border mr-8 rounded"
-      @click="login"
-    >
-      Login
-    </button>
-    <button
-      class="bg-white p-4 border-black border mr-8 rounded"
-      @click="getUser"
-    >
-      get user
-    </button>
-
     <div
       v-if="user"
       class="mx-10"
@@ -50,6 +37,9 @@ export default {
     return {
       user: null
     }
+  },
+  created () {
+    this.getUser()
   },
   methods: {
     async login () {

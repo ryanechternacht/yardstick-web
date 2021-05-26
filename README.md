@@ -8,7 +8,7 @@ install brew and npm https://changelog.com/posts/install-node-js-with-homebrew-o
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:4000 using a static self-contained dataset
 $ npm run dev-static
 ```
 

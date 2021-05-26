@@ -32,7 +32,7 @@ export const actions = {
         forceRefresh ||
         (differenceInMinutes(now, state.obstacles[studentId].generatedAt) >= 10)) {
       const obstacles = await this.$axios.$get(
-        `http://localhost:3001/v0.1/student/${studentId}/obstacles`)
+        `/api/v0.1/student/${studentId}/obstacles`)
 
       commit('loadObstacles', {
         studentId,
