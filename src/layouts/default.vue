@@ -18,7 +18,8 @@ export default {
   components: {
     TheTopNav,
     TheSideRail
-  }
+  },
+  middleware: ['enforce-auth']
 }
 </script>
 

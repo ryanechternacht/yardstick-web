@@ -11,7 +11,7 @@
 
     <div
       v-if="user"
-      class="mx-10"
+      class="mx-10 text-white"
     >
       Hello {{ user.first_name }}
     </div>
@@ -31,36 +31,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'TheTopNav',
-  data () {
-    return {
-      user: null
-    }
-  },
-  created () {
-    this.getUser()
-  },
-  methods: {
-    async login () {
-      try {
-        await this.$axios.post('/api/v0.1/users/login', {
-          username: 'ryan@echternacht.org',
-          password: '123'
-        })
-        window.location.reload()
-      } catch ($ex) {
-        console.log($ex)
-      }
-    },
-    async getUser () {
-      try {
-        const resp = await this.$axios.get('/api/v0.1/users/me')
-        this.user = resp.data
-      } catch ($ex) {
-        console.log($ex)
-      }
-    }
+  computed: {
+    ...mapGetters('user', { user: 'getUser' })
   }
 }
 </script>

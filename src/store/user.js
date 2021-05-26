@@ -13,8 +13,6 @@ export const getters = {
 
 export const mutations = {
   loadUser (state, { user }) {
-    if (!user) {
-      state.user = false
-    }
+    state.user = user
   }
 }

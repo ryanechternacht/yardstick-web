@@ -41,11 +41,12 @@ export default {
     async login () {
       try {
         await this.$axios.post('/api/v0.1/users/login', {
-          username: this.username,
+          username: this.email,
           password: this.password
         })
-        window.location.reload()
+        window.location = '/'
       } catch ($ex) {
+        // eslint-disable-next-line no-console
         console.log($ex)
       }
     }
