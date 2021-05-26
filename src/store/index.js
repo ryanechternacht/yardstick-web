@@ -6,6 +6,7 @@ import obstacles from '@/assets/static-data/obstacles'
 import explanations from '@/assets/static-data/assessment-explanations'
 import overviews from '@/assets/static-data/assessment-overviews'
 import results from '@/assets/static-data/assessment-results'
+import user from '@/assets/static-data/user'
 
 const studentId = 1
 const prefixedSettings = {
@@ -17,6 +18,7 @@ const assessmentIds = [1, 2, 3, 4, 5]
 export const actions = {
   async nuxtServerInit ({ commit }, { $axios }) {
     if (process.env.NUXT_ENV_STATIC) {
+      commit('user/loadUser', { user })
       commit('students/loadStudents', { students: [studentData] })
       commit('settings/loadSettings', { settings: prefixedSettings })
       commit('supports/loadSupports', { supports: { content: supports }, studentId })
