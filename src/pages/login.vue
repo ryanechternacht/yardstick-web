@@ -1,30 +1,6 @@
 <template>
   <div>
-    <label class="mr-10">
-      Username:
-    </label>
-    <input
-      v-model="email"
-      type="email"
-    >
-
-    <br>
-
-    <label class="mr-10">
-      Passord:
-    </label>
-    <input
-      v-model="password"
-      type="password"
-    >
-
-    <br>
-
-    <button
-      @click="login"
-    >
-      Login
-    </button>
+    <a href="http://localhost:3001/v0.1/login">Auth0 Login</a>
   </div>
 </template>
 
@@ -55,11 +31,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-input {
-  @apply border
-}
-
-button {
+a {
   @apply border
 }
 </style>
