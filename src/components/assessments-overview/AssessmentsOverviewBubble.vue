@@ -2,11 +2,11 @@
   <!-- TODO pull out these numbers as an enum? -->
   <nuxt-link
     class="rating-bubble"
-    :class="{'bg-red-off-track': rating.rating === 1,
-             'bg-orange-at-risk': rating.rating === 2,
-             'bg-yellow-likely-on-track': rating.rating === 3,
-             'bg-green-on-track': rating.rating === 4,
-             'bg-purple-advanced': rating.rating === 5}"
+    :class="{'bg-red-off-track': rating.yardstick_performance_rating <= 20,
+             'bg-orange-at-risk': rating.yardstick_performance_rating >= 21 && rating.yardstick_performance_rating <= 40,
+             'bg-yellow-likely-on-track': rating.yardstick_performance_rating >= 41 && rating.yardstick_performance_rating <= 60,
+             'bg-green-on-track': rating.yardstick_performance_rating >= 61 && rating.yardstick_performance_rating <= 80,
+             'bg-purple-advanced': rating.yardstick_performance_rating >= 81}"
     :to="`/students/${studentId}/assessments/${rating.id}`"
   >
     <h5 class="rating-text">

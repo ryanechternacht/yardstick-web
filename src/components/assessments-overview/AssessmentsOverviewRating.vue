@@ -6,7 +6,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.rating === 1"
+        v-if="rating.yardstick_performance_rating <= 20"
         :rating="rating"
         :student-id="studentId"
       />
@@ -17,7 +17,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.rating === 2"
+        v-if="rating.yardstick_performance_rating >= 21 && rating.yardstick_performance_rating <= 40"
         :rating="rating"
         :student-id="studentId"
       />
@@ -28,7 +28,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.rating === 3"
+        v-if="rating.yardstick_performance_rating >= 41 && rating.yardstick_performance_rating <= 60"
         :rating="rating"
         :student-id="studentId"
       />
@@ -39,7 +39,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.rating === 4"
+        v-if="rating.yardstick_performance_rating >= 61 && rating.yardstick_performance_rating <= 80"
         :rating="rating"
         :student-id="studentId"
       />
@@ -50,7 +50,7 @@
                'pt-15': first}"
     >
       <assessments-overview-bubble
-        v-if="rating.rating === 5"
+        v-if="rating.yardstick_performance_rating >= 81"
         :rating="rating"
         :student-id="studentId"
       />
