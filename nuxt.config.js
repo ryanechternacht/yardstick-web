@@ -38,7 +38,8 @@ export default {
 
   proxy: {
     '/api': {
-      target: 'http://localhost:3001',
+      // target: 'http://localhost:3001',
+      target: 'https://ipgp7r5gyy.us-east-1.awsapprunner.com/',
       pathRewrite: { '^/api/': '' }
     }
   },
