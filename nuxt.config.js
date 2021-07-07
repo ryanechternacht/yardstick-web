@@ -38,8 +38,9 @@ export default {
 
   proxy: {
     '/api': {
+      // target: 'http://host.docker.internal:3001',
       // target: 'http://localhost:3001',
-      target: 'https://ipgp7r5gyy.us-east-1.awsapprunner.com/',
+      target: 'https://4inqxatgws.us-east-1.awsapprunner.com/',
       pathRewrite: { '^/api/': '' }
     }
   },

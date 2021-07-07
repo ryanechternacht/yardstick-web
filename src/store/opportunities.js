@@ -26,7 +26,7 @@ export const actions = {
         forceRefresh ||
         (differenceInMinutes(now, state.opportunities[studentId].generatedAt) >= 10)) {
       const opportunities = await this.$axios.$get(
-        `/api/v0.1/student/${studentId}/opportunities`, { withCredentials: true })
+        `/api/v0.1/student/${studentId}/opportunities`)
 
       commit('loadOpportunities', {
         studentId,
