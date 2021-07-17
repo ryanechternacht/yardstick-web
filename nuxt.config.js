@@ -43,9 +43,9 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
-
   proxy: {
     '/api': {
+      // TODO do I want this like this or just in a local .env
       target: process.env.PROXY_TARGET || 'http://localhost:3001',
       pathRewrite: { '^/api/': '' }
     }
