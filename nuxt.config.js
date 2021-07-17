@@ -10,12 +10,20 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       // TODO is there a better way to load this?
+      // yes -- use the google front nuxt plugin
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap' }
     ]
   },
 
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'http://localhost:4000'
+  },
+  privateRuntimeConfig: {
+  },
+
   plugins: [
+    '@/plugins/axios',
     '@/plugins/chartist',
     '@/plugins/fort-awesome',
     '@/plugins/vue-fragment',
@@ -38,9 +46,7 @@ export default {
 
   proxy: {
     '/api': {
-      // target: 'http://host.docker.internal:3001',
-      // target: 'http://localhost:3001',
-      target: 'https://4inqxatgws.us-east-1.awsapprunner.com/',
+      target: process.env.PROXY_TARGET || 'http://localhost:3001',
       pathRewrite: { '^/api/': '' }
     }
   },
