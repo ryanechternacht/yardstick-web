@@ -17,7 +17,7 @@ const assessmentIds = [1, 2, 3, 4, 5]
 
 export const actions = {
   async nuxtServerInit ({ commit }, { $axios }) {
-    if (process.env.NUXT_ENV_STATIC) {
+    if (this.$config.staticRuntime) {
       commit('user/loadUser', { user })
       commit('students/loadStudents', { students: [studentData] })
       commit('settings/loadSettings', { settings: prefixedSettings })

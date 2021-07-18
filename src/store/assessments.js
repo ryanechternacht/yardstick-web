@@ -35,7 +35,7 @@ export const mutations = {
 
 export const actions = {
   async fetchOverviews ({ commit, state }, { studentId, forceRefresh }) {
-    if (process.env.NUXT_ENV_STATIC) {
+    if (this.$config.staticRuntime) {
       return
     }
 
@@ -57,7 +57,7 @@ export const actions = {
   },
 
   async fetchResult ({ commit, state }, { studentId, assessmentId, forceRefresh }) {
-    if (process.env.NUXT_ENV_STATIC) {
+    if (this.$config.staticRuntime) {
       return
     }
 
@@ -79,7 +79,7 @@ export const actions = {
     }
   },
   async fetchExplanation ({ commit, state }, { studentId, assessmentId, forceRefresh }) {
-    if (process.env.NUXT_ENV_STATIC) {
+    if (this.$config.staticRuntime) {
       return
     }
 

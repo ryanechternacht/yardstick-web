@@ -17,7 +17,7 @@ export const mutations = {
 
 export const actions = {
   async fetchOpportunities ({ commit, state }, { studentId, forceRefresh }) {
-    if (process.env.NUXT_ENV_STATIC) {
+    if (this.$config.staticRuntime) {
       return
     }
 

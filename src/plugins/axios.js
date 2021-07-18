@@ -1,7 +1,7 @@
-export default function ({ $axios }) {
+export default function ({ $axios, $config }) {
   if (process.server) {
     // TODO how do we want this? (like this or a local .env)
-    $axios.setBaseURL(process.env.BASE_URL || 'http://localhost:4000')
+    $axios.setBaseURL($config.baseUrl)
   } else if (process.client) {
     $axios.setBaseURL('/')
   }
