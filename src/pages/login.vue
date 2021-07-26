@@ -1,6 +1,11 @@
 <template>
   <div>
-    <a href="/api/v0.1/login">Auth0 Login</a>
+    <a href="/api/v0.1/login/google">Google Login</a>
+
+    <br>
+    <br>
+
+    <a href="/api/v0.1/login/facebook">Facebook Login</a>
   </div>
 </template>
 
