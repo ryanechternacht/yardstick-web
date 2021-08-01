@@ -53,18 +53,34 @@
         >
       </div>
     </div>
-    <div>
-      <a href="/api/v0.1/login/google">Google Login</a>
+    <div class="login-section">
+      <div class="login-pane">
+        <img
+          class="login-logo"
+          src="~/assets/svg/logo-with-ruler.svg"
+        >
 
-      <br>
-      <br>
+        <a
+          class="login-link"
+          href="/api/v0.1/login/google"
+        >
+          Google Login
+        </a>
 
-      <a href="/api/v0.1/login/facebook">Facebook Login</a>
+        <a
+          class="login-link"
+          href="/api/v0.1/login/facebook"
+        >
+          Facebook Login
+        </a>
 
-      <br>
-      <br>
-
-      <a href="/api/v0.1/login/microsoft">Microsoft Login</a>
+        <a
+          class="login-link"
+          href="/api/v0.1/login/microsoft"
+        >
+          Microsoft Login
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -86,15 +102,21 @@ a {
 }
 
 .testimonials-section {
-  @apply w-full h-full bg-blue
+  @apply w-full h-full bg-blue;
 }
 
 .testimonial {
-  @apply flex p-50;
+  @apply flex p-50 items-center;
 }
 
 .testimonial-image-left {
   @apply flex-row-reverse;
+}
+
+.text {
+  @apply grid bg-gray-graph rounded-md;
+  min-height: 200px;
+  grid-template-rows: 1fr 50px;
 }
 
 .avatar {
@@ -102,17 +124,50 @@ a {
   height: 150px;
 }
 
-.text {
-  @apply bg-gray-graph;
-}
-
 .testimonial-image-left .text {
   margin-left: -75px;
-  padding-left: 75px;
+  grid-template-columns: 75px 1fr;
+  grid-template-areas:
+    "spacer quote"
+    "spacer attribution";
 }
 
 .testimonial-image-right .text {
   margin-right: -75px;
-  padding-right: 75px;
+  grid-template-columns: 1fr 75px;
+  grid-template-areas:
+    "quote       spacer"
+    "attribution spacer";
+}
+
+.quote {
+  @apply italic p-20;
+  grid-area: quote;
+  font-size: 24px;
+}
+
+.attribution {
+  @apply justify-self-center self-center;
+  grid-area: attribution;
+}
+
+.login-section {
+  @apply mx-auto my-auto;
+}
+
+.login-pane {
+  @apply flex flex-col items-center justify-center
+    bg-gray-graph rounded-md;
+  width: 534px;
+  height: 438px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-logo {
+  margin-bottom: 40px;
+}
+
+.login-link {
+  margin-bottom: 20px;
 }
 </style>
