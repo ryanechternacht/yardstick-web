@@ -114,9 +114,8 @@ a {
 }
 
 .text {
-  @apply grid bg-gray-graph rounded-md;
+  @apply flex flex-col bg-gray-graph rounded-md p-20;
   min-height: 200px;
-  grid-template-rows: 1fr 50px;
 }
 
 .avatar {
@@ -126,29 +125,25 @@ a {
 
 .testimonial-image-left .text {
   margin-left: -75px;
-  grid-template-columns: 75px 1fr;
-  grid-template-areas:
-    "spacer quote"
-    "spacer attribution";
+  padding-left: 95px; /* 75 + 20 */
 }
 
 .testimonial-image-right .text {
   margin-right: -75px;
-  grid-template-columns: 1fr 75px;
-  grid-template-areas:
-    "quote       spacer"
-    "attribution spacer";
+  padding-right: 95px; /* 75 + 20 */
 }
 
 .quote {
-  @apply italic p-20;
+  @apply italic flex-grow;
   grid-area: quote;
   font-size: 24px;
 }
 
 .attribution {
-  @apply justify-self-center self-center;
+  @apply justify-self-center self-center mt-10;
   grid-area: attribution;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .login-section {
