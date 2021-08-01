@@ -137,6 +137,7 @@ a {
   @apply italic flex-grow;
   grid-area: quote;
   font-size: 24px;
+  line-height: 29px;
 }
 
 .attribution {
