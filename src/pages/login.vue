@@ -93,7 +93,7 @@ export default {
 
 <style lang="postcss" scoped>
 a {
-  @apply border
+  @apply border p-4
 }
 
 .login-layout {
