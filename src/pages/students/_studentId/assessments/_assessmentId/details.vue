@@ -7,6 +7,7 @@
     <div class="assessment-details">
       <div />
       <div class="year-header">
+        <!-- TODO also flip these -->
         <!-- TODO pull these from somewhere -->
         8th Grade (2020 - 2021 Results)
       </div>
@@ -65,6 +66,7 @@
         :key="t.id"
         class="cell"
       >
+        <!-- TODO capitalize -->
         {{ t.metGoal }}
       </p>
 
@@ -90,27 +92,24 @@
         {{ t.growthPercentile }}
       </p>
 
-      <p class="row-header">
-        ACT College Readiness
-      </p>
-      <p
-        v-for="t in assessment.recentTerms"
-        :key="t.id"
-        class="cell"
+      <fragment
+        v-for="(pl, i) in assessment.recentTerms[0].proficiencyLevels"
+        :key="pl.study"
+        class="row-header"
       >
-        {{ t.actCollegeReadiness }}
-      </p>
-
-      <p class="row-header">
-        Forward Projection
-      </p>
-      <p
-        v-for="t in assessment.recentTerms"
-        :key="t.id"
-        class="cell"
-      >
-        {{ t.forwardProjection }}
-      </p>
+        <p class="row-header">
+          <!-- TODO colors -->
+          {{ pl.study }}
+        </p>
+        <p
+          v-for="t in assessment.recentTerms"
+          :key="t.id"
+          class="cell"
+        >
+          <!-- TODO colors -->
+          {{ t.proficiencyLevels[i].level }}
+        </p>
+      </fragment>
 
       <p class="row-header">
         Test Duration (Mins)
