@@ -10,12 +10,21 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       // TODO is there a better way to load this?
+      // yes -- use the google front nuxt plugin
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap' }
     ]
   },
 
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:4000',
+    staticRuntime: process.env.NUXT_ENV_STATIC || false
+  },
+  privateRuntimeConfig: {
+  },
+
   plugins: [
+    '@/plugins/axios',
     '@/plugins/chartist',
     '@/plugins/fort-awesome',
     '@/plugins/vue-fragment',
@@ -35,10 +44,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
-
   proxy: {
     '/api': {
-      target: 'http://localhost:3001',
+      // TODO do I want this like this or just in a local .env
+      target: process.env.PROXY_TARGET || 'http://localhost:3001',
       pathRewrite: { '^/api/': '' }
     }
   },

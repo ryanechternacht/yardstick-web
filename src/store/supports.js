@@ -18,9 +18,8 @@ export const mutations = {
 }
 
 export const actions = {
-  // TODO avoid refetching if data is fresh
   async fetchSupports ({ commit, state }, { studentId, forceRefresh }) {
-    if (process.env.NUXT_ENV_STATIC) {
+    if (this.$config.staticRuntime) {
       return
     }
 

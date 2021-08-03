@@ -21,7 +21,13 @@
         class="icon"
         :icon="['far', 'question-circle']"
       />
+      <img
+        v-if="user"
+        :src="user.picture"
+        class="icon"
+      >
       <font-awesome-icon
+        v-else
         class="icon"
         :icon="['fas', 'user']"
       />

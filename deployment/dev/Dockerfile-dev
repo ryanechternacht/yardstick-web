@@ -1,0 +1,26 @@
+FROM node:12.13.0-alpine
+
+# create destination directory
+RUN mkdir -p /usr/src/nuxt-app
+WORKDIR /usr/src/nuxt-app
+
+# update and install dependency
+# TODO is this really necessary?
+# RUN apk update && apk upgrade
+# RUN apk add git
+
+# copy the app, note .dockerignore
+COPY . /usr/src/nuxt-app/
+COPY ./deployment/dev/.env /usr/src/nuxt-app/
+
+RUN npm install && \
+  npm run build
+
+EXPOSE 4000
+
+# Not fully sure what this does, 
+# but without it the image is borked
+ENV NUXT_HOST=0.0.0.0
+
+# start the app
+CMD [ "npm", "run", "start" ]
