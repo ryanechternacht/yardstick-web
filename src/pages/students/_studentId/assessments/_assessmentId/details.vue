@@ -4,16 +4,22 @@
       {{ assessment.name }} - {{ assessment.subject.name }} Details
     </h1>
 
+    <!-- TODO what if no data? -->
+
     <div class="assessment-details">
       <div />
       <div class="year-header">
-        <!-- TODO also flip these -->
-        <!-- TODO pull these from somewhere -->
-        8th Grade (2020 - 2021 Results)
+        <!-- TODO pull these dates from somewhere -->
+        <!-- Handle kindergarten? -->
+        {{ assessment.recentTerms[0].grade }} Grade (2019 - 2020 Results)
       </div>
-      <div class="year-header">
-        <!-- TODO pull these from somewhere -->
-        7th Grade (2019 - 2020 Results)
+      <div
+        v-if="assessment.recentTerms.length > 3"
+        class="year-header"
+      >
+        <!-- TODO pull these dates from somewhere -->
+        <!-- Handle kindergarten? -->
+        {{ assessment.recentTerms[3].grade }} Grade (2020 - 2021 Results)
       </div>
 
       <div />
