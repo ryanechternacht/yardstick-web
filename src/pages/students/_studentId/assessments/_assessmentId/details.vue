@@ -1,30 +1,34 @@
 <template>
   <div>
     <h1 class="mb-50">
-      {{ assessment.name }} - {{ assessment.subject.name }} Details
+      {{ assessment.name }} Details
     </h1>
 
     <!-- TODO what if no data? -->
 
     <div class="assessment-details">
       <div />
-      <div class="year-header">
-        <!-- TODO pull these dates from somewhere -->
-        <!-- Handle kindergarten? -->
-        {{ assessment.recentTerms[0].grade }} Grade (2019 - 2020 Results)
-      </div>
-      <div
-        v-if="assessment.recentTerms.length > 3"
-        class="year-header"
-      >
-        <!-- TODO pull these dates from somewhere -->
-        <!-- Handle kindergarten? -->
-        {{ assessment.recentTerms[3].grade }} Grade (2020 - 2021 Results)
-      </div>
+      <fragment v-if="hasTwoYears">
+        <div
+          class="year-header"
+        >
+          {{ terms[0].grade }} Grade ({{ lastYear.name }} Results)
+        </div>
+        <div class="year-header">
+          {{ terms[3].grade }} Grade ({{ thisYear.name }} Results)
+        </div>
+      </fragment>
+
+      <fragment v-else>
+        <div>
+          {{ terms[0].grade }} Grade ({{ thisYear.name }} Results)
+        </div>
+        <div class="year-header-blank" />
+      </fragment>
 
       <div />
       <p
-        v-for="t in assessment.recentTerms"
+        v-for="t in terms"
         :key="t.id"
         class="text-center bg-gray-graph py-4"
       >
@@ -35,7 +39,7 @@
         RIT Score
       </p>
       <p
-        v-for="t in assessment.recentTerms"
+        v-for="t in terms"
         :key="t.id"
         class="cell"
       >
@@ -46,7 +50,7 @@
         Norm
       </p>
       <p
-        v-for="t in assessment.recentTerms"
+        v-for="t in terms"
         :key="t.id"
         class="cell"
       >
@@ -57,7 +61,7 @@
         Growth Goal
       </p>
       <p
-        v-for="t in assessment.recentTerms"
+        v-for="t in terms"
         :key="t.id"
         class="cell"
       >
@@ -68,7 +72,7 @@
         Met Goal?
       </p>
       <p
-        v-for="t in assessment.recentTerms"
+        v-for="t in terms"
         :key="t.id"
         class="cell"
       >
@@ -80,7 +84,7 @@
         Percentile
       </p>
       <p
-        v-for="t in assessment.recentTerms"
+        v-for="t in terms"
         :key="t.id"
         class="cell"
       >
@@ -91,7 +95,7 @@
         Growth Percentile
       </p>
       <p
-        v-for="t in assessment.recentTerms"
+        v-for="t in terms"
         :key="t.id"
         class="cell"
       >
@@ -99,7 +103,7 @@
       </p>
 
       <fragment
-        v-for="(pl, i) in assessment.recentTerms[0].proficiencyLevels"
+        v-for="(pl, i) in terms[0].proficiencyLevels"
         :key="pl.study"
         class="row-header"
       >
@@ -108,7 +112,7 @@
           {{ pl.study }}
         </p>
         <p
-          v-for="t in assessment.recentTerms"
+          v-for="t in terms"
           :key="t.id"
           class="cell"
         >
@@ -121,7 +125,7 @@
         Test Duration (Mins)
       </p>
       <p
-        v-for="t in assessment.recentTerms"
+        v-for="t in terms"
         :key="t.id"
         class="cell"
       >
@@ -148,8 +152,21 @@ export default {
   },
   computed: {
     ...mapGetters('assessments', ['getResultsByStudentAndId']),
+    ...mapGetters('settings', ['getSettings']),
     assessment () {
       return this.getResultsByStudentAndId(this.studentId, this.assessmentId)
+    },
+    hasTwoYears () {
+      return this.terms.length > 3
+    },
+    terms () {
+      return this.assessment ? this.assessment.recentTerms : []
+    },
+    thisYear () {
+      return this.getSettings.this_academic_year
+    },
+    lastYear () {
+      return this.getSettings.last_academic_year
     }
   }
 }
@@ -167,6 +184,10 @@ export default {
   grid-column: span 3;
   font-size: 22px;
   line-height: 26px;
+}
+
+.year-header-blank {
+  grid-column: span 3;
 }
 
 .row-header {
