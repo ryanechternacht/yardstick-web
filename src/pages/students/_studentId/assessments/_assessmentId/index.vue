@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ assessment.name }} - {{ assessment.subject.name }}</h1>
+    <h1>{{ assessment.name }}</h1>
 
     <h2 class="mt-50">
       <!-- TODO where does this text come from? -->

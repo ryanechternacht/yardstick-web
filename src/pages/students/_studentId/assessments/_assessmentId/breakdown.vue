@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ assessment.name }} - {{ assessment.subject.name }} Breakdown</h1>
+    <h1>{{ assessment.name }} Breakdown</h1>
     <h2 class="mt-50">
       Growth v. Achievement ({{ assessment.latestTerm.fullName }})
     </h2>
