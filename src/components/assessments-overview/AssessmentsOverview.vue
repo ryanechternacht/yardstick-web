@@ -57,13 +57,13 @@ export default {
   },
   computed: {
     general () {
-      return this.assessments.filter(a => a.type === 'general')
+      return this.assessments.filter(a => a.subject === 'general')
     },
     math () {
-      return this.assessments.filter(a => a.type === 'math')
+      return this.assessments.filter(a => a.subject === 'math')
     },
     ela () {
-      return this.assessments.filter(a => a.type === 'ela')
+      return this.assessments.filter(a => a.subject === 'ela')
     }
   }
 }
