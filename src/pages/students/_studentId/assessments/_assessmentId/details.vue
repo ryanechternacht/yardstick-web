@@ -5,6 +5,7 @@
     </h1>
 
     <!-- TODO what if no data? -->
+    <!-- TODO dynamic column count -->
 
     <div class="assessment-details">
       <div />
@@ -36,6 +37,7 @@
       </p>
 
       <p class="row-header">
+        <!-- TODO pull from scale -->
         RIT Score
       </p>
       <p
