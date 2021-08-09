@@ -5,24 +5,30 @@
     </h1>
 
     <!-- TODO what if no data? -->
-    <!-- TODO dynamic column count -->
 
-    <div class="assessment-details">
+    <div
+      class="assessment-details"
+      :style="{ gridTemplateColumns }"
+    >
       <div />
-      <fragment v-if="hasTwoYears">
+      <fragment v-if="lastYearResults.length">
         <div
           class="year-header"
+          :style="{ gridColumn: lastYearColumnSpan }"
         >
-          {{ terms[0].grade }} Grade ({{ lastYear.name }} Results)
+          {{ lastYearResults[0].grade }} Grade ({{ lastYear.name }} Results)
         </div>
-        <div class="year-header">
-          {{ terms[3].grade }} Grade ({{ thisYear.name }} Results)
+        <div
+          class="year-header"
+          :style="{ gridColumn: thisYearColumnSpan }"
+        >
+          {{ thisYearResults[0].grade }} Grade ({{ thisYear.name }} Results)
         </div>
       </fragment>
 
       <fragment v-else>
         <div>
-          {{ terms[0].grade }} Grade ({{ thisYear.name }} Results)
+          {{ thisYearResults[0].grade }} Grade ({{ thisYear.name }} Results)
         </div>
         <div class="year-header-blank" />
       </fragment>
@@ -37,15 +43,14 @@
       </p>
 
       <p class="row-header">
-        <!-- TODO pull from scale -->
-        RIT Score
+        {{ assessment.scale }}
       </p>
       <p
         v-for="t in terms"
         :key="t.id"
         class="cell"
       >
-        {{ t.ritScore }}
+        {{ t.score }}
       </p>
 
       <p class="row-header">
@@ -78,8 +83,7 @@
         :key="t.id"
         class="cell"
       >
-        <!-- TODO capitalize -->
-        {{ t.metGoal }}
+        {{ boolToYesNo(t.metGoal) }}
       </p>
 
       <p class="row-header">
@@ -139,8 +143,15 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { useUtilities } from '@/composables/utilities'
 
 export default {
+  setup () {
+    const { boolToYesNo } = useUtilities()
+    return {
+      boolToYesNo
+    }
+  },
   async asyncData ({ params, store }) {
     const assessmentId = parseInt(params.assessmentId, 10)
     const studentId = parseInt(params.studentId, 10)
@@ -158,17 +169,32 @@ export default {
     assessment () {
       return this.getResultsByStudentAndId(this.studentId, this.assessmentId)
     },
-    hasTwoYears () {
-      return this.terms.length > 3
-    },
     terms () {
       return this.assessment ? this.assessment.recentTerms : []
+    },
+    gridTemplateColumns () {
+      const cols = Math.max(this.terms.length + 1, 7)
+      return `repeat(${cols}, 1fr)`
     },
     thisYear () {
       return this.getSettings.this_academic_year
     },
     lastYear () {
       return this.getSettings.last_academic_year
+    },
+    lastYearResults () {
+      return this.terms.filter(t => t.year === this.lastYear.end_year)
+    },
+    lastYearColumnSpan () {
+      // TODO filter this.terms on lastYear
+      return `span ${this.lastYearResults.length}`
+    },
+    thisYearResults () {
+      return this.terms.filter(t => t.year === this.thisYear.end_year)
+    },
+    thisYearColumnSpan () {
+      // TODO filter this.terms on lastYear
+      return `span ${this.thisYearResults.length}`
     }
   }
 }
@@ -176,14 +202,11 @@ export default {
 
 <style lang="postcss" scoped>
 .assessment-details {
-  @apply grid gap-10;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(11, auto);
+  @apply grid gap-10 overflow-y-auto;
 }
 
 .year-header {
   @apply text-center bg-gray-graph py-7;
-  grid-column: span 3;
   font-size: 22px;
   line-height: 26px;
 }
