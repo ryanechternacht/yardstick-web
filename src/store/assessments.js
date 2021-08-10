@@ -90,9 +90,9 @@ export const actions = {
     }
 
     const now = Date.now()
-    if (!state.results[studentId] ||
+    if (!(state.results[studentId] && state.results[studentId][assessmentId]) ||
         forceRefresh ||
-        (differenceInMinutes(now, state.results[studentId].generatedAt) >= 10)) {
+        (differenceInMinutes(now, state.results[studentId][assessmentId].generatedAt) >= 10)) {
       const result = await this.$axios.$get(
         `/api/v0.1/student/${studentId}/assessment/${assessmentId}`)
 
@@ -112,9 +112,9 @@ export const actions = {
     }
 
     const now = Date.now()
-    if (!state.explanations[studentId] ||
+    if (!(state.explanations[studentId] && state.explanations[studentId][assessmentId]) ||
         forceRefresh ||
-        (differenceInMinutes(now, state.explanations[studentId].generatedAt) >= 10)) {
+        (differenceInMinutes(now, state.explanations[studentId][assessmentId].generatedAt) >= 10)) {
       const explanation = await this.$axios.$get(
         `/api/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
 
