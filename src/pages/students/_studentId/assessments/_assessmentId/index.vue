@@ -30,6 +30,7 @@ import { mapGetters } from 'vuex'
 
 import AssessmentExplanation from '@/components/assessment-explanation/AssessmentExplanation'
 import AssessmentOverview from '@/components/graphs/AssessmentOverview'
+// TODO pull this out of static data
 import graphData from '@/assets/static-data/graph-data'
 
 export default {
@@ -58,13 +59,13 @@ export default {
   },
   computed: {
     ...mapGetters('students', ['getStudentById']),
-    ...mapGetters('assessments', ['getExplanationByStudentAndId', 'getResultsByStudentAndId']),
+    ...mapGetters('assessments', ['getExplanationById', 'getResultsByStudentAndId']),
     student () {
       return this.getStudentById(this.studentId)
     },
     // TODO lazy load this?
     explanation () {
-      return this.getExplanationByStudentAndId(this.studentId, this.assessmentId)
+      return this.getExplanationById(this.assessmentId)
     },
     assessment () {
       return this.getResultsByStudentAndId(this.studentId, this.assessmentId)

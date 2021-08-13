@@ -34,12 +34,13 @@ const buildExplanation = ({ traits, assessmentType }) => {
 }
 
 export const getters = {
+  // TODO use the ?. form?
   getOverviewsByStudent: state => studentId =>
     state.overviews[studentId].content,
   getResultsByStudentAndId: state => (studentId, assessmentId) =>
     state.results[studentId] && state.results[studentId][assessmentId].content,
-  getExplanationByStudentAndId: state => (studentId, assessmentId) =>
-    state.explanations[studentId] && state.explanations[studentId][assessmentId].explanation
+  getExplanationById: state => assessmentId =>
+    state.explanations[assessmentId].explanation
 }
 
 export const mutations = {
@@ -52,12 +53,9 @@ export const mutations = {
     }
     state.results[studentId][assessmentId] = result
   },
-  loadExplanation (state, { explanation, assessmentId, studentId }) {
-    if (!state.explanations[studentId]) {
-      state.explanations[studentId] = {}
-    }
+  loadExplanation (state, { explanation, assessmentId }) {
     explanation.explanation = buildExplanation(explanation.content)
-    state.explanations[studentId][assessmentId] = explanation
+    state.explanations[assessmentId] = explanation
   }
 }
 
@@ -106,20 +104,19 @@ export const actions = {
       })
     }
   },
-  async fetchExplanation ({ commit, state }, { studentId, assessmentId, forceRefresh }) {
+  async fetchExplanation ({ commit, state }, { assessmentId, forceRefresh }) {
     if (this.$config.staticRuntime) {
       return
     }
 
     const now = Date.now()
-    if (!(state.explanations[studentId] && state.explanations[studentId][assessmentId]) ||
+    if (!(state.explanations[assessmentId]) ||
         forceRefresh ||
-        (differenceInMinutes(now, state.explanations[studentId][assessmentId].generatedAt) >= 10)) {
+        (differenceInMinutes(now, state.explanations[assessmentId].generatedAt) >= 10)) {
       const explanation = await this.$axios.$get(
-        `/api/v0.1/student/${studentId}/assessment/${assessmentId}/explanation`)
+        `/api/v0.1/assessment/${assessmentId}/explanation`)
 
       commit('loadExplanation', {
-        studentId,
         assessmentId,
         explanation: {
           content: explanation,
