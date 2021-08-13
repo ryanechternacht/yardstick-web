@@ -186,14 +186,12 @@ export default {
       return this.terms.filter(t => t.year === this.lastYear.end_year)
     },
     lastYearColumnSpan () {
-      // TODO filter this.terms on lastYear
       return `span ${this.lastYearResults.length}`
     },
     thisYearResults () {
       return this.terms.filter(t => t.year === this.thisYear.end_year)
     },
     thisYearColumnSpan () {
-      // TODO filter this.terms on lastYear
       return `span ${this.thisYearResults.length}`
     }
   }

@@ -8,6 +8,9 @@ import overviews from '@/assets/static-data/assessment-overviews'
 import results from '@/assets/static-data/assessment-results'
 import user from '@/assets/static-data/user'
 
+// TODO consume this here
+// import graphData from '@/assets/static-data/graph-data'
+
 const studentId = 1
 const prefixedSettings = {
   currentStudent: studentId

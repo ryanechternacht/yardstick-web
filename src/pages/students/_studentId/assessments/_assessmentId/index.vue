@@ -10,7 +10,7 @@
 
     <assessment-overview
       class="my-graph"
-      :graph-data="graphData"
+      :graph-data="assessment.recentResults"
       height="600px"
       width="1200px"
     />
@@ -30,8 +30,6 @@ import { mapGetters } from 'vuex'
 
 import AssessmentExplanation from '@/components/assessment-explanation/AssessmentExplanation'
 import AssessmentOverview from '@/components/graphs/AssessmentOverview'
-// TODO pull this out of static data
-import graphData from '@/assets/static-data/graph-data'
 
 export default {
   components: {
@@ -39,7 +37,6 @@ export default {
     AssessmentOverview
   },
   async asyncData ({ params, store }) {
-    graphData.slice(-1)[0].label = 'Now'
     const assessmentId = parseInt(params.assessmentId, 10)
     const studentId = parseInt(params.studentId, 10)
 
@@ -47,7 +44,6 @@ export default {
     await store.dispatch('assessments/fetchExplanation', { studentId, assessmentId })
 
     return {
-      graphData,
       studentId,
       assessmentId
     }

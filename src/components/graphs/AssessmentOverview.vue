@@ -117,16 +117,17 @@ export default {
 
 #my-chart .student.ct-line,
 #my-chart .reference.ct-line {
-  stroke-width: 5px;
+  stroke-width: 4px;
 }
 
 #my-chart .reference.ct-line {
   @apply stroke-current text-gray-graph-dark;
-  stroke-dasharray: 5px 5px;
+  stroke-dasharray: 20px 5px;
 }
 
 #my-chart .reference.ct-point {
-  stroke-width: 0;
+  @apply stroke-current text-gray-graph-dark;
+  stroke-width: 12;
 }
 
 /* Change the points to the big red/green circles

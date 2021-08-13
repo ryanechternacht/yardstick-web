@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- TODO some bug exists navigating to one page, then to another -->
-
     <the-sub-nav :links="links" />
 
     <nuxt-child />
