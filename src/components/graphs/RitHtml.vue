@@ -15,16 +15,10 @@
           class="grade-level-average-reference-line"
           :style="{ top: `${gradeLevelAverageHeight}px` }"
         />
-        <h3
-          class="grade-level-average-reference-label"
-          :style="{ top: `${gradeLevelAverageHeight - 60}px` }"
-        >
-          Grade Level Average
-        </h3>
       </div>
       <div
         :style="{ height: `${chartHeight}px`,
-                  'grid-template-columns': `repeat(${domains.length}, 1fr)` }"
+                  'grid-template-columns': `repeat(${domains.length}, 1fr) auto` }"
         class="grid gap-x-60"
       >
         <div
@@ -40,6 +34,25 @@
             <h4 class="bar-label">
               {{ d.name }}
             </h4>
+          </div>
+        </div>
+        <!-- We render both and just show one -->
+        <div class="grade-level-average-reference-area">
+          <div
+            class="grade-level-average-reference-label label-up"
+            :style="{ height: `${gradeLevelAverageHeight}px` }"
+          >
+            <h3 v-if="showAboveReferenceLabel">
+              Grade Level Average
+            </h3>
+          </div>
+          <div
+            class="grade-level-average-reference-label"
+            :style="{ height: `${chartHeight - gradeLevelAverageHeight}px` }"
+          >
+            <h3 v-if="!showAboveReferenceLabel">
+              Grade Level Average
+            </h3>
           </div>
         </div>
       </div>
@@ -79,7 +92,10 @@ export default {
   },
   data () {
     return {
-      chartHeight: 400
+      chartHeight: 400,
+      // how much we're faking the bottom of the graph to make sure
+      // we have room for text labels
+      chartLabelBuffer: 50
     }
   },
   computed: {
@@ -87,20 +103,24 @@ export default {
       return this.chartHeight - this.barHeight(this.gradeLevelAverage)
     },
     yMax () {
-      // TODO calc this
-      return 286
+      return Math.max(...this.domains.map(x => x.score), this.gradeLevelAverage) + 1
     },
     yMin () {
-      // TODO calc this
-      return 272
+      return Math.min(...this.domains.map(x => x.score), this.gradeLevelAverage) - 1
     },
     yRange () {
       return this.yMax - this.yMin
+    },
+    showAboveReferenceLabel () {
+      return (this.gradeLevelAverage - this.yMin) / this.yRange <= 0.5
+    },
+    actualChartHeight () {
+      return this.chartHeight - this.chartLabelBuffer
     }
   },
   methods: {
     barHeight (value) {
-      return (value - this.yMin) / this.yRange * this.chartHeight
+      return ((value - this.yMin) / this.yRange * this.actualChartHeight) + this.chartLabelBuffer
     },
     isAtRisk (score) {
       return score <= this.gradeLevelAverage
@@ -140,7 +160,7 @@ export default {
 }
 
 .grade-level-average-reference {
-  @apply w-full relative;
+  @apply relative;
 }
 
 .grade-level-average-reference-line {
@@ -149,8 +169,13 @@ export default {
 }
 
 .grade-level-average-reference-label {
-  @apply text-gray-graph-dark absolute text-center;
-  width: 150px;
+  @apply text-gray-graph-dark text-right py-10;
+  width: 110px; /* Manually determined */
+  margin-left: -50px;
+}
+
+.label-up {
+  @apply flex flex-col-reverse
 }
 
 .chart {
@@ -158,7 +183,7 @@ export default {
 }
 
 .bar-area {
-  @apply flex-grow h-full flex flex-col-reverse px-20;
+  @apply flex flex-col-reverse px-20;
 }
 
 .bar {
