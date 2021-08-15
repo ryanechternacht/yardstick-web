@@ -1,32 +1,34 @@
 [
   {
     "id": 1,
-    "name": "PreACT 8/9",
-    "rating": 3,
-    "type": "general"
+    "name": "NWEA MAP - Mathematics",
+    "shortname": "MAP",
+    "type": "growth",
+    "subject": "math",
+    "yardstick_performance_rating": 85
   },
   {
     "id": 2,
-    "name": "Forward - Mathematics",
-    "rating": 4,
-    "type": "math"
+    "name": "NWEA MAP - ELA",
+    "shortname": "MAP",
+    "type": "growth",
+    "subject": "ela",
+    "yardstick_performance_rating": 15
   },
   {
     "id": 3,
-    "name": "NWEA MAP - Mathematics",
-    "rating": 5,
-    "type": "math"
+    "name": "STAR - ELA",
+    "shortname": "STAR",
+    "type": "growth",
+    "subject": "ela",
+    "yardstick_performance_rating": 36
   },
   {
     "id": 4,
-    "name": "Forward - ELA",
-    "rating": 2,
-    "type": "ela"
-  },
-  {
-    "id": 5,
-    "name": "NWEA MAP - Reading",
-    "rating": 1,
-    "type": "ela"
+    "name": "STAR - Mathematics",
+    "shortname": "STAR",
+    "type": "growth",
+    "subject": "math",
+    "yardstick_performance_rating": 72
   }
 ]

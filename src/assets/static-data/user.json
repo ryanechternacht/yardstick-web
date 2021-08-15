@@ -1,5 +1,7 @@
 {
-  "username": "ryan@echternacht.org",
+  "id": 1,
   "first_name": "ryan",
-  "last_name": "echternacht"
+  "last_name": "echternacht",
+  "picture": "https://lh3.googleusercontent.com/a-/AOh14Gj7bRqIHOzEsxnNH0zncgji-J7DQlQFNtAFSYgv_A=s96-c",
+  "language": "en"
 }

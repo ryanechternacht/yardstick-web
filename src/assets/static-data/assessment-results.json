@@ -1,817 +1,1288 @@
 [
   {
+    "latestTerm": {
+      "fullName": "Spring '20-'21",
+      "gradeLevelAverage": 280,
+      "domains": [
+        {
+          "name": "Geometry",
+          "score": 278
+        },
+        {
+          "name": "Statistics and Probability",
+          "score": 282
+        },
+        {
+          "name": "Operations and Algebra Thinking",
+          "score": 283
+        },
+        {
+          "name": "The Real and Complex Number System",
+          "score": 284
+        }
+      ]
+    },
+    "achievement": 72,
+    "scale": "RIT Score",
+    "name": "NWEA MAP - Mathematics",
+    "type": "growth",
+    "shortName": "MAP",
     "id": 1,
-    "name": "PreACT 8/9",
-    "shortName": "PreACT",
-    "scale": "RIT Score",
+    "recentResults": [
+      {
+        "testDuration": 68,
+        "metGoal": true,
+        "norm": 222,
+        "growthPercentile": 65,
+        "percentile": 76,
+        "term": "Fall",
+        "year": 2020,
+        "reference": 222,
+        "grade": "7th",
+        "label": "Fall'19-'20",
+        "score": 226,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 226,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Not on Track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Proficient"
+          }
+        ]
+      },
+      {
+        "testDuration": 71,
+        "metGoal": true,
+        "norm": 220,
+        "growthPercentile": 82,
+        "percentile": 76,
+        "term": "Winter",
+        "year": 2020,
+        "reference": 220,
+        "grade": "7th",
+        "label": "Winter'19-'20",
+        "score": 228,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 228,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "On Track for a 22"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Advanced"
+          }
+        ]
+      },
+      {
+        "testDuration": 62,
+        "metGoal": true,
+        "norm": 222,
+        "growthPercentile": 51,
+        "percentile": 76,
+        "term": "Spring",
+        "year": 2020,
+        "reference": 222,
+        "grade": "7th",
+        "label": "Spring'19-'20",
+        "score": 229,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 229,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Not on Track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Proficient"
+          }
+        ]
+      },
+      {
+        "testDuration": 37,
+        "metGoal": true,
+        "norm": 224,
+        "growthPercentile": 52,
+        "percentile": 76,
+        "term": "Fall",
+        "year": 2021,
+        "reference": 224,
+        "grade": "8th",
+        "label": "Fall'20-'21",
+        "score": 230,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 230,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "On Track for a 24"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Proficient"
+          }
+        ]
+      },
+      {
+        "testDuration": 84,
+        "metGoal": true,
+        "norm": 222,
+        "growthPercentile": 98,
+        "percentile": 76,
+        "term": "Winter",
+        "year": 2021,
+        "reference": 222,
+        "grade": "8th",
+        "label": "Winter'20-'21",
+        "score": 227,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 227,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Not on Track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Proficient"
+          }
+        ]
+      },
+      {
+        "testDuration": 73,
+        "metGoal": true,
+        "norm": 224,
+        "growthPercentile": 98,
+        "percentile": 76,
+        "term": "Spring",
+        "year": 2021,
+        "reference": 224,
+        "grade": "8th",
+        "label": "Spring'20-'21",
+        "score": 232,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 232,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "On Track for a 24"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Proficient"
+          }
+        ]
+      }
+    ],
+    "growth": 98,
     "subject": {
-      "name": ""
-    },
+      "name": "math"
+    }
+  },
+  {
     "latestTerm": {
-      "fullName": "Winter 2021",
+      "fullName": "Spring '20-'21",
       "gradeLevelAverage": 280,
       "domains": [
         {
-          "name": "ELA",
+          "name": "Reading",
+          "score": 272
+        },
+        {
+          "name": "Critical Thinking",
+          "score": 273
+        },
+        {
+          "name": "Creative Writing",
+          "score": 274
+        },
+        {
+          "name": "Science Fiction",
           "score": 278
-        },
-        {
-          "name": "Science",
-          "score": 282
-        },
-        {
-          "name": "Social Studies",
-          "score": 283
-        },
-        {
-          "name": "Mathematics",
-          "score": 284
         }
       ]
     },
     "achievement": 72,
-    "growth": 98,
-    "recentResults": [
-      {
-        "label": "Spring '18",
-        "student": 226,
-        "reference": 222,
-        "hitGoal": true
-      },
-      {
-        "label": "Fall '19",
-        "student": 228,
-        "reference": 220,
-        "hitGoal": false
-      },
-      {
-        "label": "Winter '19",
-        "student": 229,
-        "reference": 222,
-        "hitGoal": true
-      },
-      {
-        "label": "Spring '20",
-        "student": 230,
-        "reference": 224,
-        "hitGoal": true
-      },
-      {
-        "label": "Fall '20",
-        "student": 227,
-        "reference": 222,
-        "hitGoal": true
-      },
-      {
-        "label": "Winter '20",
-        "student": 232,
-        "reference": 224,
-        "hitGoal": true
-      }
-    ],
-    "recentTerms": [
-      {
-        "id": 4,
-        "year": 2021,
-        "grade": 8,
-        "term": "Fall",
-        "ritScore": 232,
-        "norm": 224.9,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 76,
-        "growthPercentile": 52,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 37
-      },
-      {
-        "id": 5,
-        "year": 2021,
-        "grade": 8,
-        "term": "Winter",
-        "ritScore": 239,
-        "norm": 228.1,
-        "growthGoal": 6,
-        "metGoal": true,
-        "percentile": 70,
-        "growthPercentile": 98,
-        "actCollegeReadiness": "On Track for a 24",
-        "forwardProjection": "Proficient",
-        "testDuration": 84
-      },
-      {
-        "id": 6,
-        "year": "-",
-        "grade": "-",
-        "term": "Spring",
-        "ritScore": "-",
-        "norm": "-",
-        "growthGoal": "-",
-        "metGoal": "-",
-        "percentile": "-",
-        "growthPercentile": "-",
-        "actCollegeReadiness": "-",
-        "forwardProjection": "-",
-        "testDuration": "-"
-      },
-      {
-        "id": 1,
-        "year": 2020,
-        "grade": 7,
-        "term": "Fall",
-        "ritScore": 233,
-        "norm": 220.2,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 75,
-        "growthPercentile": 65,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 68
-      },
-      {
-        "id": 2,
-        "year": 2020,
-        "grade": 7,
-        "term": "Winter",
-        "ritScore": 235,
-        "norm": 224.1,
-        "growthGoal": 5,
-        "metGoal": null,
-        "percentile": 74,
-        "growthPercentile": 82,
-        "actCollegeReadiness": "On Track for a 22",
-        "forwardProjection": "Advanced",
-        "testDuration": 71
-      },
-      {
-        "id": 3,
-        "year": 2020,
-        "grade": 7,
-        "term": "Spring",
-        "ritScore": 236,
-        "norm": 226.7,
-        "growthGoal": 4,
-        "metGoal": true,
-        "percentile": 66,
-        "growthPercentile": 51,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 62
-      }
-    ]
-  },
-  {
+    "scale": "RIT Score",
+    "name": "NWEA MAP - ELA",
+    "type": "growth",
+    "shortName": "MAP",
     "id": 2,
-    "name": "Forward",
-    "shortName": "Forward",
-    "scale": "RIT Score",
-    "subject": {
-      "name": "Mathematics"
-    },
-    "latestTerm": {
-      "fullName": "Winter 2021",
-      "gradeLevelAverage": 280,
-      "domains": [
-        {
-          "name": "Geometry",
-          "score": 278
-        },
-        {
-          "name": "Statistics and Probability",
-          "score": 282
-        },
-        {
-          "name": "Operations and Algebraic Thinking",
-          "score": 283
-        },
-        {
-          "name": "The Real and Complex Number System",
-          "score": 284
-        }
-      ]
-    },
-    "achievement": 72,
-    "growth": 98,
     "recentResults": [
       {
-        "label": "Spring '18",
-        "student": 226,
+        "testDuration": 68,
+        "metGoal": false,
+        "norm": 222,
+        "growthPercentile": 33,
+        "percentile": 76,
+        "term": "Fall",
+        "year": 2020,
         "reference": 222,
-        "hitGoal": true
+        "grade": "7th",
+        "label": "Fall'19-'20",
+        "score": 190,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 190,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Not on Track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Below Average"
+          }
+        ]
       },
       {
-        "label": "Fall '19",
-        "student": 228,
+        "testDuration": 71,
+        "metGoal": false,
+        "norm": 220,
+        "growthPercentile": 26,
+        "percentile": 76,
+        "term": "Winter",
+        "year": 2020,
         "reference": 220,
-        "hitGoal": false
+        "grade": "7th",
+        "label": "Winter'19-'20",
+        "score": 193,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 193,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Not on Track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Below Average"
+          }
+        ]
       },
       {
-        "label": "Winter '19",
-        "student": 229,
+        "testDuration": 62,
+        "metGoal": false,
+        "norm": 222,
+        "growthPercentile": 37,
+        "percentile": 76,
+        "term": "Spring",
+        "year": 2020,
         "reference": 222,
-        "hitGoal": true
+        "grade": "7th",
+        "label": "Spring'19-'20",
+        "score": 195,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 195,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Not on Track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Below Average"
+          }
+        ]
       },
       {
-        "label": "Spring '20",
-        "student": 230,
+        "testDuration": 37,
+        "metGoal": false,
+        "norm": 224,
+        "growthPercentile": 29,
+        "percentile": 76,
+        "term": "Fall",
+        "year": 2021,
         "reference": 224,
-        "hitGoal": true
+        "grade": "8th",
+        "label": "Fall'20-'21",
+        "score": 192,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 192,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Not on Track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Below Average"
+          }
+        ]
       },
       {
-        "label": "Fall '20",
-        "student": 227,
+        "testDuration": 84,
+        "metGoal": false,
+        "norm": 222,
+        "growthPercentile": 39,
+        "percentile": 76,
+        "term": "Winter",
+        "year": 2021,
         "reference": 222,
-        "hitGoal": true
+        "grade": "8th",
+        "label": "Winter'20-'21",
+        "score": 197,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 197,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Not on Track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "Below Average"
+          }
+        ]
       },
       {
-        "label": "Winter '20",
-        "student": 232,
+        "testDuration": 73,
+        "metGoal": false,
+        "norm": 224,
+        "growthPercentile": 36,
+        "percentile": 76,
+        "term": "Spring",
+        "year": 2021,
         "reference": 224,
-        "hitGoal": true
+        "grade": "8th",
+        "label": "Spring'20-'21",
+        "score": 199,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 199,
+        "proficiencyLevels": [
+          {
+            "study": "ACT College Readiness",
+            "level": "Off track"
+          },
+          {
+            "study": "Forward Projection",
+            "level": "At Risk"
+          }
+        ]
       }
     ],
-    "recentTerms": [
-      {
-        "id": 4,
-        "year": 2021,
-        "grade": 8,
-        "term": "Fall",
-        "ritScore": 232,
-        "norm": 224.9,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 76,
-        "growthPercentile": 52,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 37
-      },
-      {
-        "id": 5,
-        "year": 2021,
-        "grade": 8,
-        "term": "Winter",
-        "ritScore": 239,
-        "norm": 228.1,
-        "growthGoal": 6,
-        "metGoal": true,
-        "percentile": 70,
-        "growthPercentile": 98,
-        "actCollegeReadiness": "On Track for a 24",
-        "forwardProjection": "Proficient",
-        "testDuration": 84
-      },
-      {
-        "id": 6,
-        "year": "-",
-        "grade": "-",
-        "term": "Spring",
-        "ritScore": "-",
-        "norm": "-",
-        "growthGoal": "-",
-        "metGoal": "-",
-        "percentile": "-",
-        "growthPercentile": "-",
-        "actCollegeReadiness": "-",
-        "forwardProjection": "-",
-        "testDuration": "-"
-      },
-      {
-        "id": 1,
-        "year": 2020,
-        "grade": 7,
-        "term": "Fall",
-        "ritScore": 233,
-        "norm": 220.2,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 75,
-        "growthPercentile": 65,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 68
-      },
-      {
-        "id": 2,
-        "year": 2020,
-        "grade": 7,
-        "term": "Winter",
-        "ritScore": 235,
-        "norm": 224.1,
-        "growthGoal": 5,
-        "metGoal": null,
-        "percentile": 74,
-        "growthPercentile": 82,
-        "actCollegeReadiness": "On Track for a 22",
-        "forwardProjection": "Advanced",
-        "testDuration": 71
-      },
-      {
-        "id": 3,
-        "year": 2020,
-        "grade": 7,
-        "term": "Spring",
-        "ritScore": 236,
-        "norm": 226.7,
-        "growthGoal": 4,
-        "metGoal": true,
-        "percentile": 66,
-        "growthPercentile": 51,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 62
-      }
-    ]
+    "growth": 36,
+    "subject": {
+      "name": "ela"
+    }
   },
   {
+    "latestTerm": {
+      "fullName": "April '20-'21",
+      "gradeLevelAverage": 0,
+      "domains": []
+    },
+    "achievement": 16,
+    "scale": "Score",
+    "name": "STAR - ELA",
+    "type": "growth",
+    "shortName": "STAR",
     "id": 3,
-    "name": "NWEA MAP",
-    "shortName": "MAP",
-    "scale": "RIT Score",
-    "subject": {
-      "name": "Mathematics"
-    },
-    "latestTerm": {
-      "fullName": "Winter 2021",
-      "gradeLevelAverage": 280,
-      "domains": [
-        {
-          "name": "Geometry",
-          "score": 278
-        },
-        {
-          "name": "Statistics and Probability",
-          "score": 282
-        },
-        {
-          "name": "Operations and Algebraic Thinking",
-          "score": 283
-        },
-        {
-          "name": "The Real and Complex Number System",
-          "score": 284
-        }
-      ]
-    },
-    "achievement": 72,
-    "growth": 98,
     "recentResults": [
       {
-        "label": "Spring '18",
-        "student": 226,
-        "reference": 222,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 626,
+        "hitGoal": false,
+        "growthPercentile": 1,
+        "percentile": 16,
+        "term": "September",
+        "year": 2020,
+        "reference": 626,
+        "grade": "7th",
+        "label": "September'19-'20",
+        "score": 1,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 1,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
       },
       {
-        "label": "Fall '19",
-        "student": 228,
-        "reference": 220,
-        "hitGoal": false
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 627,
+        "hitGoal": false,
+        "growthPercentile": 2,
+        "percentile": 16,
+        "term": "October",
+        "year": 2020,
+        "reference": 627,
+        "grade": "7th",
+        "label": "October'19-'20",
+        "score": 2,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 2,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
       },
       {
-        "label": "Winter '19",
-        "student": 229,
-        "reference": 222,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 628,
+        "hitGoal": false,
+        "growthPercentile": 3,
+        "percentile": 16,
+        "term": "November",
+        "year": 2020,
+        "reference": 628,
+        "grade": "7th",
+        "label": "November'19-'20",
+        "score": 3,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 3,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
       },
       {
-        "label": "Spring '20",
-        "student": 230,
-        "reference": 224,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 630,
+        "hitGoal": false,
+        "growthPercentile": 4,
+        "percentile": 16,
+        "term": "December",
+        "year": 2020,
+        "reference": 630,
+        "grade": "7th",
+        "label": "December'19-'20",
+        "score": 4,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 4,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
       },
       {
-        "label": "Fall '20",
-        "student": 227,
-        "reference": 222,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 631,
+        "hitGoal": false,
+        "growthPercentile": 5,
+        "percentile": 16,
+        "term": "January",
+        "year": 2020,
+        "reference": 631,
+        "grade": "7th",
+        "label": "January'19-'20",
+        "score": 5,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 5,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
       },
       {
-        "label": "Winter '20",
-        "student": 232,
-        "reference": 224,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 632,
+        "hitGoal": false,
+        "growthPercentile": 6,
+        "percentile": 16,
+        "term": "February",
+        "year": 2020,
+        "reference": 632,
+        "grade": "7th",
+        "label": "February'19-'20",
+        "score": 6,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 6,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 633,
+        "hitGoal": false,
+        "growthPercentile": 7,
+        "percentile": 16,
+        "term": "March",
+        "year": 2020,
+        "reference": 633,
+        "grade": "7th",
+        "label": "March'19-'20",
+        "score": 7,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 7,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 634,
+        "hitGoal": false,
+        "growthPercentile": 8,
+        "percentile": 16,
+        "term": "April",
+        "year": 2020,
+        "reference": 634,
+        "grade": "7th",
+        "label": "April'19-'20",
+        "score": 8,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 8,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 630,
+        "hitGoal": false,
+        "growthPercentile": 9,
+        "percentile": 16,
+        "term": "September",
+        "year": 2021,
+        "reference": 630,
+        "grade": "8th",
+        "label": "September'20-'21",
+        "score": 9,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 9,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 632,
+        "hitGoal": false,
+        "growthPercentile": 10,
+        "percentile": 16,
+        "term": "October",
+        "year": 2021,
+        "reference": 632,
+        "grade": "8th",
+        "label": "October'20-'21",
+        "score": 10,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 10,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 634,
+        "hitGoal": false,
+        "growthPercentile": 9,
+        "percentile": 16,
+        "term": "November",
+        "year": 2021,
+        "reference": 634,
+        "grade": "8th",
+        "label": "November'20-'21",
+        "score": 9,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 9,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 636,
+        "hitGoal": false,
+        "growthPercentile": 8,
+        "percentile": 16,
+        "term": "December",
+        "year": 2021,
+        "reference": 636,
+        "grade": "8th",
+        "label": "December'20-'21",
+        "score": 8,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 8,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 635,
+        "hitGoal": false,
+        "growthPercentile": 7,
+        "percentile": 16,
+        "term": "January",
+        "year": 2021,
+        "reference": 635,
+        "grade": "8th",
+        "label": "January'20-'21",
+        "score": 7,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 7,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 632,
+        "hitGoal": false,
+        "growthPercentile": 6,
+        "percentile": 16,
+        "term": "February",
+        "year": 2021,
+        "reference": 632,
+        "grade": "8th",
+        "label": "February'20-'21",
+        "score": 6,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 6,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 634,
+        "hitGoal": false,
+        "growthPercentile": 5,
+        "percentile": 16,
+        "term": "March",
+        "year": 2021,
+        "reference": 634,
+        "grade": "8th",
+        "label": "March'20-'21",
+        "score": 5,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 5,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 635,
+        "hitGoal": false,
+        "growthPercentile": 4,
+        "percentile": 16,
+        "term": "April",
+        "year": 2021,
+        "reference": 635,
+        "grade": "8th",
+        "label": "April'20-'21",
+        "score": 4,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 4,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "Intervention"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Limited"
+          }
+        ]
       }
     ],
-    "recentTerms": [
-      {
-        "id": 4,
-        "year": 2021,
-        "grade": 8,
-        "term": "Fall",
-        "ritScore": 232,
-        "norm": 224.9,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 76,
-        "growthPercentile": 52,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 37
-      },
-      {
-        "id": 5,
-        "year": 2021,
-        "grade": 8,
-        "term": "Winter",
-        "ritScore": 239,
-        "norm": 228.1,
-        "growthGoal": 6,
-        "metGoal": true,
-        "percentile": 70,
-        "growthPercentile": 98,
-        "actCollegeReadiness": "On Track for a 24",
-        "forwardProjection": "Proficient",
-        "testDuration": 84
-      },
-      {
-        "id": 6,
-        "year": "-",
-        "grade": "-",
-        "term": "Spring",
-        "ritScore": "-",
-        "norm": "-",
-        "growthGoal": "-",
-        "metGoal": "-",
-        "percentile": "-",
-        "growthPercentile": "-",
-        "actCollegeReadiness": "-",
-        "forwardProjection": "-",
-        "testDuration": "-"
-      },
-      {
-        "id": 1,
-        "year": 2020,
-        "grade": 7,
-        "term": "Fall",
-        "ritScore": 233,
-        "norm": 220.2,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 75,
-        "growthPercentile": 65,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 68
-      },
-      {
-        "id": 2,
-        "year": 2020,
-        "grade": 7,
-        "term": "Winter",
-        "ritScore": 235,
-        "norm": 224.1,
-        "growthGoal": 5,
-        "metGoal": null,
-        "percentile": 74,
-        "growthPercentile": 82,
-        "actCollegeReadiness": "On Track for a 22",
-        "forwardProjection": "Advanced",
-        "testDuration": 71
-      },
-      {
-        "id": 3,
-        "year": 2020,
-        "grade": 7,
-        "term": "Spring",
-        "ritScore": 236,
-        "norm": 226.7,
-        "growthGoal": 4,
-        "metGoal": true,
-        "percentile": 66,
-        "growthPercentile": 51,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 62
-      }
-    ]
+    "growth": 4,
+    "subject": {
+      "name": "ela"
+    }
   },
   {
+    "latestTerm": {
+      "fullName": "April '20-'21",
+      "gradeLevelAverage": 0,
+      "domains": []
+    },
+    "achievement": 85,
+    "scale": "Score",
+    "name": "STAR - Mathematics",
+    "type": "growth",
+    "shortName": "STAR",
     "id": 4,
-    "name": "Forward",
-    "shortName": "Forward",
-    "scale": "RIT Score",
-    "subject": {
-      "name": "ELA"
-    },
-    "latestTerm": {
-      "fullName": "Winter 2021",
-      "gradeLevelAverage": 280,
-      "domains": [
-        {
-          "name": "Reading Comprehension",
-          "score": 278
-        },
-        {
-          "name": "Essay Writing",
-          "score": 282
-        },
-        {
-          "name": "American Literature",
-          "score": 283
-        },
-        {
-          "name": "Creative Writing",
-          "score": 284
-        }
-      ]
-    },
-    "achievement": 72,
-    "growth": 98,
     "recentResults": [
       {
-        "label": "Spring '18",
-        "student": 226,
-        "reference": 222,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 626,
+        "hitGoal": false,
+        "growthPercentile": 85,
+        "percentile": 75,
+        "term": "September",
+        "year": 2020,
+        "reference": 626,
+        "grade": "7th",
+        "label": "September'19-'20",
+        "score": 85,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 85,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
       },
       {
-        "label": "Fall '19",
-        "student": 228,
-        "reference": 220,
-        "hitGoal": false
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 627,
+        "hitGoal": false,
+        "growthPercentile": 83,
+        "percentile": 76,
+        "term": "October",
+        "year": 2020,
+        "reference": 627,
+        "grade": "7th",
+        "label": "October'19-'20",
+        "score": 83,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 83,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
       },
       {
-        "label": "Winter '19",
-        "student": 229,
-        "reference": 222,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 628,
+        "hitGoal": false,
+        "growthPercentile": 87,
+        "percentile": 79,
+        "term": "November",
+        "year": 2020,
+        "reference": 628,
+        "grade": "7th",
+        "label": "November'19-'20",
+        "score": 87,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 87,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
       },
       {
-        "label": "Spring '20",
-        "student": 230,
-        "reference": 224,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 630,
+        "hitGoal": false,
+        "growthPercentile": 81,
+        "percentile": 81,
+        "term": "December",
+        "year": 2020,
+        "reference": 630,
+        "grade": "7th",
+        "label": "December'19-'20",
+        "score": 81,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 81,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
       },
       {
-        "label": "Fall '20",
-        "student": 227,
-        "reference": 222,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 631,
+        "hitGoal": false,
+        "growthPercentile": 84,
+        "percentile": 74,
+        "term": "January",
+        "year": 2020,
+        "reference": 631,
+        "grade": "7th",
+        "label": "January'19-'20",
+        "score": 84,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 84,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
       },
       {
-        "label": "Winter '20",
-        "student": 232,
-        "reference": 224,
-        "hitGoal": true
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 632,
+        "hitGoal": false,
+        "growthPercentile": 86,
+        "percentile": 76,
+        "term": "February",
+        "year": 2020,
+        "reference": 632,
+        "grade": "7th",
+        "label": "February'19-'20",
+        "score": 86,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 86,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 633,
+        "hitGoal": false,
+        "growthPercentile": 89,
+        "percentile": 78,
+        "term": "March",
+        "year": 2020,
+        "reference": 633,
+        "grade": "7th",
+        "label": "March'19-'20",
+        "score": 89,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 89,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 634,
+        "hitGoal": false,
+        "growthPercentile": 91,
+        "percentile": 73,
+        "term": "April",
+        "year": 2020,
+        "reference": 634,
+        "grade": "7th",
+        "label": "April'19-'20",
+        "score": 91,
+        "yearShortName": "'19-'20",
+        "growthGoal": 6,
+        "student": 91,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 630,
+        "hitGoal": false,
+        "growthPercentile": 84,
+        "percentile": 69,
+        "term": "September",
+        "year": 2021,
+        "reference": 630,
+        "grade": "8th",
+        "label": "September'20-'21",
+        "score": 84,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 84,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 632,
+        "hitGoal": false,
+        "growthPercentile": 82,
+        "percentile": 68,
+        "term": "October",
+        "year": 2021,
+        "reference": 632,
+        "grade": "8th",
+        "label": "October'20-'21",
+        "score": 82,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 82,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 634,
+        "hitGoal": false,
+        "growthPercentile": 85,
+        "percentile": 60,
+        "term": "November",
+        "year": 2021,
+        "reference": 634,
+        "grade": "8th",
+        "label": "November'20-'21",
+        "score": 85,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 85,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 636,
+        "hitGoal": false,
+        "growthPercentile": 83,
+        "percentile": 82,
+        "term": "December",
+        "year": 2021,
+        "reference": 636,
+        "grade": "8th",
+        "label": "December'20-'21",
+        "score": 83,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 83,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 635,
+        "hitGoal": false,
+        "growthPercentile": 82,
+        "percentile": 94,
+        "term": "January",
+        "year": 2021,
+        "reference": 635,
+        "grade": "8th",
+        "label": "January'20-'21",
+        "score": 82,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 82,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 632,
+        "hitGoal": false,
+        "growthPercentile": 89,
+        "percentile": 83,
+        "term": "February",
+        "year": 2021,
+        "reference": 632,
+        "grade": "8th",
+        "label": "February'20-'21",
+        "score": 89,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 89,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 634,
+        "hitGoal": false,
+        "growthPercentile": 84,
+        "percentile": 86,
+        "term": "March",
+        "year": 2021,
+        "reference": 634,
+        "grade": "8th",
+        "label": "March'20-'21",
+        "score": 84,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 84,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
+      },
+      {
+        "testDuration": null,
+        "metGoal": false,
+        "norm": 635,
+        "hitGoal": false,
+        "growthPercentile": 83,
+        "percentile": 85,
+        "term": "April",
+        "year": 2021,
+        "reference": 635,
+        "grade": "8th",
+        "label": "April'20-'21",
+        "score": 83,
+        "yearShortName": "'20-'21",
+        "growthGoal": 6,
+        "student": 83,
+        "proficiencyLevels": [
+          {
+            "study": "Screening Category",
+            "level": "At/Above Benchmark"
+          },
+          {
+            "study": "State Benchmark",
+            "level": "Accelerated"
+          }
+        ]
       }
     ],
-    "recentTerms": [
-      {
-        "id": 4,
-        "year": 2021,
-        "grade": 8,
-        "term": "Fall",
-        "ritScore": 232,
-        "norm": 224.9,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 76,
-        "growthPercentile": 52,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 37
-      },
-      {
-        "id": 5,
-        "year": 2021,
-        "grade": 8,
-        "term": "Winter",
-        "ritScore": 239,
-        "norm": 228.1,
-        "growthGoal": 6,
-        "metGoal": true,
-        "percentile": 70,
-        "growthPercentile": 98,
-        "actCollegeReadiness": "On Track for a 24",
-        "forwardProjection": "Proficient",
-        "testDuration": 84
-      },
-      {
-        "id": 6,
-        "year": "-",
-        "grade": "-",
-        "term": "Spring",
-        "ritScore": "-",
-        "norm": "-",
-        "growthGoal": "-",
-        "metGoal": "-",
-        "percentile": "-",
-        "growthPercentile": "-",
-        "actCollegeReadiness": "-",
-        "forwardProjection": "-",
-        "testDuration": "-"
-      },
-      {
-        "id": 1,
-        "year": 2020,
-        "grade": 7,
-        "term": "Fall",
-        "ritScore": 233,
-        "norm": 220.2,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 75,
-        "growthPercentile": 65,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 68
-      },
-      {
-        "id": 2,
-        "year": 2020,
-        "grade": 7,
-        "term": "Winter",
-        "ritScore": 235,
-        "norm": 224.1,
-        "growthGoal": 5,
-        "metGoal": null,
-        "percentile": 74,
-        "growthPercentile": 82,
-        "actCollegeReadiness": "On Track for a 22",
-        "forwardProjection": "Advanced",
-        "testDuration": 71
-      },
-      {
-        "id": 3,
-        "year": 2020,
-        "grade": 7,
-        "term": "Spring",
-        "ritScore": 236,
-        "norm": 226.7,
-        "growthGoal": 4,
-        "metGoal": true,
-        "percentile": 66,
-        "growthPercentile": 51,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 62
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "name": "NWEA MAP",
-    "shortName": "MAP",
-    "scale": "RIT Score",
+    "growth": 83,
     "subject": {
-      "name": "ELA"
-    },
-    "latestTerm": {
-      "fullName": "Winter 2021",
-      "gradeLevelAverage": 280,
-      "domains": [
-        {
-          "name": "Reading Comprehension",
-          "score": 278
-        },
-        {
-          "name": "Essay Writing",
-          "score": 282
-        },
-        {
-          "name": "American Literature",
-          "score": 283
-        },
-        {
-          "name": "Creative Writing",
-          "score": 284
-        }
-      ]
-    },
-    "achievement": 72,
-    "growth": 98,
-    "recentResults": [
-      {
-        "label": "Spring '18",
-        "student": 226,
-        "reference": 222,
-        "hitGoal": true
-      },
-      {
-        "label": "Fall '19",
-        "student": 228,
-        "reference": 220,
-        "hitGoal": false
-      },
-      {
-        "label": "Winter '19",
-        "student": 229,
-        "reference": 222,
-        "hitGoal": true
-      },
-      {
-        "label": "Spring '20",
-        "student": 230,
-        "reference": 224,
-        "hitGoal": true
-      },
-      {
-        "label": "Fall '20",
-        "student": 227,
-        "reference": 222,
-        "hitGoal": true
-      },
-      {
-        "label": "Winter '20",
-        "student": 232,
-        "reference": 224,
-        "hitGoal": true
-      }
-    ],
-    "recentTerms": [
-      {
-        "id": 4,
-        "year": 2021,
-        "grade": 8,
-        "term": "Fall",
-        "ritScore": 232,
-        "norm": 224.9,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 76,
-        "growthPercentile": 52,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 37
-      },
-      {
-        "id": 5,
-        "year": 2021,
-        "grade": 8,
-        "term": "Winter",
-        "ritScore": 239,
-        "norm": 228.1,
-        "growthGoal": 6,
-        "metGoal": true,
-        "percentile": 70,
-        "growthPercentile": 98,
-        "actCollegeReadiness": "On Track for a 24",
-        "forwardProjection": "Proficient",
-        "testDuration": 84
-      },
-      {
-        "id": 6,
-        "year": "-",
-        "grade": "-",
-        "term": "Spring",
-        "ritScore": "-",
-        "norm": "-",
-        "growthGoal": "-",
-        "metGoal": "-",
-        "percentile": "-",
-        "growthPercentile": "-",
-        "actCollegeReadiness": "-",
-        "forwardProjection": "-",
-        "testDuration": "-"
-      },
-      {
-        "id": 1,
-        "year": 2020,
-        "grade": 7,
-        "term": "Fall",
-        "ritScore": 233,
-        "norm": 220.2,
-        "growthGoal": null,
-        "metGoal": null,
-        "percentile": 75,
-        "growthPercentile": 65,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 68
-      },
-      {
-        "id": 2,
-        "year": 2020,
-        "grade": 7,
-        "term": "Winter",
-        "ritScore": 235,
-        "norm": 224.1,
-        "growthGoal": 5,
-        "metGoal": null,
-        "percentile": 74,
-        "growthPercentile": 82,
-        "actCollegeReadiness": "On Track for a 22",
-        "forwardProjection": "Advanced",
-        "testDuration": 71
-      },
-      {
-        "id": 3,
-        "year": 2020,
-        "grade": 7,
-        "term": "Spring",
-        "ritScore": 236,
-        "norm": 226.7,
-        "growthGoal": 4,
-        "metGoal": true,
-        "percentile": 66,
-        "growthPercentile": 51,
-        "actCollegeReadiness": "Not on Track",
-        "forwardProjection": "Proficient",
-        "testDuration": 62
-      }
-    ]
+      "name": "math"
+    }
   }
 ]
