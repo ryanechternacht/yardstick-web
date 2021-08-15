@@ -30,15 +30,15 @@ export default {
   data () {
     return {
       chartData: {
-        labels: this.graphData.map(x => x.label),
+        labels: this.graphData.map(x => `${x.term} ${x.yearShortName}`),
         series: [
           {
             name: 'student',
-            data: this.graphData.map(x => x.student)
+            data: this.graphData.map(x => x.score)
           },
           {
             name: 'reference',
-            data: this.graphData.map(x => x.reference)
+            data: this.graphData.map(x => x.norm)
           }
         ]
       },
@@ -76,7 +76,7 @@ export default {
 
               // Add green/red success/failure coloration to nodes
               // if (event.series.name === 'student') {
-              //   const className = data[event.index].hitGoal ? 'point-success' : 'point-failure'
+              //   const className = data[event.index].metGoal ? 'point-success' : 'point-failure'
               //   const successMarker = new this.$chartist.Svg('line', {
               //     x1: event.x,
               //     x2: event.x,
@@ -97,6 +97,7 @@ export default {
 </script>
 
 <style lang="postcss">
+/* TODO can we do this with deep selector? */
 #my-chart .axis {
   @apply stroke-current text-gray-graph-dark;
   stroke-dasharray: initial;

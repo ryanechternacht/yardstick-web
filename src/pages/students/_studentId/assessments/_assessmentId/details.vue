@@ -35,81 +35,81 @@
 
       <div />
       <p
-        v-for="t in terms"
-        :key="t.id"
+        v-for="r in results"
+        :key="r.id"
         class="text-center bg-gray-graph py-4"
       >
-        {{ t.term }}
+        {{ r.term }}
       </p>
 
       <p class="row-header">
         {{ assessment.scale }}
       </p>
       <p
-        v-for="t in terms"
-        :key="t.id"
+        v-for="r in results"
+        :key="r.id"
         class="cell"
       >
-        {{ t.score }}
+        {{ r.score }}
       </p>
 
       <p class="row-header">
         Norm
       </p>
       <p
-        v-for="t in terms"
-        :key="t.id"
+        v-for="r in results"
+        :key="r.id"
         class="cell"
       >
-        {{ t.norm }}
+        {{ r.norm }}
       </p>
 
       <p class="row-header">
         Growth Goal
       </p>
       <p
-        v-for="t in terms"
-        :key="t.id"
+        v-for="r in results"
+        :key="r.id"
         class="cell"
       >
-        {{ t.growthGoal }}
+        {{ r.growthGoal }}
       </p>
 
       <p class="row-header">
         Met Goal?
       </p>
       <p
-        v-for="t in terms"
-        :key="t.id"
+        v-for="r in results"
+        :key="r.id"
         class="cell"
       >
-        {{ boolToYesNo(t.metGoal) }}
+        {{ boolToYesNo(r.metGoal) }}
       </p>
 
       <p class="row-header">
         Percentile
       </p>
       <p
-        v-for="t in terms"
-        :key="t.id"
+        v-for="r in results"
+        :key="r.id"
         class="cell"
       >
-        {{ t.percentile }}
+        {{ r.percentile }}
       </p>
 
       <p class="row-header">
         Growth Percentile
       </p>
       <p
-        v-for="t in terms"
-        :key="t.id"
+        v-for="r in results"
+        :key="r.id"
         class="cell"
       >
-        {{ t.growthPercentile }}
+        {{ r.growthPercentile }}
       </p>
 
       <fragment
-        v-for="(pl, i) in terms[0].proficiencyLevels"
+        v-for="(pl, i) in results[0].proficiencyLevels"
         :key="pl.study"
         class="row-header"
       >
@@ -118,12 +118,12 @@
           {{ pl.study }}
         </p>
         <p
-          v-for="t in terms"
-          :key="t.id"
+          v-for="r in results"
+          :key="r.id"
           class="cell"
         >
           <!-- TODO colors -->
-          {{ t.proficiencyLevels[i].level }}
+          {{ r.proficiencyLevels[i].level }}
         </p>
       </fragment>
 
@@ -131,11 +131,11 @@
         Test Duration (Mins)
       </p>
       <p
-        v-for="t in terms"
-        :key="t.id"
+        v-for="r in results"
+        :key="r.id"
         class="cell"
       >
-        {{ t.testDuration }}
+        {{ r.testDuration }}
       </p>
     </div>
   </div>
@@ -169,11 +169,11 @@ export default {
     assessment () {
       return this.getResultsByStudentAndId(this.studentId, this.assessmentId)
     },
-    terms () {
-      return this.assessment ? this.assessment.recentTerms : []
+    results () {
+      return this.assessment ? this.assessment.recentResults : []
     },
     gridTemplateColumns () {
-      const cols = Math.max(this.terms.length + 1, 7)
+      const cols = Math.max(this.results.length + 1, 7)
       return `repeat(${cols}, 1fr)`
     },
     thisYear () {
@@ -183,13 +183,13 @@ export default {
       return this.getSettings.last_academic_year
     },
     lastYearResults () {
-      return this.terms.filter(t => t.year === this.lastYear.end_year)
+      return this.results.filter(r => r.year === this.lastYear.end_year)
     },
     lastYearColumnSpan () {
       return `span ${this.lastYearResults.length}`
     },
     thisYearResults () {
-      return this.terms.filter(t => t.year === this.thisYear.end_year)
+      return this.results.filter(r => r.year === this.thisYear.end_year)
     },
     thisYearColumnSpan () {
       return `span ${this.thisYearResults.length}`
