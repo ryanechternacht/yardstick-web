@@ -307,6 +307,11 @@ export default {
   @apply bg-blue text-white cursor-pointer;
 }
 
+.submit:disabled,
+.submit:disabled:hover {
+  @apply border-gray-graph-dark bg-gray-graph text-gray-text;
+}
+
 .submit-message {
   @apply ml-20 text-gray-text italic;
 }
